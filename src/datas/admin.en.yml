@@ -1,0 +1,1491 @@
+en:
+  orson:
+    pages:
+      settings:
+        opengraph_title: "Title for Facebook and LinkedIn"
+        twitter_title: "Title for Twitter"
+        opengraph_description: "Description for Facebook and LinkedIn"
+        opengraph_image: Share image for Facebook and LinkedIn
+        twitter_description: "Description for Twitter"
+        generic: "Generic"
+        advanced: "Social Networks"
+    wizard:
+      user_messages:
+        no_images_yet: "You don't have any images yet. Upload your first one using the tab on the left."
+        nice_header: Well done!
+        nice_page: Great
+      errors:
+        unreadable_logo: Your logo can't be read. Please try with a different logo.
+      instructions:
+        step0:
+          welcome: Welcome!
+          build_steps: "So you can customise your website as you want. Let’s get started!"
+          orson_bot_introduction: "Hi, I'm Orson Bot, I will be your companion. In three steps, you will get your website up and running."
+          add_logo: Add a logo or the name of your website.
+          add_block: Select a theme.
+          edit_block: "Customize your website with your content and colors."
+          create_website: Create your website.
+        step1:
+          add_brand: Add your logo or the name of your website.
+          brand_customization_1: "Let's start with something about you. Don't have a logo yet?"
+          brand_customization_2: "No worries. You can change your logo and your content anytime."
+          have_logo: I'm uploading my logo.
+          dont_have_logo: I'm writing the name of my company.
+          website_name: Or add the name of your website.
+          no_happy: "Not happy with this one? You can "
+          upload_another: "upload another one."
+          prefer_choose_name: "You prefer to choose a name?"
+          go_back: "Go back"
+        step2:
+          standard: "Multi pages"
+          onepage: "One page"
+          add_new_block: Get started with your page.
+          build_page_1: The blocks can be changed or modified anytime.
+          build_page_2: To choose a block among the examples, click on the + button
+          select_theme: "Select a theme to start"
+          select_theme_1: "These themes are totally customizable with your colors, content, layout..."
+          select_theme_2: "You can also change your theme at any time without having to redo your website."
+          onepage_explanation: "One Page are websites with just one page."
+        step3:
+          edit_block: Edit the block to customize your pages
+          click_to_edit_1: Each block can be customized. You can add a background image or a background color.
+          click_to_edit_2: "To customize your block, click on the button"
+          check_site_made_by_clients: "Check sites made with theme "
+          back_to_themes: "Back to themes"
+        summary:
+          congratulations: Great! Your turn now.
+          achievements_1: You just got started with your new webiste.
+          achievements_2: At any time you can customize your content and modify the blocks to build an efficient and elegant website.
+          launch_website: I want to keep on with this page.
+          start_with_other_page: I prefer to start over with a new page.
+          orson_always_around: Orson is always around to guide you while you're building your site.
+      steps:
+        step: Step
+        first_of_three: Step 1
+        second_of_three: Step 2
+        last_of_three: Step 3
+  common:
+    left: Left
+    right: Right
+    top: Top
+    example: Example
+    normal: Normal
+    reset: Reset
+    name: Nom
+    type: Type
+    like: "I like"
+    or: "or"
+    by: "by"
+    all: all
+    day: day
+    month: month
+    week: week
+    with: with
+    between: between
+    and: and
+  social_authentication:
+    providers:
+      disconnected: "You've been disconnected from %{provider}"
+      connection_error: "Sorry, we couldn't connect your website to %{provider}"
+      already_connected: "Your website is already connected to %{provider}"
+      connected: "Your website has been successfully connected to %{provider}"
+    errors:
+      invalid_credentials: "Sorry. Your %{provider} information doesn't match our records."
+      api_connection_error: "We encountered an error contacting the %{provider} API. Sorry for the inconvenience."
+      wrong_oauth_state: Invalid connection parameters
+  actions:
+    fix_incoming_links: Fix all links pointing to this page.
+    finish_action: Finish your action first
+    put_offline_anyway: Put this page offline anyway
+    subscribe: Subscribe
+    add: Add
+    connect: Connect
+    disconnect: Disconnect
+    create: Create
+    save: Save
+    publish: Publish
+    unpublish: Unpublish
+    and: and
+    drag: Drag
+    up: Up
+    down: down
+    select: Select
+    search: Search
+    ok: Ok
+    oui: "Yes"
+    non: "No"
+    cancel: Cancel
+    sure: Confirm
+    prev: Previous
+    next: Next
+    edit: Edit
+    replace: Replace
+    skip: Skip
+    apply: Apply
+    preview: Preview
+    view: View
+    preview_with_my_changes: Preview with my changes
+    finish: Finish
+    send: Send
+    delete: Delete
+    settings: Settings
+    customization: Customize
+    customization_small: Custom
+    update: Modify
+    later: "Later"
+    comment: Comment
+    move_up: Upwards
+    move_down: Downwards
+    move_left: to the left
+    move_right: to the right
+    switch_page_to: "Switch page "
+    back_to_editor: "Get back to the editor"
+    go_to_dash_page: "Go to my pages"
+    filter: Filter
+    need_help: "Need some help ?"
+    close_help: "Close the help"
+    close: "Fermer"
+    use: Use
+    duplicate: Duplicate
+    load_more: Load more
+    create_my_site: Create my site
+    return_to: "Return to "
+    stay: "Stay"
+    leave: "Leave"
+    choose: 'Choose'
+    copy: 'Copy'
+  required:
+    nothing_to_see: You haven't got any pictures so far. Upload your first pictures with the following link.
+    required_field: Essential for your SEO. Use your keywords.
+    required_field_text: This field is required.
+    email_not_valid: Are you sure about your email? Please try again.
+    url_not_valid: Are you sure about your URL? Please try again.
+    no_result_found: No result has been found. Please try again.
+    website_com: http://www.website.com
+    invalid_password_email: Invalid password or email.
+    provide_password: Please type your password.
+    password_updated: "Your password has been updated, please login."
+    email_sent: Email sent.
+    name_page_existed: "This page name already exists."
+  form:
+    first_name: First name
+    last_name: Name
+    password: Create your password.
+    password_confirmation: Confirm your password.
+    email: Type your email.
+    phone_number: Type your phone number.
+    subject: Subject
+    message: Message
+    adress: Address
+    time: Hour
+    date: Date
+    display: Display
+  processables:
+    twitter:
+      tweets_of: "Tweets from %{screen_name}"
+    notice: The message has been sent successfully.
+    newsletter_notice: You've now subscribed to the newsletter.
+  admin:
+    settings:
+      show:
+        code_widget_expert_zone: This is an advanced setting, use with caution. The code you add here will be inserted on all the pages of your website.
+        disqus_short_name_invalid:  Your Disqus shortname is invalid. Please check your credentials on Disqus.
+        successful_social_connect: "Your site is successfully connected to %{provider}"
+        add_file: Add an icon
+        edit_file: Change this icon
+        add_icon_help: Your image should be at least 256x256 pixels, as recommended by Apple.
+        add_file_help: Upload a square image for your favicon to look pretty. The optimal size is 16x16 pixels.
+        website_icon: "Your website's icon"
+        website_verification: Website verification
+    locales:
+      fr: French
+      en: English
+      pt-BR: Portuguese (BR)
+    layout:
+      account: Your account
+      login: Login
+      login_facebook: Facebook login
+      login_google: Google login
+      logout: Log out
+      actions: Actions
+      my_page: My page
+      my_page_access: See my page online
+      my_website_access: See my published website
+      forgotten_password: I have forgotten my password
+      send_my_password: Please send me a password
+      recovery_password: Please reset my password
+      i_remember_password: "I remember my password."
+      tour: Guided tour with Orson
+      keyboard: Keyboard shortcuts
+      pikock_support: "Orson's Advice and Support"
+      pikock_support_href: "http://support-en.orson.io"
+      feedback: "Give feedback"
+    menu:
+      menus: Menus
+      dashboard: Dashboard
+      settings: Settings
+      files: Files
+      users: Users
+      fragments: Header and footer
+      articles: Articles
+      pages: Pages
+      your_page: Your page
+      subscribe: Subscribe
+      themes: Themes
+      statistics: Statistics
+      comments: Comments
+      documents: Documents
+      free_trial: Free trial.
+      upgrade_unlimited: "Upgrade to the unlimited version"
+      remaining: remaining
+      help: Support
+      see_demonstration: See the demonstration
+      check_support: Check the support
+      contact_chat: Contact vith the live chat
+      call_at: Call at +33 1 45 31 64 32
+      product_tour: Start tutorial
+  error:
+    error_404: "Sorry, this page does not exist."
+    error_500: "Sorry, this page is not accessible."
+    go_back: "Go to your"
+    home_page: Home page
+    under_maintenance: "Website under maintenance"
+    service_will_be_back: "The service will soon be back"
+    site_offline: "Opening soon"
+    site_not_found: "We couldn't find this website. Please try again."
+    if_owner: "If you are the site owner, please go to"
+    admin: "your website's administration"
+    goto_pikock: "go to Orson."
+    handmade_paris: "Handmade with passion in Paris"
+    powered_by: "Site web powered by Orson"
+    create_website_pikock_onepage: "Create your website for $2"
+  dashboard:
+    welcome:
+      edit_site_now: Edit my site now
+      discover_website_builder: "Discover Orson.io editor in 2 minutes"
+      edit_site_help: Edit the content of your website, text and images as much as you want to create an amazing website
+      title: Welcome home!
+      congrats: "Awesome! Your new domain,"
+      being_deployed: "is being configured. Check its status in 'Settings'"
+      thanks_for_trying: "Thanks for trying Orson!"
+      give_feedback: "Give us your feedback at contact@orson.io"
+      days_remaining: "remaining days - Free trial"
+      update_your_site: "You can subscribe to Orson anytime"
+      at_this_adress: "at http://www.orson.io"
+      video_starting: "71882917"
+      introduction_to_video: "Get familiar with Orson, start by modifying a page."
+      modify_page: Modify a page
+      greeting: "Hi %{user_full_name}"
+    analytics:
+      logo_title: Google Analytics
+      create_google_analytics_account: Create your Google Analytics account.
+      title: Visits
+      visits: Visits
+      more_on_google_analytics: More about Google Analytics
+      connect_button: Connect
+      no_google_account: Create your Google account.
+      overview: "Overview"
+      page_view: "Visits on your pages"
+      source_traffic: "Traffic sources"
+      select_account: "Select an account"
+      change_account: "Change account"
+      no_data_found: "No data has been found."
+      disconnect: "Log out"
+      need_connect_analytics: "To show your website's statistics, please connect to your Google Analytics account."
+      error_occured_refresh_page: "An error occured, please refresh your page."
+      activate_analytics: "Your account is not activated for Google Analytics."
+      insufficient_permissions: "Connect my Orson site to Google Analytics"
+      property_not_found: "You haven't created any property for your website yet."
+      create_profile_analytics: "Create my profile on Google Analytics"
+      stats_website: "Statistics of your website"
+      pages_visits: "Number of visits on your website"
+      evolution_description_week: Evolution this week
+      evolution_description_month: Evolution this month
+      of_your_site: "of your site"
+      my_account: 'My account'
+      javascript:
+        evolution_null: "No evolution"
+        accounts: Accounts
+        accounts_description: "Several accounts have been found, please select one"
+        webproperties: Proprerties
+        webproperties_description: "Several webproperties have been found, please select one"
+        profiles: profiles
+        profiles_description: "Several profiles have been found, please select one"
+        change_of: "Change of "
+        over_the_last: " over the last "
+        days: " days"
+
+
+  website:
+    general: General
+    disqus_shortname: "Disqus shortname"
+    disqus_help: "To activate the 'comment' field on your blog, connect your Disqus account. To create and connect one, check this : "
+    disqus_support: "http://support-en.orson.io/78/create-a-professional-blog"
+    website_settings: Website settings
+    updated: Your website settings are modified.
+    host: Host
+    host_url: "http://support-en.orson.io/72/redirect-your-domain-name-url"
+    analytics_url: "http://support-en.orson.io/73/activate-google-analytics"
+    actual_host:  Actual host
+    colors: Colors
+    admin_language: Administration language
+    site_language: Website language
+    online: Site online
+    analytics_id: Google analytics ID
+    how_to_analytics_id: "To get detailed statistics about your visitors, add your Google Analytics ID. For more information:"
+    how_to_analytics_id_url: "https://support.google.com/chrome_webstore/answer/188739?hl=en"
+    no_domain_yet: "You don't have your own domain yet? Get one here, it's included in your subscription."
+    register_domain: "Register your domain"
+    domain_configuring: "is being configured"
+    configure_host: "If you already have a domain, please follow the instructions to configure it"
+    tape_host: ", then type it in the field above."
+    set_host_url: ""
+    existing_host_url: "www.your-existing-host.com"
+    here: "here"
+    domain_name_support_slug: "/en/domain-name"
+    google_analytics_support_slug: "/en/doc-google-analytics"
+    social_connects: Social networks
+    google_drive_href: "https://support.google.com/drive/answer/2424384?hl=en"
+    want_domain_name?: "Subscribe to Orson. Your custom domain name is included."
+    favicon: "Your website icon"
+  files:
+    delete:
+      action: Delete image
+      confirmation: Are you sure you want to delete this image?
+      success: Your file has been successfully deleted
+      error: An error occurred. Your file could not be deleted. Contact the support for assistance
+    new_file: New picture(s)
+    used: Used pictures
+    not_used: Unused pictures
+  menus:
+    menu: Menu
+    edit_menu: Modify the menu
+    new_menu: New menu
+    link_lists: Link lists
+    add_page: Add a link
+    add_image_link: Add a link with a picture
+    add_group_links: Add a dropdown menu
+    add_group_imgs: Add  a dropup images menu
+    menu_links: Menu links
+    menu_text: Menu text
+    modify_name: Change the menu name
+    name_menu: Menu name
+    add_icon: Add an icon
+    folder: Drop down menu
+    display_as_button: Display as button
+  articles:
+    fill_required_fields: "Please provide a title, a description and an address for your article."
+    read_more: Read more
+    create_new_article: "Let's get started with your 1st article"
+    posted: "Posted"
+    posted_ago: "Posted"
+    ago: "ago"
+    the: "the"
+    not_published_yet: "Not published yet"
+    tags: Tags
+    last_published: "Published on"
+    all_articles: "Show all articles"
+    last_published: "Last published"
+    title_article: Title of your article
+    create_article: Create this article
+    save_article: Save article
+    no_article_yet: "There is no content. Add content by clicking on the button '+'."
+    new_article: New article
+    publication_date: "Publication date"
+  publish:
+    awesome: Awesome!
+    orson_bot_happy: The Orson Bot is just so happy!
+    almost_perfect: Near the awesomeness before publishing!
+    found_issues: The Orson Bot found issues with your page
+    correct_issues_first: Correct them before publishing to make your website perfect.
+    congrats: Congrats!
+    page_online: Your page is online.
+    design_online: your design is online.
+    page_to_menu: "Would you like to add this page to your menu?"
+    copy_url: Copy the url
+    share_page: Share your page
+    share_my_page: Share my page
+    return: Return to edit mode
+  pages:
+    new_page: New page
+    edit_page: Edit a page
+    archived: Archived
+    switch_page: Switch page
+    updated: Page updated
+    created: Page created
+    deleted: Page deleted
+    duplicated: Page duplicated
+    click_here_to_edit: "Click here to edit the "
+    click_here_to_edit_page: "Click here to edit the page"
+    header: header
+    footer: footer
+    editor:
+      replace_success: "Your page has been replaced successfully. Don't forget to save to confirm those changes."
+      replace: "Replace the content of this page with the content of :"
+      pages:
+        manage: Manage my pages
+      versions:
+        manage: Manage page versions
+        version: VersionO
+        version_online: Online version
+        version_offline: Offline version
+      menu:
+        to_edit: Edit my menus
+        to_edit_instructions:  "To edit your menu, use the Menu Editor."
+        link_menu_editor: Go to Menu Editor
+        to_add: Add your menus
+        to_add_instructions: "Drag and drop your existing menus, available on the left side of the editor in the 'Permanents' section"
+    index:
+      all: All
+      offline_page_instructions: Preview your page or take it online
+      published: Online
+      page_published: Online
+      draft: Offline
+      page_draft: Offline
+      edit: SEO
+      setting: Set up this page
+      duplicate: Duplicate
+      share: Share
+      delete: Delete
+      thumbnails: Thumbnails
+      lists: Lists
+      display_as_list: List
+      name: Name
+      last_modified: Last modified
+      actions: Actions
+      screenshot: Orson is taking a screenshot of your page.
+      status: Status
+      created_at: Date created
+      replace_page_by: Replace
+      see_my_page_online: View online
+    new:
+      name: Page name
+      slug: Address
+      title: Title
+      description: Description
+      help_slug: "Only lowercase letters, numbers and dashes allowed."
+      help_message: Essential for your seo. Use your keywords.
+      help_message_name: "Maximum size for an optimal display on Google: 155 characters"
+      help_message_title: "Maximum size for an optimal display on Google: 155 characters"
+      help_og_title_max_length: "Maximum size for an optimal display on Facebook / LinkedIn : 40 characters"
+      help_og_description_max_length: "Maximum size for an optimal display on Facebook / LinkedIn : 200 characters"
+      help_og_image: The link to the image that'll be displayed when you share this page on social networks (see https://developers.facebook.com/docs/sharing/best-practices#images)
+      help_twitter_card_title_max_length: "Maximum size for an optimal display on Twitter : 70 characters"
+      help_twitter_card_description_max_length: "Maximum size for an optimal display on Twitter : 200 characters"
+      example_page: Example page
+      start_empty_page: Start with another page
+      start_example_page: Start with this model
+      get_start_fast: "To get started on your page rapidly, Orson Super Page Starter lays out a few examples sorted by category."
+      change_content_any_time: "You can change the content and the layout of your page as you want later."
+      blank: Blank
+      home: Home
+      about_us: "About us"
+      products: "Products"
+      services: Services
+      focus: Focus
+      big_team: Big team
+      classic: Classic
+      projects: Projects
+      big_projects: Big projects
+      portfolio_one: One project
+      startup: Start up
+      name_help_you_find: "to help you find it easily"
+      mess_help_length_1: "You have"
+      mess_help_length_2: "characters left to get an optimal display on Google."
+    settings:
+      page_settings: Page settings
+      seo_informations: Titles and descriptions of your pages are very important for your SEO.
+      take_time_to_fill: "Take the time to fill them with relevant keywords."
+  mailers:
+    form_mailer:
+      contact_form_submitted: New email from a visitor
+      contact_mail_received:
+        subject: "Thank you, we just received your email"
+      newsletter_subscription_notification:
+        subject: "Yay, you have a new subscriber on your website"
+      contact:
+        no_subject: "No subject provided"
+    user_mailer:
+      password_recovery:
+        subject: "Password recovery"
+  sessions:
+    created: "Welcome !"
+  users:
+    my_profile: My profile
+    my_websites: My sites
+    new_user: "New user"
+    updated: "User updated"
+    created: "User created"
+    deleted: "User deleted"
+    index:
+      edit_your_name: Edit your name
+      why_not_on_list: "You're not on the list as you're the site owner. You can manage your account at the following address:"
+      main_website: main website.
+    new:
+      first_name: First name
+      last_name: Last name
+      email_gravatar: Your email will define your Gravatar picture - More info on http://gravatar.com
+      password: "Password :"
+      password_confirmation: "Password confirmation :"
+    edit:
+      edit_user: Update user
+  wizard:
+    back_to_themes: "Back to all designs"
+    no_and_create_site: "No and create my website"
+    add_infos: "Add your information"
+    choose_theme: "Select a design to start your site"
+    rocket_site: "Launch your site"
+    select_this_theme: "Select this design"
+    create_my_site: "Select this design"
+    change_colors_anytime: "You can change your colors now or do it later anytime."
+    website_being_rocketted: Your website is being launched on the Internet
+    wait: Wait for 1 minute...
+    choose_theme_of_your_site: "Select the design of your website"
+    change_anytime: "You can change it anytime."
+    personalize_theme: "Customize your site with your colors."
+    would_personalize: "Would you like to customize your website?"
+    customize: "Ma customization"
+    remaining_before_launch: "Orson Bot is creating your website"
+    oui: "Yes"
+    themes:
+      photograph: Photograph
+      business: Business
+      agency: Portfolio
+      presentation: Presentation
+      event: Event
+      ecommerce: Ecommerce
+      blog: Blog
+      asyouwant: "Blank page"
+      restaurant_bar: "Restaurant bar"
+      organization: "Organization"
+      artist: "Artist"
+      agency: "Agency"
+      anzo_description: "Designed for any kind of business selling product or services. Clean and modern design will help you to be successful."
+      journeys_description: "Craft for content websites to help your visitors to be focus on your text and images. Spread your content to the world."
+      incognito_description: "Design and made for food lovers with simple and beautiful images to make your product awesome."
+      elf_description: "Start to sell and conquer the world with this design focus on Ecommerce. Neat and beautiful design to make your product astonishing."
+      nova_description: "Made for creative, designers, people making beautiful things and want to create an amazing portfolio. Nova is for you."
+      amerigo_description: "Your world are built with images. Show and share them with this gorgeous design. "
+      vitae_description: "Get a job with a clean and multi media CV to start a new life. Conquer the world with your CV."
+      kiubo_description: "Launch your idea and start to make it well known with a one page website. Conquer the world with just one page."
+      specta_description: "A must for an event one page site. Super clean and efficient layout to make your event famous in the world"
+      kaito_description: "Start to sell your product to the world with one page product site. Clean and successful layout to start making business now."
+      new_description: "This design is pure and clean. You can start with this design to build any website you want."
+    zopim:
+      chat_with_an_expert: "Get advice from an expert on the live chat"
+  editor:
+    image_frame_styles:
+      circle: Circle
+      polaroid: Polaroid
+      normal: Normal
+      rounded: Rounded
+    features:
+      icon_widget_feature: "Icon Widget"
+      video_background_feature: "Video Backgrounds"
+      parallax: Parallax scrolling
+    user_blocks: Your custom block has been deleted
+    select_displayed_widgets: Select the widgets you want displayed in your menu
+    website_care:
+      error_title: "Orson Bot has found an error"
+      error_description: "Our customer service has been notified."
+      error_explanation: "Our teams are taking care of the error and we will reply as soon as possible. If desired, our customer service is available through the live chat right now."
+      page_title_and_description: "Title and description"
+      page_title_and_description_good: "Your title and description looks good. Use keywords in there."
+      page_title_and_description_bad: "Title and description are the most important things for your SEO."
+      images: "Images"
+      high_quality_images_good: Nice! All your images are beautiful.
+      high_quality_images_bad: images have bad quality. Change them.
+      high_quality_images_bad_one: image have bad quality. Change it.
+      external_links: "External links"
+      external_links_good: Orson Bot tested all external links. They are all good!
+      external_links_bad: links are broken. Change them.
+      external_links_bad_one: link is broken. Change it.
+      internal_links: "Internal links"
+      internal_links_good: Orson Bot tested all internal links. They are all good!
+      internal_links_bad: internal links are broken. Change them.
+      internal_links_bad_one: internal link is broken. Change it.
+      incoming_links: Links pointing to this page
+      fix_incoming_links: Fix your incoming links so you will not have broken links on these pages.
+      incoming_links_bad: Orson Bot found out some links pointing to this page.
+      bad_image: "This image is pixelated for this place. Change the image."
+      video_background: "This is a video background"
+      save_done: "Saved"
+      save_help: '"Save" allows you to keep changes made to your page without publishing it on the Internet'
+      publish_help: '"Publish" allows you to update your page on the Internet'
+      good_understanding: "Understand the difference"
+      understood_no_display_message_anymore: "I understand, do not display this messsage"
+    editing: "Being edited..."
+    back_online_version: "Go back to online version"
+    drag_here_new_section: "Drag and drop a new block here"
+    update_code_version:
+      title: "Updating your Orson website"
+      description: "Orson is evolving to offer new exciting features:"
+    space:
+      title_help: Give space to your content
+      description_help: Add spaces above or below some of your widgets for more clarity.
+    browser:
+      old_browser: "Your browser is outdated (Internet Explorer)."
+      pikock_optimized: "Orson is optimized"
+      for_new_browsers: " for new browsers such as Chrome, Firefox, Opera or Safari"
+      if_benefits_from_features: "To enjoy all the features, "
+      have_to_update: "you have to update your browser to one of these."
+      update_browser: "Update my browser now"
+    upgrade:
+      unlimited_offer: Unlimited
+      unlimited_offer_help: "All included and without restrictions"
+      unlimited_offer_price: "$20"
+      one_page_offer: One Page plan
+      one_page_offer_help: "First step on the web"
+      one_page_offer_price: "$2"
+      VAT_per_month: "VAT/month"
+      best: Best
+      deal: deal
+      no_commitment: "Without commitment"
+      upgrade_title: Pick the right plan for you.
+      go_further: "Want to go further?"
+      give_more_power_to_website: "Give your site extra power with the Unlimited offer:"
+      unlimited_pages: "An unlimited number of pages,"
+      unlimited_pages_help: "to better promote your content, your news, your blog, your products or services."
+      unique_url: "A unique address for your website, "
+      unique_url_help: "to ensure a better visibility"
+      audit_per_year: "The audit of your site each year "
+      audit_per_year_help: "to provide you with practical tips to optimize your website's visibility"
+      pikock_center_access: "Access the Orson Center"
+      pikock_center_access_help: "for practical advice on how to improve your website and make it more visible"
+    tools:
+      show_tool: Show menu
+      hide_tool: Hide menu
+      move_to_the_left: Move to the left
+      move_to_the_right: Move to the right
+    fragments:
+      fragments_present_each_page: Header and footer are present on every page.
+      to_edit_fragments_right: "All changes done on header or footer will automatically be applied to all the pages of your website"
+      to_edit_fragments_left: "Insert your corporate logo, a baseline, or adjust the menu to customize your pages and have them reflect your identity."
+      edit_header: Edit the header
+      edit_footer: Edit the footer
+    dropdowns:
+      more_buttons: Display/hide additional buttons
+      add_blocks: Add a block
+      add_article_widget: Add an article widget
+      add_widgets: Add a widget
+      add_above: Add above
+      add_below: Add below
+    new_blocks: "Drag a block or click here to get started"
+    new_blocks_help: "Drag and drop a block from the right panel."
+    widget: Widget
+    permanent_widget: Permanent widget
+    drag_me: Drag me on the page!
+    sections: Sections
+    components: Components
+    permanents: Permanents
+    library: Library
+    layouts: Blocks
+    grid: Grid
+    layouts_columns: Layout columns
+    layout:
+      choose_layout: Choose the layout you want to add.
+      what_is_layout: "What is a layout? "
+      how_to_add_layout: "How to add a layout?"
+      page_divided_in_12:  A page is divided into 6 columns.
+      layout_between_2_12: "All structures have from 1 to 6 columns."
+      example_add: "for example, you can embed a structure:"
+      full_layout_explanation: "Full (the entire width of your page)"
+      columns_two_explanation: "2 columns,"
+      columns_third_explanation: "2 columns 1/3 "
+      lot_of_combinaitions: "There are many combinations, this way you can build a page exactly as you want "
+      build_whatever_page: "You can also use blocks, which are pre-designed structures."
+      drag_and_drop_layout: "Drag and drop structures on your page at the right-hand side,"
+      add_widget_wherever: " then embed your content (Text, Image, Video) by dragging it to the desired structure."
+    blog:
+      tag_page_description: "%{tag}, discover our other articles on that topic. You'll know everything about %{tag}!"
+      blog_title: "Blog of %{name}"
+      blog_description: "Discover the blog of %{name} and read our articles written by experts"
+      connect_disqus: "Connect your Disqus account first, go to"
+      number_articles_display: Number of articles to display
+      share_buttons: Share buttons
+      comments: Comments
+      dont_have_articles_yet: "You don't have any articles yet. Go to  the Blog section to create one."
+      go_to_articles: "Go to Blog section"
+      title_article: "Title of your article"
+      date_publication: "Publication date"
+      tags_to_display: "Tags to display"
+      separate_tags_commas: "Separate your tags with commas"
+      caution_tags_limit: "A tag cannot be composed of more than 30 characters."
+      display_link_history: "Display a link to all the articles"
+      what_is_blog: What is a 'Blog' widget?
+      what_is_blog_help: "The Blog widget enables you to define where to display your articles on your website"
+      how_to_add: "How to add, edit or delete an article ?"
+      how_to_add_help: "You articles can be added, edited or be deleted in the 'Blog' section."
+      go_to_blog_section: "Go to the 'Blog' section"
+      delete: Delete your article
+      sure_delete: Are you sure you want to delete your article?
+      watch_out: "Watch out, "
+      page_linked: "this article is linked from"
+      different_pages: "this article is linked with others pages. Change or delete those links in the following widgets or pages."
+      still_delete_article: "I still want to delete this article"
+    image_manager:
+      uploading_files: "Uploading your pictures..."
+      upload_completed: "Upload completed."
+      image_too_small: "This image's size is too small"
+      image_too_small_tooltip: "This image width or height is lower than 300pixels."
+      format_not_supported: "Only format JPG and PNG are supported."
+      format_not_supported_tooltip: "JPG and PNG files are supported"
+    widgets:
+      images:
+        title_seo_warning: Images titles are important for your SEO. Use the relevant keywords.
+      icons:
+        categories:
+          neat: Neat
+          elegant: Elegant
+          pure: Pure
+          minimalist: Minimalist
+        subcategories:
+          art: "Art"
+          business-commerce-shopping: "Business / Commerce / Shopping"
+          safety: "Security"
+          general: "General"
+          transport-trip: "Transportation / Trips"
+          medical: "Medical"
+          nature: "Nature"
+          food: "Food"
+          time: "Time"
+          people: "People"
+          music: "Music"
+          web-app: "Web Applications"
+          transportation: "Transportation"
+          payment: "Payment"
+          chart: "Charts"
+          currency: "Currency"
+          directions: "Directions"
+          directions-circled: "Directions (circled)"
+          directions-full: "Directions (full)"
+          directions-circled-full: "Directions (full / circle)"
+          shapes: "Shapes"
+          shapes-round: "Shapes (round)"
+          business: "Business"
+          maps: "Maps"
+          artistic: "Artistic"
+          transport: "Transportation"
+          actions: "Actions"
+      manage_widgets: Manage your widgets
+      at_least_one_widget: You must have at least one widget
+      background_video: Video
+      background_image: Image
+      enable_captcha: Enable CAPTCHA to avoid spamming
+      captcha_error: Please verify you're a human before submitting the form
+      configure_permanent: Configure permanent widget
+      remove_permanent: Make widget non-permanent
+      content: Content
+      title: Title
+      text: Text
+      link: "Link & Button"
+      media: Media
+      image: Image
+      video: Video
+      carousel: Carousel
+      portfolio: Portfolio
+      visual_ratio: Visual ratio
+      social: Social
+      share_buttons: Share
+      share_links: Link
+      share_follow: Follow
+      gmap: Google Maps
+      form: Form
+      paypal: Paypal
+      code: Code
+      comments: Comments
+      script: Script
+      blog: Blog
+      position: Position
+      click_on_preview: Click on "Preview" on the top right of the editor to preview your widget code on your page
+      double_click_set_address: "Double click to set your address"
+      help_canot_move: 'For optimal readability, add this widget in a bigger location and it will look beautiful on every device (tablets - smartphones - computers)'
+    form:
+      contact_mail: Contact mail
+      form_name: Form name
+      form_type: Form type
+      contact: Contact
+      newsletter: Newsletter
+      form_contact_mail_help: "You will receive the content of this form at the following address:"
+    paypal:
+      placeholder_copy_paste: "Copy and Paste your Paypayl button code"
+      paypal_url: https://www.paypal.com
+      how_to: "How to add a Paypal button?"
+      create_one: "You don't have a paypal account yet, you have to create one."
+      go_to: "To do this, go to: "
+      paypal_html: "Paypal HTML code"
+      paypal_code: "Paypal button"
+      click_open_count: "Click on Sign Up"
+      let_paypal_tour: Choose « Create a professional account ». Paypal will then ask you some information about yourself and your company
+      read_tutorial: "Read the information from the « First steps with Paypal » guide. You will find some explanations to customize your account."
+      this_process: This operation will take less than 5 minutes.
+      paypal_already_exist: You already have a Paypal account.
+      login_paypal: Go to your dashboard by entering your email and password on this page.
+      click_on_eshop: "Click on 'Merchant Services'"
+      choose_button: "Select 'Buy Now Buttons' on the left of the page."
+      configure_paypal: « Configure your Paypal button »
+      set_paypal_options: "To do that, choose a button type (Buy now, shopping cart, ...) then specify the net amount of the product you wish to sell and the associated costs (delivery - taxes - ...)"
+      paypal_valid: "Validate your entry by clicking on 'Create Button' "
+      new_page: "On the next page, a window with a code appears with the code you have to copy. To avoid any mistakes, please click on « Select Code » which is just below the window."
+      check_valid: "You still have to save your page. To get started, make a test payment to make sure everything is working as expected."
+      retry: "To add more payment buttons on other products/services sold on your site, repeat the same operation."
+      paypal_code_is_good: "The code Paypal is valid!"
+      add_paypal_code: "Add the Paypal code"
+      add_just_paypal_code: "Add the Paypal code above. Need some help? Check out"
+      our_help: "our support"
+      help_link: ""
+    code:
+      widget: "Code for this widget (HTML/CSS)"
+      whole_page: "Code for the whole page (Javascript/CSS)"
+      integrate_tool: "Integrate your faveorite tool directly in Orson.io"
+      integrate_tool_explain: "Add directly the embed code of your tool just below"
+      discover_new_tool: "Discover new tools to add to your website on"
+      on_support: " Orson's support"
+      link_to_support: "http://support-en.orson.io/60/the-best-tools-to-optimize-a-website"
+    gmap:
+      select_right_place: Select the right address
+    logo:
+      size: Size
+      mini: XS
+      small: S
+      normal: M
+      nice: L
+      big: XL
+      huge: XXL
+      new_logo: Newlogo
+      new_logo_help: Add your logo to your site
+      gallery_help: Select an existing logo from your gallery
+      image_settings_help: Edit the size and the alignment of your logo
+      edit_logo: Edit my logo
+      edit_logo_help: Enhance your logo with our online photo editor.
+    text:
+      title: Title
+      subtitle: Subtitle
+      subtitle2: Subtitle 2
+      paragraph: Paragraph
+      break_line: Break link
+      align_left: Align left
+      align_center: Center
+      align_right: Align right
+      justify: Justify
+      bold: Bold
+      italic: Italic
+      outdent: Decrease indent
+      indent: Increase indent
+      bullet_list: List
+      ordered_list: Ordered list
+      link: Create a link
+      img: Insert an image
+      unlink: Unlink
+      undo: Undo
+      redo: Redo
+      create_table: Create a table
+      insert_row_above: Insert a row above
+      insert_row_below: Insérer a row under
+      insert_column_left: Insert a column left
+      insert_column_right: Insert a column right
+      delete_table: Delete the table
+      delete_row: Delete the row
+      delete_column: Delete the column
+      table_style: Table style
+      normal: Normal
+      bordered: Bordered
+      striped: Striped
+      merge_cell: Merge cell
+      columns: Columns
+      column: Column
+      rows: Rows
+      remove_format: Remove format
+      copy_paste_image: "Image(s) to be optimized"
+      copy_paste_image_help: "To optimize the visibility of your site and its responsiveness, copy and paste has been disabled. Your images should come from your Orson gallery."
+      copy_paste_image_help2: "Please delete the other pictures to be able to publish your article."
+    link:
+      button_color: Button color
+      button: Button
+      no_draft_link: "Pour create a link, your page has to be taken online first."
+      active_drive: Activate Google Drive in "Settings"
+      redirect_to_files: "Redirect to your files"
+      search_on_drive: Search on Google Drive
+      files_from_drive: "Files from Google Drive: "
+      search_link: Search link
+      search_name: Search by name
+      reset_search: Reset the search filter
+      remove_link: Remove link
+      external_link: External link
+      external_link_adress: External link address
+      text_link_display: Text to display
+      size: Size
+      button_main_color: Main color
+      button_second_color: Second color
+      icon_main_color: Main color icon
+      icon_second_color: Secondary color icon
+      link: Link
+      icon: Icon
+      icon_position: Icon position
+      align: Alignment
+      no_link: No link
+      link_to: "Link to the page: "
+      paste_link_or_search: Select a page of your website or paste an external address
+      paste_link_or_search_stub: Select a page or paste your link
+      example_format: "Format example :"
+      pages_from_site: "published pages of your site: "
+      external_link: "External link"
+      change_link: "Change link"
+      redirect_visitor_files: "You can redirect your visitors to all kind of files ( Pdf, word, excel ... ) thanks to"
+      create_account: "Create your account "
+      import_file_drive: "Import your files on Google Drive(15 GO free storage)."
+      connect_drive: "Connect Google Drive account to Orson in "
+      access_files: "You will then be able to add a link towards all your public Google Drive files."
+      open_new_tab: "Open in a new tab."
+      help_button_color: "You can change these colors in:"
+    comment_form:
+      name: Name
+      email: Email
+      comment: Comment
+      comments_sent: Your comment as been sent.
+      ago: ago
+    sharelink:
+      colors: Colors
+      shape: Shape
+      black: Black
+      white: White
+      square_shape: Square shape
+      circle_shape: Circle shape
+      classic_shape: Classic shape
+      help: Redirect your visitors to your social media pages.
+      type_at_least_one_page: Provide the address to one of your social media account.
+      select_at_least_one_account: Select a social network.
+    share_button:
+      classic_style: Classic style
+      switch_at_least_one: Please activate at least one social network.
+      help: "Add social network sharing buttons to your page"
+      count_position: Counter position
+    share_follow:
+      help: "Add follow button to your page."
+    image:
+      slide: Slide
+      new_photo: New image
+      new_photo_help: "Import your images to your site"
+      gallery: Gallery
+      gallery_help: Select an existing image from your gallery
+      edit_photo: Edit this image
+      edit_photo_help: "Retouchez votre image avec l'éditeur de photo."
+      library: Galerie Orson
+      library_help: Sélectionnez une image dans la galerie Orson.
+      image_settings_help: Edit the style and the settings of your image.
+      delete: Delete this image
+      sure_delete: "Are you sure you want to delete this image?"
+      delete_first: "This image is present on the following pages. Delete it first there, so your pages won't be broken."
+      being_used: "Your image is being used in:"
+      before_being_used: "This image is linked to"
+      after_being_used: " components(s) of your site. You can not remove it as long as these links exist"
+      pretty: "Nice color"
+      search_flickr: "Search images from Flickr"
+      title: "Title"
+      frame: "Frame"
+      free_gallery: "Free stock images"
+      meta_alt: (Meta alt)
+      create_new_photo: "Let's get started by importing your first image!"
+    video:
+      how_to: "How to upload a video on your website?"
+      host_video: This video has to be hosted on Youtube or Vimeo.
+      go_to: Go to
+      have_account: "1. You have a Google account (YouTube, Gmail, Picasa, Google Play, Google Analytics)"
+      no_account: "2. You don't have a Google account"
+      create_account: "Create one, you can do it directly at: "
+      account_created: "Once your account is created, go to:"
+      follow_instructions: "Follow the instructions. Important: chose 'Public Access' so that your visitors can access it on your site"
+      important: "Essential for your SEO. Use your keywords."
+      link_upload: "https://www.youtube.com/my_videos_upload"
+      link_account: "https://www.youtube.com/account?gl=EN&hl=en"
+      video_url: "Video url"
+      video_url_help: Youtube or Vimeo url
+      video_appear_here: Your video will appear here
+    carousel:
+      single_carousel: Full size images
+      single_carousel_help: Select a carousel of full size images.
+      multiple_carousel: thumbnails
+      multiple_carousel_help: Select a carousel of thumbnails.
+      title: "Title : "
+      text: "Text :"
+      no_link: "No link"
+      link_to: "Link to the page : "
+      new_slide: New slide
+      content: Content
+      display: Display
+      lightbox: "Fullscreen mode"
+      lightbox_title: "Display slide titles"
+      lightbox_description: "Display slide descriptions"
+      crop_fit: "Fit image dimensions to crop ratio"
+      img_by_column: Number of images per column
+      img_ratio: Images format
+      img_ajust: Adjust images
+      original_ratio: Original format
+
+    bg_section:
+      block: Block
+      section_background: Block background
+      background: Background
+      edit_background: Edit the block background
+      normal: Normal
+      background_image: Background image
+      background_video: Background video
+      background_color: Background color
+      light: Light
+      dark: Dark
+      text_color: Font color
+      text_color_help: Choose a font color.
+      background_color_help: Choose a background block color.
+      gallery_help: Choose a background image to highlight this block.
+      default_color: Default color
+      custom_color: Custom color
+      theme_block: Special theme background
+      column_background: Couleur de fond de la colonne
+      no_background: "No Background"
+      no_background_help: "Disable background color for this block. "
+      team: Team
+      product: Products
+      portfolio: Portfolio
+      quotes: Testimonials
+      contact: Contacts
+      features: Features
+      pricing: Pricing
+      editorial: Editorial
+      digital_products: Application
+      partnership: Partners
+      hero: Introduction
+      zoom_minus: "Zoom -"
+      zoom_normal: "Reset zoom"
+      zoom_plus: "Zoom +"
+      spacing: Spacing
+      spacing_top: Upper spacing
+      spacing_bottom: Bottom spacing
+      white_with_shadow: White with shadow
+      color: Color
+      color_filer: Color filter
+
+    pimagic:
+      horizontal: Horizontal
+      crop: Crop
+      view: View
+      effects: Effects
+      settings: Settings
+      rotate_90: "Rotate 90°"
+      rotate_180: "Rotate 180°"
+      rotate_minus_90: "Rotate  -90°"
+      flip_horizontal:  Horizontal flip
+      flip_vertical: Vertical flip
+      effect_sharpen: Sharpen
+      effect_sharpenmore: "Sharpen more"
+      effect_blur: Blur
+      effect_blurmore: Blur more
+      effect_noise: Noise
+      effect_noisemore: Noise more
+      effect_desaturate: Desaturate
+      effect_blackandWhite: "Black & White"
+      effect_vignetteblur: Focus
+      effect_horizontalblur: Focus Line
+      type_of_image: Choose the format for your image.
+      square: Square
+      free: Free
+      fixed: Fixed
+      wait: Orson is enhancing your image, so you can move it everywhere in your page.
+      redirect: Orson will redirect you as soon as the image is uploaded.
+      describe_name: Essentieal for your SEO. Use your keywords.
+      name_picture: "Name of the image"
+      add_file: "Add a new image"
+      drag_file: "Drag and drop your image into this box. Supported formats : JPG, PNG."
+      no_effect: "No effect"
+      reset: "Reset"
+      file: File
+      new_file: New image
+      169_help: The 16/9 format is best suited to landscape images.
+      43_help: The 4/3 format is perfect for portrait images.
+      square_help: "The square format is perfect for product images."
+      free_help: Choose the free format for more freedom in the frame.
+      fixed_help: Choose the fixed format to get images of identical size.
+      fixed_dimensions: "Fixed dimensions"
+      width: "Width in pixels"
+      height: "Height in pixels"
+      width_above: "The width of your image must be bigger than "
+      height_above: "The height of your image must be bigger than "
+      file_compression: Image optimized for Internet.
+      hd_image_option: Disable this option for higher-quality images.
+    page:
+      delete: Delete your page
+      sure_delete: Are you sure you want to delete your page?
+      watch_out: "Watch out! "
+      page_linked: "This page is linked to "
+      different_pages: "Delete or modify those links at the following locations:"
+      page_linked_warning: "This page is linked to other pages of your website."
+      page_linked_warning_issues: "Deleting it will generate broken links."
+      publish_page: Publish your page
+      draft_page: Take your page offline
+      sure_publish: I want to publish this page.
+      sure_save: I want to save this page.
+      sure_draft: I want to take this page offline.
+      question_sure_draft: This page can't be accessed on the internet if you take it offline.
+      are_you_sure: Are you sure?
+      delete_in_permanents: "Delete the link inside these permanent widgets:"
+      type_of: "type of "
+      present_in_these_pages: "present in the following pages:"
+      last_saved: "Last saved "
+    share_page: Share your page on social networks
+    share_page_help: "You can share your page on social networks:"
+    pigallery:
+      search_by_name: Search by name
+      reset: Reset
+      by_date: By date
+      image_size_small: "Important : this image size is too small"
+      format_different: Different format
+      ask_add_file: Add a new image?
+      import_files: "Import images"
+      image_ratio_help: "This is the ratio of the image."
+      video_ratio_help: "This is the ratio of the video"
+      free_stock_images_broken: "Access to the free stock images is temporarily interrupted."
+    permanent_widgets:
+      what: "What is a permanent widget?"
+      what_description: "A permanent widget is a widget you can reuse on multiple pages if you want the same content. If you change it, it will automatically change on all pages it's present on."
+      how: "How do I create a permanent widget?"
+      how_description1: "Create or edit a widget. "
+      how_description2: "Click on the arrow on the right of the title widget in the upper left"
+      how_description3: "Fill in the fields and save"
+      how_description4: "You will find all your permanent widgets in the 'Permanent' section, under the other widgets. "
+      widget_permanent: Permanent widget
+      name_widget_permanent: "Name of your permanent widget"
+      color_widget_permanent: "Color of your permanent widget"
+      widget_non_permanent: Non permanent widget
+      delete: Delete this permanent widget
+      being_used: "This permanent widget is being used on other pages."
+      delete_them_firt: "You need to delete it on these pages at first."
+      sure_delete: "Are you sure you want to delete this permanent widget?"
+    spacer:
+      empty_space: "Empty space"
+    countdown:
+      days: Days
+      hours: Hours
+      minutes: Minuts
+      seconds: Seconds
+    timeline:
+      facebook_show_cover: Show page cover
+      facebook_show_faces: Show friends' faces
+      twitter_user_name: Twitter user name
+      reconnect_facebook_page_help: "Reconnect your Facebook account to you website in the Settings."
+      connect_first_facebook: "Connect Facebook to your site"
+      facebook_page_help: "Promote your Facebook page"
+      facebook_page_help2: "by adding this widget to your site"
+      twitter_help: "Enable your visitors to reply, retweet, and favorite Tweets directly from your pages"
+      number_tweets_display: "Number of tweets to display"
+      color_theme: "Color of the theme"
+      dark_theme: "Dark"
+      light_theme: "Light"
+      display_users: "Display user's images"
+      select_page: "Facebook page to be displayed"
+      not_connect_yet: You're not connected yet.
+      no_facebook_pages: You don't administrate any pages on Facebook.
+      to_connect_to: "To connect your website to"
+      go_to: "Go to:"
+    picolor:
+      download_file: Upload your logo
+      simply_download: "Upload your logo or an image you like, we will suggest a color range suited for your website."
+      library: Color range
+    magic_palette:
+      magic_palette: Magic color range
+      lets_create: "Let's define your graphic style guidelines!"
+      simply_download: "Start by uploading your logo or an image you like, we will suggest a color range suited for your website."
+      start_magic_palette : "Get started"
+    themes:
+      be_patient: "Please wait a moment, it's going to be awesome..."
+      modular_scale:
+        minor_third: Minor Third  (6:5)
+        perfect_fourth: Perfect Fourth(4:3)
+        default: Default values
+        square_of_two: "√2 (1.414)"
+      modify_header_background_color: To modify the background color of your menu, go to Header and Footer
+      edit:
+        rotation: Rotation
+      change_theme: Change theme
+      reset: Reset to current theme
+      font_selector: Font selector
+      fonts: Fonts
+      colors: Colors
+      buttons: Buttons
+      set_own: Set your own colors
+      fixed_menu: Fixed menu
+      progressive_display: Progressive display
+      apply_my_color_to_theme: Apply my colors to this theme
+      actual_theme: Actual theme
+    site_background:
+      set_background: Set the background of my website
+    versions:
+      original_version: Original version
+      name_version: Name of the new version
+      save_new_version: Save this new version
+      delete: Delete this version
+      create: Create a new version
+      published: Online
+      name_already_used: "This version name is already in use, please pick a different one."
+    javascript:
+      custom_blocks: Custom user blocks
+      sure_delete_user_block: Are you sure you want to delete this block?
+      block_saved: "Your block has been copied. You can find it in \"Custom\""
+      icon: "Icon"
+      bad_name_please_change: "This page name is not good. Choose another one."
+      video_type_not_supported: This video type is not supported. Orson currently supports YouTube and Vimeo.
+      logo_too_small: "Your logo is too small. The minimum height is 48pixels."
+      add_to_menu: Add to menu
+      add_page_to_menu: Add this page to my website's menu
+      publish_my_page: "Publish"
+      still_publish_my_page: "I still want to publish"
+      buy: Buy
+      main_color: Main color
+      second_color: Secondary color
+      third_color: Third color
+      background_color: Background color
+      text_color: Text color
+      heading_color: Heading color
+      text_font: Text font
+      heading_font:  Heading font
+      font_size:  Font size
+      modular_ratio: Proportions between headings
+      button_style: Style
+      button_border: Border
+      background_img: Website background image
+      flat: Flat
+      border: Border
+      reflect: Reflect
+      glossy: Glossy
+      square: Square
+      rounded: Rounded
+      round: Round
+      blank_page: "Do you want to start from a blank page?"
+      structure_cannot_be_moved: "You cannot move this block to this place, the target structure is too small."
+      warning: "Attention"
+      pending_image_uploads: You're uploading several images, if you leave now the uploads will be cancelled.
+      failed_image_pendings: "Your images are still being uploaded. Please wait until it's finished before doing anyting."
+      failed_image_uploads: "Some image uploads have failed."
+      level1_only_level1: "For a better readibility on your site, you can create maximum 2 menu levels."
+      image_url_go_only_dropdown_images: "This images go to an image menu"
+      only_image_url_are_accepted_dropdown_images: "Only images are accepted here."
+      magic_slider_new_section: "Add this block in the gray striped areas to create a new structure"
+      magic_editor: "Layouts with content"
+      not_enough_article_available: "There are not enough articles to be displayed. Delete some tags or change the number of articles you want to display."
+      no_article_available: There are no articles with the specified tags. Please retry with different ones.
+      delete_widget: Delete widget
+      sure_delete_widget: Are you sure you want to delete this widget?
+      ok: OK
+      cancel: Cancel
+      done: Done
+      too_many_levels: Orson accepts up to 2 levels of layouts.
+      layout_cant_be_added: This layout can't be added here.
+      delete_layout: Delete this layout?
+      sure_delete_layout: Are you sure you want to delete this layout?
+      delete_article: Delete this article?
+      sure_delete_article: Are you sure you want to delete this article?
+      still_ghost_page: "Your page hasn't been saved, there is still an empty element. Please, fill it with content."
+      published_success: "Yay, your page has been successfully published!"
+      draft_success: "Your page has been successfully taken offline."
+      something_happened: "Something happened, please try again"
+      your: "Your"
+      url_not_correct: "URL is wrong. Check the URL and try again."
+      url_not_exist: "URL dos not exist. Try with another one."
+      video_no_exist: "This video does not exist."
+      project_no_exist: "This project does not exist."
+      google_map_change: "You can change your Google Maps marker."
+      google_adress_not_found: "Google Maps ne trouve pas votre adresse. Ré-essayez."
+      contact_to_email: The replies will be sent to your contact email.
+      cant_have_empty_menu: "You cannot have an empty menu, please complete it."
+      cant_have_empty_menu_dropdown: "You cannot have an empty dropdown menu, please complete it."
+      menu_created: "Yay, your menu has been successfully created!"
+      menu_saved: "Yay, your menu has been successfully saved!"
+      menu_deleted: "Your menu has been successfully deleted."
+      full: "Full"
+      columns: "Columns"
+      two_columns: "2 columns"
+      three_columns: "3 columns"
+      four_columns: "4 columns"
+      six_columns: "6 columns"
+      main_right: "2 columns 1/3"
+      main_left: "2 columns 2/3"
+      small_left: "2 columns 1/5"
+      small_right: "2 columns 4/5"
+      main_center: "3 columns centered"
+      menu: Menu
+      title: Title
+      text: Text
+      link: "Link and button"
+      img: Image
+      logo: Logo
+      video: Video
+      carousel: Carousel
+      portfolio: Portfolio
+      space: Spacing
+      share: Social networks
+      blog: Blog
+      sharelink: Links
+      gmap: Google Maps
+      form: Form
+      paypal: Paypal
+      code: Code
+      comment_form: Comments
+      navbar: Menu
+      navlist: Link list
+      content: Content
+      media: Media
+      social: Social
+      extra: Extra
+      new_link: New link
+      timeline: Timeline
+      countdown: Countdown
+      crowdfunding: Crowdfunding
+      crowdfunding_url: Address of your project's presentation page
+      duplicate_page: Duplicate your page ?
+      sure_duplicate_page: "Are you sure you want to duplicate your page?"
+      image_too_small: "This image is too small for this block, please insert it into a smaller block."
+      add_link_to_img: "Please add a link to your image."
+      save_before_leave: "You'll lose your changes if you leave, don't forget to save."
+      sure_want_leave: "You'll lose your changes if you leave, don't forget to publish."
+      publish_before_leave_article: "Are you sure you want to leave? Your website is not created yet"
+      crashed_version: "Unsaved version"
+      crashed_explication: "You had modified a page without saving it. Would you like to recover these changes?"
+      spacer_no_drag: "You cannot move an empty space."
+      yes_: "Yes"
+      no_: "No"
+      min_size: "Minimal size"
+      img_to_small: "Please upload a bigger image. Your current image is too small."
+      format_not_supported: "Sorry, only PNG and JPEG formats are supported. Please try with another image."
+      browser_not_supported: "Please upgrade or change your browser to benefit from of all the features"
+      sublime_your_img: "Your image is being enhanced..."
+      crop_your_img: "Your image is being duplicated into different sizes."
+      upload_your_img: "Your image is on its way to the Cloud."
+      no_link: "No link"
+      dont_leave_wizard: "Important : if you leave this page, you'll lose your changes."
+      paypal_invalid_html: The Paypal code is not valid, please select the entire code and try again.
+      code_invalid_html: "Your code is not valid, please check your input."
+      paypal_insecure: Your Paypal button code is not secured. Please recreate it with a Paypal account.
+      new_version_created: "Yay, your new version has been created"
+      version_deleted: "This version has been deleted, you got back to the online version"
+      expert_mode: "To preview your code, save and click on Preview on the top right of the editor"
+      save_success: "Yay, your page has been successfully saved!"
+      settings_save_success: "Yay, your page settings has been successfully saved!"
+      article_created: "Yay, your article has been successfully created!"
+      article_deleted: " Your article has been successfully deleted."
+      article_updated: " Yay, your article has been successfully updated!"
+      page_duplicated: " Yay, your page has been successfully duplicated!"
+      page_deleted: " Your page has been successfully deleted."
+      cant_be_added_in_this_box: "The block is too small to contain this widget. Please try in a bigger place."
+      switch_version: Version switch
+      switch_version_success: "Your page is back to the version of the "
+      sure_switch_version: Your current version has not been saved yet. You are going to lose your changes. Are you sure you want to switch version?
+      cant_create_more_versions: "You can created up to 5 versions for one page. Please delete one first."
+      countdown_span12: "This widget can only be displayed in a full block."
+      server_error_from: "An error occurred from"
+      try_again: "Please try again"
+      delete_version: Delete this version
+      sure_delete_version: Are you sure you want to delete this version?
+      page_being_unpublished: "Your page is being taken offline."
+      page_unpublished: "Your page is offline."
+      page_being_saved: "Your page is being saved."
+      page_being_published: "Your page is being published."
+      page_saved: "Your page is saved."
+      page_publish: "Your page is now published."
+      theme_being_saved: "Your theme is being built."
+      theme_saved: "Your theme is being saved."
+      theme_online: "Your theme is being saved on the Cloud."
+      theme_adapting: "Your colors are being adapted to the theme"
+      theme_creating: "Your theme is being generated."
+      theme_responsive: "Orson is making your theme responsive on mobile devices."
+      issue_uploading: "Something happened during the upload. Please try again."
+      can_now_put_page_offline: Your page can now be taken offline
+      can_now_delete_page: Your page can now be deleted.
+      all_links_removed: All links to your page have been successfully modified.
+      fix_broken_links_before_publish: "There are broken links on the page. Please modify those links on the highlighted widgets before publishing."
+      automatic_replacement: Automatic replacement
+      manual_replacement: Manual replacement
+      replace_all_links_with: "Redirect all broken links to that page:"
+      info_automatic_replacement: "All broken links to this page will be automatically replaced by a link to a page of your choosing."
+      info_manual_replacement: "I'll replace all broken links myself (either by deleting them or replacing them with a link to a different page)."
+      jpg_png_better: "JPEG or PNG format are more suitable, please try with one of them."
+      what_nice_logo: "Nice logo!"
+      what_nice_header: "Awesome!"
+      what_nice_page: "My page is starting to look good!"
+      want_leave: "Do you want to leave this site?"
+      is_external_link: "est un lien externe"
+    tour:
+      add_content: Add blocks with prebuilt content
+      add_content_instructions: Prebuilt blocks will help you to gain time when creating your site. They are organized by categories
+      add_widget: Add more content
+      add_widget_instructions: "Customize the content of your website thanks to widgets: buttons, icons and videos. Everything is possible!"
+      manage_widget: Edit this widget
+      manage_widget_instructions: Click on the pen to edit this widget.
+      edit_widget: Edit this widget
+      edit_widget_instructions: Click on the pen to edit this widget.
+      delete_widget: Delete this widget
+      delete_widget_instructions: Click on the X to delete this widget.
+      preview_page: Preview this page
+      preview_page_instructions: "Click to preview the result of your work - you can use Desktop, iPad, or iPhone screen layouts"
+      publish_page: Save this page.
+      publish_page_instructions: "Satisfied with your work? Save it!"
+      add_structure: Add a block
+      add_structure_instructions: "Cliquez pour ajouter différents blocs."
+      final_step: "Great! Now you're ready, it's your turn"
+      final_step_instructions: "try now! Drag and drop this widget onto your page"
+
+      welcome: "Welcome on Orson.io!"
+      welcome_instructions: "Lean in few clics how to use Orson to create easily a website like you"
+      edit_text: "Edit the text"
+      edit_text_instructions: "Change the content of your website as you want and as much as you want"
+      add_text: "Add text"
+      add_text_instructions: "Replace the text by your content. You can adjust the size, make text bold like in a classic text editor"
+      validate_action: "Validate an action"
+      validate_action_image: "You remember ? As seen before, to validate an action on Orson.io, click on the button OK"
+      validate_text_step_instructions: |
+        Awesome! You have modified your text correctly !
+        
+        To validate an action on Orson.io, click on the button OK
+      validate_action_instructions: "To validate an action on Orson.io, click on the button OK"
+      edit_block: "Change the background image"
+      edit_block_instructions: "Click on background block to replace the background image. Replace it by a color, an image or even a video"
+      replace_image: "Replace an image"
+      replace_image_instructions: "Click on Replace to change the background image"
+      import_image: "Import an image"
+      import_image_instructions: "Import images from your computer. We have already done it for you during this tutorial"
+      add_link: "Add a widget button"
+      add_link_instructions: "Drag and drop your button on your page. You will see a blue line to show you where you can drop your button"
+      name_link: "Name the button"
+      name_link_instructions: "Add the text of your button. Use action verb to make it clear. You will the result directly on your page"
+      create_link: "Link the button to an internal page or to an external link"
+      create_link_instructions: "Connect your button to an internal link of your website or to an external website"
+      drag_block: "Add a Presentation block"
+      drag_block_instructions: "Drag and drop your block into wherever you want on your page, you will see a blue zone to drop it"
+      contact: "Contact Orson"
+      contact_instructions: "Feel free to contact the support if you have any questions"
+      congrats: "Congratulations"
+      congrats_instructions: "You know how to create a page on Orson.io. Create your website now with confidence and autonomy"
+      edit_text: "Edit my text"
+      download_image: "Download images"
+      customize_site: "Customize my site"
+      create_my_website: "Create my site"
+      no_thank: "No thanks, I prefer discover Orson by myself"
+      discover: "Discover"
+      pass_tour: "Skip tour"
+      restart_tour: "Restart tour"
+      finish_tour: "Finish the tour"
+    shortcuts:
+      keys: Shortcuts keys
+      descriptions: Descriptions
+      up: Up
+      up_description: Move the selected widget or block upwards.
+      down: Down
+      down_description: Move the selected widget or layout downwards.
+      enter: Entrer
+      enter_description: Validate your choice or your modifications.
+      e: Valider
+      e_description: Edit the selected widget or block.
+      del: Supprimer
+      del_description: Delete the selected widget or block.
+      esc: Sortir
+      esc_description: Cancel your choice or your modfications.
+  will_paginate:
+    previous_label: Parevious page.
+    next_label: Next page.
