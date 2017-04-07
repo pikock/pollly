@@ -1,0 +1,37 @@
+<div class="container main-content-primary">
+  <div class="row">
+    <div class="col-md-12">
+      <br><br>
+      <a class="btn btn-primary" ng-click="export(inline_es,totranslateLang )">Export</a>
+
+      <input type="file" fileread="initial" filestate="" />
+
+      <input type="file" fileread="totranslate" />
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Ref</th>
+            <th>Key</th>
+            <th>{{initialLang}}</th>
+            <th>{{totranslateLang}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in inline_es">
+            <td>{{$index}}</td>
+            <td width="15%">{{item.key}}</td>
+            <td>
+              <input class="form-control" type="text" ng-model="item[initialLang]">
+            </td>
+            <td>
+              <input class="form-control" type="text" ng-model="item[totranslateLang]">
+            </td>
+            <!-- <td>{{item.path}}</td> -->
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

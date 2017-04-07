@@ -1,0 +1,29 @@
+<div class="lift-wizard-progress">
+    <uib-progressbar max="progress.max" value="progress.value"></uib-progressbar>
+</div>
+
+<nav class="navbar ">
+  <div class="container-fluid">
+    <div class="col-xs-12">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a ng-href="https://secure.orson.io/{{currentLang}}/sessions/new" target="_blank">{{ 'site.actions.connect' | translate}}</a></li>
+          <li ng-if="currentLang == 'fr'"><a href="" ng-click="changeLang('en')">English</a></li>
+          <li ng-if="currentLang == 'en'"><a href="" ng-click="changeLang('fr')">French</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div>
+   
+  </div><!-- /.container-fluid -->
+</nav>

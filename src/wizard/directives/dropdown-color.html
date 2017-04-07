@@ -1,0 +1,20 @@
+<span uib-dropdown on-toggle="toggled(open)" auto-close="outsideClick" is-open="status.isopen">
+  <a class="palette-color" href="" style="background-color:{{color}}" uib-dropdown-toggle></a>
+  <div class="dropdown-menu dropdown-menu-colors" uib-dropdown-menu aria-labelledby="simple-dropdown">
+    <div class="palette-color-input">
+      <input  type="text" ng-model="color" ng-pattern="/#([a-f0-9]{3}){1,2}\b/i" required/>
+    </div>
+    <ul>
+      <li ng-repeat="localColor in colors" class="palette-color-box">
+        <a href="" class="palette-color" ng-click="selectColor(localColor.hexa)" style="background-color:{{localColor.hexa}}"  ng-class="{ selected: localColor.hexa == color }"></a>
+      </li>
+      <li class="palette-color-box">
+        <div colorpicker ng-model="color" colorpicker-parent="true" colorpicker-position="left" class="palette-color custom" style="background-color:{{color}}" ng-class="{ edit: colorIsCustom(color, colors) }"></div>
+      </li>
+    </ul>
+
+  </div>
+
+  <h5 ng-if="name.length">{{name}}</h5>
+  <!-- div class="color-code-hexa">{{ color }}</div -->
+</span>
