@@ -28,7 +28,7 @@ module.exports = angular.module('services', [
     return service
   })
 
-  
+
 
   .factory('AlertManager', function ($timeout) {
     'ngInject'
@@ -54,47 +54,47 @@ module.exports = angular.module('services', [
     return service
   })
 
-  .factory('GenericDatas', function (localStorageService, $q, $http,AlertManager) {
+  .factory('GenericDatas', function (localStorageService, $q, $http, AlertManager) {
     'ngInject'
 
     var service = {
       fr: {},
       es: {}
-      
+
 
     }
 
-    service.fr.get = function(){
+    service.fr.get = function () {
       return {
-          "fr": {
-              
-              "toto": {
-                "tutu": {
-                  "caca": "prout"
-                }
-              },
-              "page_disabled": {
-                  "caca": "L'accès à votre site d'administration Orson a été désactivé",
-                  "bo_disabled_message": "Merci de nous contacter pour plus d'information",
-                  "dada": "dadada"
-              }
+        "fr": {
+
+          "toto": {
+            "tutu": {
+              "caca": "prout"
+            }
+          },
+          "page_disabled": {
+            "caca": "L'accès à votre site d'administration Orson a été désactivé",
+            "bo_disabled_message": "Merci de nous contacter pour plus d'information",
+            "dada": "dadada"
           }
+        }
       }
     }
 
-    service.es.get = function(){
+    service.es.get = function () {
       return {
-          "es": {
-              "toto": {
-                "tutu": {
-                  "caca": "prout"
-                }
-              },
-              "page_disabled": {
-                  "bo_disabled_title": "L'accès à votre site d'administration Orson a été désactivé",
-                  "bo_disabled_message": "Gdyguyaghdyuaga"
-              }
+        "es": {
+          "toto": {
+            "tutu": {
+              "caca": "prout"
+            }
+          },
+          "page_disabled": {
+            "bo_disabled_title": "L'accès à votre site d'administration Orson a été désactivé",
+            "bo_disabled_message": "Gdyguyaghdyuaga"
           }
+        }
       }
     }
 

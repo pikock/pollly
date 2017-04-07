@@ -3,12 +3,7 @@
  * for orson by thierry_c
  */
 
-module.exports = function($scope, $rootScope, wizardService) {
+module.exports = function($scope, $rootScope, editorService) {
     'ngInject';
     'use strict';
-
-    
-    $scope.getSvg = function (fileName) {
-      return '/assets/images/' + fileName + '.svg'
-    }
 };

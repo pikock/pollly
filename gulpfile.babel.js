@@ -12,11 +12,9 @@ import envify from 'envify';
 import del from 'del';
 import fs from 'fs';
 import mkdirp from 'mkdirp'
-
 import { argv } from 'yargs';
 
 const plugins = gulpPlugins({ lazy: true });
-const ECOSYSTEM_APPLICATION_PATH = '/Users/mubarak/Documents/ecosystem'
 gulp.task('help', plugins.taskListing);
 
 gulp.task('plugins', () => {
@@ -25,7 +23,6 @@ gulp.task('plugins', () => {
 
 gulp.task('default', ['help']);
 gulp.task('build', ['js:hint', 'js:build', 'assets', 'template:build', 'less:build', 'html']);
-gulp.task('rails', ['js:hint', 'rails:js:build', 'assets', 'template:build', 'rails:less:build', 'rails:html', 'rails:svg:move']);
 gulp.task('dev', ['js:hint', 'js:dev', 'assets', 'template:build', 'less:build', 'html']);
 
 gulp.task('clean', () => del(['dist/']).then(paths => {
@@ -69,47 +66,30 @@ gulp.task('js:hint', () => {
   return gulp.src(['src/**/*.js', '!src/js/libs/**/*'])
     .pipe(plugins.ngAnnotate())
     .pipe(plugins.jshint())
-    .pipe(plugins.jshint.reporter('jshint-stylish', { beep: true }));
+    .pipe(plugins.jshint.reporter('jshint-stylish', { beep: false }));
 });
 
 gulp.task('js:dev', () => {
   return bundler.bundle().pipe(plugins.plumber())
-    // log errors if they happen
     .on('error', plugins.util.log.bind(plugins.util, 'Browserify Error')).pipe(source('bundle.js'))
-    // optional, remove if you don't need to buffer file contents
     .pipe(buffer())
-    //.pipe(plugins.jshint())
-    //.pipe(plugins.jshint.reporter('jshint-stylish', {beep: true}))
-    // optional, remove if you dont want sourcemaps
     .pipe(plugins.sourcemaps.init({ loadMaps: true }))
-    // loads map from browserify file
-    .pipe(plugins.sourcemaps.write('.')) // writes .map file
+    .pipe(plugins.sourcemaps.write('.'))
     .pipe(gulp.dest('./dist')).pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task('js:build', () => {
   return bundler.bundle().pipe(plugins.plumber())
-    // log errors if they happen
     .on('error', plugins.util.log.bind(plugins.util, 'Browserify Error')).pipe(source('bundle.js'))
-    // optional, remove if you don't need to buffer file contents
     .pipe(buffer())
-    //.pipe(plugins.jshint())
-    //.pipe(plugins.jshint.reporter('jshint-stylish', {beep: true}))
-    // optional, remove if you dont want sourcemaps
-    //    .pipe(plugins.sourcemaps.init({loadMaps: true}))
-    // loads map from browserify file
-    //    .pipe(plugins.sourcemaps.write('.')) // writes .map file
     .pipe(gulp.dest('./dist')).pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task('html', ['html:build']);
-gulp.task('rails:html', ['rails:html:build']);
 gulp.task('html:build', () => {
-
   return gulp.src(['src/index.html'])
     .pipe(plugins.replace(/%(.$)%/, config['$1']))
     .pipe(gulp.dest('dist/'));
-
 });
 
 gulp.task('assets', ['assets:fonts', 'assets:build']);
@@ -126,39 +106,6 @@ gulp.task('less:build', () => {
   return gulp.src(['src/assets/styles/main.less']).pipe(plugins.sourcemaps.init()).pipe(plugins.less()).pipe(plugins.autoprefixer({
     browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']
   })).pipe(plugins.sourcemaps.write()).pipe(gulp.dest('dist/assets')).pipe(browserSync.reload({ stream: true }));
-});
-
-gulp.task('rails:html:build', () => {
-  return gulp.src(['src/show.html.erb'])
-    .pipe(plugins.replace(/%(.$)%/, config['$1']))
-    .pipe(gulp.dest([ECOSYSTEM_APPLICATION_PATH, 'app/views/admin/wizard'].join('/')))
-});
-
-gulp.task('rails:js:build', () => {
-  return bundler.bundle().pipe(plugins.plumber())
-    .on('error', plugins.util.log.bind(plugins.util, 'Browserify Error')).pipe(source('bundle.js'))
-    .pipe(buffer())
-    .pipe(plugins.replace(/assets\/images\/gear/g, '/assets/images/wizard/gear'))
-    .pipe(gulp.dest([ECOSYSTEM_APPLICATION_PATH, 'app/assets/javascripts/wizard'].join('/'))).pipe(browserSync.reload({ stream: true }))
-})
-
-gulp.task('rails:svg:move', () => {
-  const ecosystemPublicAssetsPath = [ECOSYSTEM_APPLICATION_PATH, 'public/assets/images/wizard'].join('/')
-  mkdirp(ecosystemPublicAssetsPath, error => {
-    return gulp.src(['src/assets/images/*.svg']).pipe(gulp.dest(ecosystemPublicAssetsPath))
-  })
-})
-
-gulp.task('rails:less:build', () => {
-  return gulp.src(['src/assets/styles/main.less'])
-    .pipe(plugins.sourcemaps.init())
-    .pipe(plugins.less())
-    .pipe(plugins.autoprefixer({
-      browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']
-    }))
-    .pipe(plugins.sourcemaps.write())
-    .pipe(gulp.dest([ECOSYSTEM_APPLICATION_PATH, 'app/assets/stylesheets/wizard'].join('/')))
-    .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task('template:build', () => {

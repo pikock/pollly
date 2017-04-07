@@ -1,37 +1,38 @@
-#background-hero-example{
+#background-hero-example {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
 
-.progress{
+.progress {
     margin-bottom: 0;
 }
-.navbar{
+
+.navbar {
     z-index: 50;
 }
 
-.nav > li > a:hover, .nav > li > a:focus {
+.nav>li>a:hover,
+.nav>li>a:focus {
     text-decoration: none;
-        background-color: transparent;
+    background-color: transparent;
 }
 
-.or-alert{
+.or-alert {
     margin-top: 8px;
 }
 
-
-.main-conent + .blue {
+.main-conent+.blue {
     background: blue;
 }
 
 .blue {
     background: #3A599A;
-
     h3 {
         color: white;
     }
 }
+
 //
 .full-container {
     position: absolute;
@@ -51,26 +52,22 @@
     z-index: -1;
 }
 
-
-
 .actions {
     margin: 15px auto;
     width: 80%;
-
     .actions-container {
         padding-top: 10px;
     }
 }
 
-.container-finish{
-  margin-top: 50px;
-  margin-bottom: 50px;
+.container-finish {
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .color-btn {
     width: 30px;
     height: 30px;
-
     &.large {
         width: 120px;
         height: 120px;
@@ -79,17 +76,17 @@
 
 .main-content-primary {
     padding-top: 10vh;
-    &.main-content-on-page{
+    &.main-content-on-page {
         padding-top: 20vh;
     }
-    &.main-content-facebook{
+    &.main-content-facebook {
         padding-top: 5vh;
     }
 }
 
-.block-container{
-  margin-top: 40px;
-  margin-bottom: 40px;
+.block-container {
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .form-control:focus {
@@ -97,35 +94,33 @@
     box-shadow: none;
 }
 
-.label{
-  font-size: 1.3em;
-}
-.form-control {
-  border: 1px solid #000;
+.label {
+    font-size: 1.3em;
 }
 
-.logo-bottom{
-  position: fixed;
+.form-control {
+    border: 1px solid #000;
+}
+
+.logo-bottom {
+    position: fixed;
     bottom: 0;
     left: 50%;
     margin-left: -50px;
     z-index: -1;
-
-  &.logo-white{
-    fill: white;
-  }
-  svg{
-    width: 100px;
-    height: 100px;
-  }
-
+    &.logo-white {
+        fill: white;
+    }
+    svg {
+        width: 100px;
+        height: 100px;
+    }
 }
 
 // GENERIC END
 .alert {
     z-index: 11;
     text-align: center;
-
     .close {
         z-index: 12;
     }
@@ -141,24 +136,22 @@
         background-color: white;
         list-style: none;
         text-align: left;
-
-        img{
+        img {
             width: 80px;
         }
-
         .btn-default {
             float: right;
             margin-top: 24px;
         }
     }
 }
+
 // BUTTONS START
 .icn-in-button {
     position: absolute;
     top: 25px;
     left: 59px;
 }
-
 
 .btn-default {
     border-width: 1px;
@@ -186,29 +179,26 @@
 }
 
 .btn-sm {
-  padding: 20px 30px 20px;
-  height: 65px;
-  text-align: center;
-}
-
-.btn-border-overlay{
-  width: 100%;
-  left: 0;
-  bottom: -40px;
-  position: absolute;
-
-
-}
-
-.btn-border-overlay-hero{
-    width: 50%;
-    position: absolute;
-    left: 25%;
-        bottom: 10px;
-    background: white;
+    padding: 20px 30px 20px;
+    height: 65px;
     text-align: center;
 }
 
+.btn-border-overlay {
+    width: 100%;
+    left: 0;
+    bottom: -40px;
+    position: absolute;
+}
+
+.btn-border-overlay-hero {
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    bottom: 10px;
+    background: white;
+    text-align: center;
+}
 
 .btn-float {
     float: right;
@@ -217,23 +207,20 @@
 .btn-link {
     text-decoration: none;
 }
+
 // BUTTONS END
 .content-container {
     padding: 50px;
     width: 100%;
     border-radius: 15px;
     background-color: white;
-
 }
 
 // image container
 .image-container {
-
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-
-
     position: relative;
     float: left;
     overflow: hidden;
@@ -242,18 +229,15 @@
     width: 100%;
     height: 0;
     border-radius: 2px;
-
     &.plus-button {
         border: 1px dashed;
         font-size: 32px;
         position: relative;
         text-align: center;
-
         &:hover {
             text-decoration: none;
         }
-
-        .plus{
+        .plus {
             width: 50%;
             height: 50%;
             overflow: auto;
@@ -282,51 +266,43 @@
     border-radius: 2px;
     text-align: center;
     line-height: 146px;
-
     #logo {
         display: inline-block;
     }
 }
 
 .readability-container {
-    text-align: center;
-    // margin-top: 120px;
+    text-align: center; // margin-top: 120px;
 }
 
 .loading-bar {
     position: relative;
     z-index: 10;
-
     .loading-step {
         display: block;
         float: left;
         width: 15%;
         height: 10px;
         background-color: #eee;
-
         &.active {
             background-color: @brand-primary;
         }
     }
 }
 
-
 .logo-creator {
     .palette-colors {
         padding: 10px 2px;
     }
-
     .palette-color {
         float: left;
         margin-right: 10px;
         width: 32px;
         height: 32px;
     }
-
     .form-group {
         margin-bottom: 40px;
     }
-
     .logo-creator-title {
         margin-bottom: 20px;
     }
@@ -335,6 +311,7 @@
 .close {
     background-color: #000;
 }
+
 //END COLOR-BAR
 #logo-creator-input {
     padding: 0;
@@ -346,6 +323,7 @@
     box-shadow: none;
     font-size: 3em;
 }
+
 //ASIDE-BAR
 .aside-bar {
     position: fixed;
@@ -356,7 +334,6 @@
     width: 30%;
     height: 100%;
     z-index: 10;
-
     &.aside-bar-image {
         padding-top: 60px;
     }
@@ -364,7 +341,6 @@
 
 .aside-container {
     padding-left: 20px;
-
     &.aside-container-colors {
         margin-top: 100px;
     }
@@ -374,7 +350,6 @@
     margin: 0;
     padding: 0;
     list-style: none;
-
     .font-container {
         overflow: hidden;
         padding-left: 30px;
@@ -384,63 +359,57 @@
         /* Safari */
         transition: all 0.8s;
         position: relative;
-
-        .sign{
+        .sign {
             font-size: 0.8em;
             position: absolute;
             right: 7px;
             bottom: 3px;
             color: white;
-            a, a:hover{
+            a,
+            a:hover {
                 color: white;
             }
         }
-
         .font-name {
             color: lighten(@brand-primary, 50%);
         }
-
         .font-element {
             display: block;
             padding: 20px;
             border-bottom: 1px solid lighten(@brand-primary, 80%);
             text-decoration: none;
-
             &.large {
                 padding: 40px 20px;
                 font-size: 2em;
             }
         }
-
         &.active {
             border-left: 3px solid @brand-primary;
         }
-
         &.image {
             margin-bottom: 30px;
-
             .image-container {
                 padding: 0 0 65%;
             }
         }
     }
 }
+
 //END ASIDE-BAR
 .content-container {
     margin: 40px 0;
     padding: 40px;
     border: 1px solid #979797;
     border-radius: 5px;
-
     &.content-font-container {
         min-height: 350px;
     }
-
     &.image {
         padding: 0;
         overflow: hidden
     }
 }
+
 // MODAL START
 .modal-dialog.modal-xl {
     position: fixed;
@@ -448,12 +417,10 @@
     margin: 0;
     width: 100%;
     height: 100%;
-
     .modal-content {
         height: 100%;
         border: 0;
         border-radius: 0;
-
         .modal-body {
             padding: 30px 80px;
         }
@@ -463,15 +430,13 @@
 // .modal-body{
 //   margin: 30px 0px;
 // }
-
-.modal-footer{
-margin-top: 25px;
-
+.modal-footer {
+    margin-top: 25px;
 }
 
-.modal-header{
-  margin: 20px;
-  border: none
+.modal-header {
+    margin: 20px;
+    border: none
 }
 
 .ngRepeatSpan3 .col-md-3:nth-of-type(4n+1) {
@@ -490,7 +455,6 @@ margin-top: 25px;
     width: 100%;
     height: 0;
     border-radius: 2px;
-
     img {
         position: absolute;
         left: 0;
@@ -499,15 +463,16 @@ margin-top: 25px;
     }
 }
 
-#gallery-lift, #terms-container {
+#gallery-lift,
+#terms-container {
     overflow: scroll;
     margin: 20px 0;
     height: 400px;
-
     .image-container {
         margin-bottom: 30px;
     }
 }
+
 //INPUT:
 .input-lg {
     margin: 30px 0 15px;
@@ -518,15 +483,17 @@ margin-top: 25px;
     line-height: 1.3333333;
     border-radius: 2px;
     margin: 0;
-};
+}
+
+;
 //loader
 #loader {
     margin-top: 20%;
     color: #000;
     font-size: 130px;
 }
-//image
 
+//image
 // close
 .close {
     position: absolute;
@@ -540,4 +507,5 @@ margin-top: 25px;
     line-height: 1;
     opacity: 1;
 }
+
 // MODAL END

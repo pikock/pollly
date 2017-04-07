@@ -1,42 +1,34 @@
 /*global require module */
 
-module.exports = function ($stateProvider, $urlRouterProvider, $animateProvider, AppConfig) {
+module.exports = function ($stateProvider, $urlRouterProvider, AppConfig) {
   'ngInject';
   'use strict';
-  $animateProvider.classNameFilter(/animate-/);
-
-  
-
-  $stateProvider.state('wizard', {
+  $stateProvider.state('editor', {
     abstract: true,
-    // onEnter: require('./accueil/accueil.service'),
     views: {
       '@': {
         template: require('./home/index.html'),
-        controller: require('./wizard/wizard.controller')
+        controller: require('./editor/editor.controller')
       },
-      'debug@': {
-        template: require('./debug/index.html')
-      },
-      '@wizard': {
+      '@editor': {
         template: require('./home/main.html'),
       },
-      'footer@wizard': {
+      'footer@editor': {
         template: require('./footer/index.html')
       },
-      'header@wizard': {
+      'header@editor': {
         template: require('./header/index.html'),
         controller: require('./header/header.controller')
       }
     }
-  }).state('wizard.home', {
+  }).state('editor.home', {
     url: '/home',
     data: {
       progress: 1
     },
     views: {
-      '@wizard': {
-        template: require('./wizard/index.html')
+      '@editor': {
+        template: require('./editor/index.html')
       }
     }
   });
