@@ -149,9 +149,9 @@ module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
         datas[i][lang]
       )
     }
-
-    var yamlToExport = YAML.stringify($scope.totranslate, 4)
-    var uriContent = 'data:application/octet-stream,' + encodeURIComponent(yamlToExport)
+    var yamlToExport = YAMLJS.stringify($scope.totranslate)
+    var uriContent = 'data:application/octet-stream,' +
+      encodeURIComponent(yamlToExport)
     window.open(uriContent, 'neuesDokument')
   }
 }
