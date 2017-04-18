@@ -4,7 +4,10 @@ fr:
     "no": 'Non'
     required:
       text: 'Requis'
-      mark: '*'
+      mark:
+        mark:
+          mark:
+            mark: '*'
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
@@ -12,16 +15,23 @@ fr:
       default_message: "Please review the problems below:"
     # Labels and hints examples
     labels:
-      contact: 
-        first_name: 'Prénom'
-        last_name: 'Nom'
-        email: 'Email'
-        phone_number: 'Numéro de téléphone'
-        subject: 'Sujet'
-        message: 'Message'
       defaults:
         password: 'Password'
-    hints:
-      defaults:
-        username: 'User name to sign in.'
-
+      user:
+        new:
+          email: 'E-mail to sign in.'
+        edit:
+          email: 'E-mail.'
+    # labels:
+    #   contact: 
+    #     first_name: 'Prénom'
+    #     last_name: 'Nom'
+    #     email: 'Email'
+    #     phone_number: 'Numéro de téléphone'
+    #     subject: 'Sujet'
+    #     message: 'Message'
+    #   defaults:
+    #     password: 'Password'
+    # hints:
+    #   defaults:
+    #     username: 'User name to sign in.'
