@@ -1,106 +1,110 @@
-require('./things.js')
+/* eslint-disable no-undef */
 
-/**
- * for orson by thierry_c
- */
-'use strict';
+'use strict'
+
+require('./things.js')
 
 module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
   'ngInject'
 
-  // $scope.es = '';
-  // $scope.fr = '';
-
   $scope.getLangFromObjectToTranslate = function (obj) {
-    return Object.keys(obj)[0];
+    return Object.keys(obj)[0]
   }
 
   $scope.$on('filereaded', function (event, arg) {
-    var state = arg.state;
-    $scope[state] = arg.datas;
-    $scope[state + 'Lang'] = $scope.getLangFromObjectToTranslate($scope[state]);
+    var state = arg.state
+    $scope[state] = arg.datas
+    $scope[state + 'Lang'] = $scope.getLangFromObjectToTranslate($scope[state])
 
-    if (state == 'totranslate') {
-      $scope.inline_es = convertToArray($scope.initial, ' ', ' ', $scope.getLangFromObjectToTranslate($scope.initial));
-      $scope.inline_fr = convertToArray($scope.totranslate, ' ', ' ', $scope.getLangFromObjectToTranslate($scope.totranslate));
-      extractDiffKeys($scope.inline_es, $scope.inline_fr, $scope.getLangFromObjectToTranslate($scope.totranslate));
-      extractDiffKeys($scope.inline_fr, $scope.inline_es, $scope.getLangFromObjectToTranslate($scope.initial), 'reverse');
+    if (state === 'totranslate') {
+      $scope.inline_es = convertToArray(
+        $scope.initial,
+        '',
+        '',
+        $scope.getLangFromObjectToTranslate($scope.initial)
+      )
+      $scope.inline_fr = convertToArray(
+        $scope.totranslate,
+        '',
+        '',
+        $scope.getLangFromObjectToTranslate($scope.totranslate)
+      )
+      extractDiffKeys(
+        $scope.inline_es,
+        $scope.inline_fr,
+        $scope.getLangFromObjectToTranslate($scope.totranslate)
+      )
+      extractDiffKeys(
+        $scope.inline_fr,
+        $scope.inline_es,
+        $scope.getLangFromObjectToTranslate($scope.initial),
+        'reverse'
+      )
     }
-  });
-
+  })
 
   var convertToArray = function (translations, oldPath, newPath, lang) {
-    var newDatas = [];
+    var newDatas = []
 
-    function convert(translations, oldPath, newPath, lang) {
-      var path = oldPath + '/' + newPath;
-      if (newPath == " " && oldPath == " ") {
-        path = "";
+    function convert (translations, oldPath, newPath, lang) {
+      var path = oldPath + '/' + newPath
+      if (newPath === '' && oldPath === '') {
+        path = ''
       }
 
       for (var property in translations) {
         if (translations.hasOwnProperty(property)) {
-          if (typeof translations[property] == "object")
-            convert(translations[property], path, property, lang);
-          else {
+          if (typeof translations[property] === 'object') {
+            convert(translations[property], path, property, lang)
+          } else {
             var item = {
               key: property
-            };
-            item[lang] = translations[property];
-            item["path"] = path;
-            newDatas.push(item);
-            // console.log(property + "   " + translations[property]+ "   " + path);
+            }
+            item[lang] = translations[property]
+            item['path'] = path
+            newDatas.push(item)
           }
         }
       }
     }
 
-    convert(translations, ' ', ' ', lang);
-    return newDatas;
+    convert(translations, '', '', lang)
+    return newDatas
   }
 
   var extractDiffKeys = function (a, b, lang, mode) {
     for (var i = 0; i < a.length; i++) {
-      var isPresent = false;
+      var isPresent = false
 
       for (var j = 0; j < b.length; j++) {
+        // FIXME: Should not relay on double equel to function correctly
         if (b[j].key == [a[i].key]) {
-
           if (angular.isDefined(mode)) {
           } else {
-            a[i][lang] = b[j][lang];
+            a[i][lang] = b[j][lang]
           }
-          isPresent = true;
+          isPresent = true
         }
       }
 
       if (!isPresent) {
         if (angular.isDefined(mode)) {
           b[j] = a[i]
-          b[j][lang] = "";
-          b[j]['missing'] = {};
-          b[j]['missing'][lang] = true;
+          b[j][lang] = ''
+          b[j]['missing'] = {}
+          b[j]['missing'][lang] = true
         } else {
-          a[i][lang] = "";
-          a[i]['missing'] = {};
-          a[i]['missing'][lang] = true;
+          a[i][lang] = ''
+          a[i]['missing'] = {}
+          a[i]['missing'][lang] = true
         }
-
       }
     }
-
   }
 
-
-
-
-
-
   var setPropertyFromPath = function (targetObject, path, key, value) {
-
-
-    var currentValue = targetObject;
-    var parentValue;
+    var currentValue = targetObject
+    var parentValue
     for (var i = 0, l = path.length; i < l; i++) {
       // At each step, we're descending through the object
       var previousPath = i - 1
@@ -113,22 +117,20 @@ module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
         msg: 'Files error'
       })
     } else {
-      currentValue[key] = value;
+      currentValue[key] = value
     }
-    // console.log(currentValue, value, path)
-
   }
-
 
   var checkEmptyValue = function (datas, lang) {
     for (var i = 0; i < datas.length; i++) {
-      if (datas[i][lang] == '') return true;
+      if (datas[i][lang] === '') {
+        return true
+      }
     }
-    return false;
+    return false
   }
 
   $scope.export = function (datas, lang) {
-
     if (checkEmptyValue(datas, lang)) {
       AlertManager.add({
         type: 'danger',
@@ -137,22 +139,19 @@ module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
     }
 
     for (var i = 0; i < datas.length; i++) {
-      var paths = datas[i].path.split('/');
-      paths.splice(0, 2);
+      var paths = datas[i].path.split('/')
+      paths.splice(0, 2)
       paths.unshift(lang)
-      // console.log($scope.totranslate, datas[i])
-
-      setPropertyFromPath($scope.totranslate, paths, datas[i].key, datas[i][lang]);
+      setPropertyFromPath(
+        $scope.totranslate,
+        paths,
+        datas[i].key,
+        datas[i][lang]
+      )
     }
 
-    var toto = YAML.stringify($scope.totranslate, 4)
-    console.log(toto)
-    uriContent = "data:application/octet-stream," + encodeURIComponent(toto);
-    newWindow = window.open(uriContent, 'neuesDokument');
-
+    var yamlToExport = YAML.stringify($scope.totranslate, 4)
+    var uriContent = 'data:application/octet-stream,' + encodeURIComponent(yamlToExport)
+    window.open(uriContent, 'neuesDokument')
   }
-
-  // $scope.export($scope.inline_es, ['es','fr'])
-
-  console.log($scope.es)
 }
