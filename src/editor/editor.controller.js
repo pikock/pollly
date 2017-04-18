@@ -103,14 +103,24 @@ module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
   }
 
   var setPropertyFromPath = function (targetObject, path, key, value) {
-    var currentValue = targetObject
+    var currentValue = JSON.parse(JSON.stringify(targetObject))
     var parentValue
     for (var i = 0, l = path.length; i < l; i++) {
       // At each step, we're descending through the object
-      var previousPath = i - 1
-      parentValue = currentValue[path[previousPath]]
-      currentValue = currentValue[path[i]]
+      if (currentValue.hasOwnProperty(path[i])) {
+        console.log('Has own property')
+      } else {
+        console.log('Dont have')
+        console.log(currentValue)
+        console.log(path, path[i])
+        console.log(currentValue[key])
+        // currentValue[path[i]] = {}
+      }
+      // var previousPath = i - 1
+      // parentValue = currentValue[path[previousPath]]
+      // currentValue = currentValue[path[i]]
     }
+
     if (angular.isUndefined(currentValue[key])) {
       AlertManager.add({
         type: 'danger',

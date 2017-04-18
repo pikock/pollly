@@ -4,7 +4,10 @@ en:
     "no": 'No'
     required:
       text: 'required'
-      mark: '*'
+      mark:
+        mark:
+          mark:
+            mark: '*'
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
@@ -29,3 +32,4 @@ en:
     # prompts:
     #   defaults:
     #     age: 'Select your age'
+
