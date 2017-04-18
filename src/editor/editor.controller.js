@@ -3,6 +3,7 @@
 'use strict'
 
 require('./things.js')
+var YAMLJS = require('json2yaml')
 
 module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
   'ngInject'
