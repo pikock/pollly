@@ -22,13 +22,11 @@
             <td>{{$index}}</td>
             <td width="15%">{{item.key}}</td>
             <td>
-              <input class="form-control" type="text" ng-model="item[initialLang]">
+              <input class="form-control" tabindex="{{ item.hasOwnProperty('missing') ? 0 : -1 }}" type="text" ng-model="item[initialLang]" ng-change="changeInputTraduction(item)">
             </td>
             <td>
-              <input class="form-control" type="text" ng-model="item[totranslateLang]">
+              <input class="form-control" tabindex="{{ item.hasOwnProperty('missing') ? 0 : -1 }}" type="text" ng-model="item[totranslateLang]" ng-change="changeInputTraduction(item)">
             </td>
-            <!-- <td>{{item.path}}</td> -->
-
           </tr>
         </tbody>
       </table>
