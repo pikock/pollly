@@ -1,6 +1,4 @@
-/**
- * for orson by thierry_c
- */
+var YAMLJS = require('js-yaml')
 
 module.exports = angular
   .module('directives', [])
@@ -25,7 +23,7 @@ module.exports = angular
             var reader = new FileReader()
             reader.onload = function (loadEvent) {
               scope.$apply(function () {
-                scope.fileread = YAML.parse(loadEvent.target.result)
+                scope.fileread = YAMLJS.safeLoad(loadEvent.target.result)
                 scope.$emit('filereaded', {
                   datas: scope.fileread,
                   state: attributes.fileread,

@@ -25,6 +25,7 @@
     "angular-ui-router": "^0.4.2",
     "color": "^1.0.3",
     "jquery": "^3.0.0",
+    "js-yaml": "^3.8.3",
     "json2yaml": "^1.1.0",
     "ngstorage": "^0.3.11"
   },
