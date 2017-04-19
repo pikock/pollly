@@ -7,19 +7,50 @@ var YAMLJS = require('json2yaml')
 
 module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
   'ngInject'
-
   $scope.getLangFromObjectToTranslate = function (obj) {
     return Object.keys(obj)[0]
   }
 
+  var isPresentString = function (string) {
+    return typeof string === 'string' && string.length !== 0
+  }
 
-  $scope.$on('filereaded', function (event, arg) {
+  /**
+   * Modify the missing property of item
+   * @param {Object} item
+   * @returns
+   */
+  $scope.changeInputTraduction = function (item) {
+    if (
+      isPresentString(item[$scope.initialLang]) &&
+      isPresentString(item[$scope.totranslateLang])
+    ) {
+      delete item.missing
+    } else if (!item.hasOwnProperty('missing')) {
+      item['missing'] = {}
+      if (
+        typeof item[$scope.initialLang] === 'string' &&
+        item[$scope.initialLang].length === 0
+      ) {
+        item.missing[$scope.initialLang] = true
+      } else if (
+        typeof item[$scope.totranslateLang] === 'string' &&
+        item[$scope.totranslateLang].length === 0
+      ) {
+        item.missing[$scope.totranslateLang] = true
+      }
+    }
+    return item
+  }
 
+  $scope.$on('filereaded', function (event, arg, filename) {
     var state = arg.state
     $scope[state] = arg.datas
     $scope[state + 'Lang'] = $scope.getLangFromObjectToTranslate($scope[state])
 
     if (state === 'totranslate') {
+      console.log('Filename', arg.filename)
+      $scope.filename = arg.filename
       $scope.inline_es = convertToArray(
         $scope.initial,
         '',
@@ -80,8 +111,7 @@ module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
       var isPresent = false
 
       for (var j = 0; j < b.length; j++) {
-        // FIXME: Should not relay on double equel to function correctly
-        if (b[j].key == [a[i].key]) {
+        if (b[j].key === a[i].key) {
           if (angular.isDefined(mode)) {
           } else {
             a[i][lang] = b[j][lang]
@@ -108,7 +138,7 @@ module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
   /**
    * @description addPathToObject allows to set a nested value in an object
    * @param {Object} object The object to modify
-   * @param {Array} path The segments of the path to the key we want to set 
+   * @param {Array} path The segments of the path to the key we want to set
    * @param {String} key The key we want to set in the object
    * @param {String} value The value associated with the key
    */
@@ -128,7 +158,6 @@ module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
       addPathToObject(object[prop], path, key, value)
     }
   }
- 
 
   var checkEmptyValue = function (datas, lang) {
     for (var i = 0; i < datas.length; i++) {
@@ -140,30 +169,34 @@ module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
   }
 
   $scope.export = function (datas, lang) {
+    console.log($scope.filename)
     if (checkEmptyValue(datas, lang)) {
       AlertManager.add({
         type: 'danger',
         msg: 'Still has empty values'
-      });
-      return;
+      })
+      return false
     }
 
     for (var i = 0; i < datas.length; i++) {
       var paths = datas[i].path.split('/')
-      paths.splice(0, 2);
-      paths.unshift(lang);
-
-      addPathToObject(
-        $scope.totranslate,
-        paths,
-        datas[i].key,
-        datas[i][lang]
-      )
+      paths.splice(0, 2)
+      paths.unshift(lang)
+      addPathToObject($scope.totranslate, paths, datas[i].key, datas[i][lang])
     }
 
     var yamlToExport = YAMLJS.stringify($scope.totranslate)
-    var uriContent = 'data:application/octet-stream,' +
-    encodeURIComponent(yamlToExport)
-    window.open(uriContent, 'neuesDokument')
+    var blob = new Blob([yamlToExport], { type: 'application/x-yaml' })
+
+    if (window.navigator.msSaveOrOpenBlob) {
+      window.navigator.msSaveBlob(blob, $scope.filename)
+    } else {
+      var elem = window.document.createElement('a')
+      elem.href = window.URL.createObjectURL(blob)
+      elem.download = $scope.filename
+      document.body.appendChild(elem)
+      elem.click()
+      document.body.removeChild(elem)
+    }
   }
 }
