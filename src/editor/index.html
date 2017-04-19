@@ -18,7 +18,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="item in inline_es">
+          <tr ng-repeat="item in inline_es" ng-class="item.hasOwnProperty('missing') ? 'missing' : ''">
             <td>{{$index}}</td>
             <td width="15%">{{item.key}}</td>
             <td>

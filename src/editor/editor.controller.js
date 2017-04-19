@@ -12,9 +12,30 @@ module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
     return Object.keys(obj)[0]
   }
 
+  var isPresentString = function (string) {
+    return typeof string === 'string' && string.length !== 0
+  }
+
+  /**
+   * Modify the missing property of item
+   * @param {Object} item
+   * @returns
+   */
+  $scope.changeInputTraduction = function (item) {
+    if (isPresentString(item[$scope.initialLang]) && isPresentString(item[$scope.totranslateLang])) {
+      delete item.missing
+    } else if (!item.hasOwnProperty('missing')) {
+      item['missing'] = {}
+      if (typeof item[$scope.initialLang] === 'string' && item[$scope.initialLang].length === 0) {
+        item.missing[$scope.initialLang] = true
+      } else if (typeof item[$scope.totranslateLang] === 'string' && item[$scope.totranslateLang].length === 0) {
+        item.missing[$scope.totranslateLang] = true
+      }
+    }
+    return item
+  }
 
   $scope.$on('filereaded', function (event, arg) {
-
     var state = arg.state
     $scope[state] = arg.datas
     $scope[state + 'Lang'] = $scope.getLangFromObjectToTranslate($scope[state])
