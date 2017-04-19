@@ -7,7 +7,7 @@ var YAMLJS = require('json2yaml')
 
 module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
   'ngInject'
-
+  
   $scope.getLangFromObjectToTranslate = function (obj) {
     return Object.keys(obj)[0]
   }
@@ -101,8 +101,7 @@ module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
       var isPresent = false
 
       for (var j = 0; j < b.length; j++) {
-        // FIXME: Should not relay on double equel to function correctly
-        if (b[j].key == [a[i].key]) {
+        if (b[j].key === a[i].key) {
           if (angular.isDefined(mode)) {
           } else {
             a[i][lang] = b[j][lang]
@@ -129,7 +128,7 @@ module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
   /**
    * @description addPathToObject allows to set a nested value in an object
    * @param {Object} object The object to modify
-   * @param {Array} path The segments of the path to the key we want to set 
+   * @param {Array} path The segments of the path to the key we want to set
    * @param {String} key The key we want to set in the object
    * @param {String} value The value associated with the key
    */
@@ -149,7 +148,6 @@ module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
       addPathToObject(object[prop], path, key, value)
     }
   }
- 
 
   var checkEmptyValue = function (datas, lang) {
     for (var i = 0; i < datas.length; i++) {
@@ -165,26 +163,20 @@ module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
       AlertManager.add({
         type: 'danger',
         msg: 'Still has empty values'
-      });
-      return;
+      })
+      return false
     }
 
     for (var i = 0; i < datas.length; i++) {
       var paths = datas[i].path.split('/')
-      paths.splice(0, 2);
-      paths.unshift(lang);
-
-      addPathToObject(
-        $scope.totranslate,
-        paths,
-        datas[i].key,
-        datas[i][lang]
-      )
+      paths.splice(0, 2)
+      paths.unshift(lang)
+      addPathToObject($scope.totranslate, paths, datas[i].key, datas[i][lang])
     }
 
     var yamlToExport = YAMLJS.stringify($scope.totranslate)
     var uriContent = 'data:application/octet-stream,' +
-    encodeURIComponent(yamlToExport)
+      encodeURIComponent(yamlToExport)
     window.open(uriContent, 'neuesDokument')
   }
 }
