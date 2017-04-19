@@ -12,7 +12,9 @@ module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
     return Object.keys(obj)[0]
   }
 
+
   $scope.$on('filereaded', function (event, arg) {
+
     var state = arg.state
     $scope[state] = arg.datas
     $scope[state + 'Lang'] = $scope.getLangFromObjectToTranslate($scope[state])
@@ -103,34 +105,30 @@ module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
     }
   }
 
-  var setPropertyFromPath = function (targetObject, path, key, value) {
-    var currentValue = JSON.parse(JSON.stringify(targetObject))
-    var parentValue
-    for (var i = 0, l = path.length; i < l; i++) {
-      // At each step, we're descending through the object
-      if (currentValue.hasOwnProperty(path[i])) {
-        console.log('Has own property')
-      } else {
-        console.log('Dont have')
-        console.log(currentValue)
-        console.log(path, path[i])
-        console.log(currentValue[key])
-        // currentValue[path[i]] = {}
-      }
-      // var previousPath = i - 1
-      // parentValue = currentValue[path[previousPath]]
-      // currentValue = currentValue[path[i]]
-    }
-
-    if (angular.isUndefined(currentValue[key])) {
-      AlertManager.add({
-        type: 'danger',
-        msg: 'Files error'
-      })
+  /**
+   * @description addPathToObject allows to set a nested value in an object
+   * @param {Object} object The object to modify
+   * @param {Array} path The segments of the path to the key we want to set 
+   * @param {String} key The key we want to set in the object
+   * @param {String} value The value associated with the key
+   */
+  var addPathToObject = function (object, path, key, value) {
+    var prop = path.shift()
+    // We're at the end of the path
+    if (typeof prop === 'undefined') {
+      object[key] = value
+      return object
     } else {
-      currentValue[key] = value
+      // If the path segment doesn't exist at this level of the object
+      // create it with an empty object and keep on descending
+      if (!object.hasOwnProperty(prop)) {
+        object[prop] = {}
+      }
+      // Default case, the path segment exists, so we keep on descending
+      addPathToObject(object[prop], path, key, value)
     }
   }
+ 
 
   var checkEmptyValue = function (datas, lang) {
     for (var i = 0; i < datas.length; i++) {
@@ -146,23 +144,26 @@ module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
       AlertManager.add({
         type: 'danger',
         msg: 'Still has empty values'
-      })
+      });
+      return;
     }
 
     for (var i = 0; i < datas.length; i++) {
       var paths = datas[i].path.split('/')
-      paths.splice(0, 2)
-      paths.unshift(lang)
-      setPropertyFromPath(
+      paths.splice(0, 2);
+      paths.unshift(lang);
+
+      addPathToObject(
         $scope.totranslate,
         paths,
         datas[i].key,
         datas[i][lang]
       )
     }
+
     var yamlToExport = YAMLJS.stringify($scope.totranslate)
     var uriContent = 'data:application/octet-stream,' +
-      encodeURIComponent(yamlToExport)
+    encodeURIComponent(yamlToExport)
     window.open(uriContent, 'neuesDokument')
   }
 }
