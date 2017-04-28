@@ -18,14 +18,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="item in inline_es" ng-class="item.hasOwnProperty('missing') ? 'missing' : ''">
+          <tr ng-repeat="(key, value) in metadata" ng-class="item.hasOwnProperty('missing') ? 'missing' : ''">
             <td>{{$index}}</td>
-            <td width="15%">{{item.key}}</td>
+            <td width="15%">{{key}}</td>
             <td>
-              <input class="form-control" tabindex="{{ item.hasOwnProperty('missing') ? 0 : -1 }}" type="text" ng-model="item[initialLang]" ng-change="changeInputTraduction(item)">
+              <input class="form-control" tabindex="{{ item.hasOwnProperty('missing') ? 0 : -1 }}" type="text" ng-model="value[initialLang]"
+                ng-change="markMissingTranslations(item)">
             </td>
             <td>
-              <input class="form-control" tabindex="{{ item.hasOwnProperty('missing') ? 0 : -1 }}" type="text" ng-model="item[totranslateLang]" ng-change="changeInputTraduction(item)">
+              <input class="form-control" tabindex="{{ item.hasOwnProperty('missing') ? 0 : -1 }}" type="text" ng-model="value[totranslateLang]"
+                ng-change="markMissingTranslations(item)">
             </td>
           </tr>
         </tbody>
