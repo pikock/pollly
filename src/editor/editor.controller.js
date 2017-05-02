@@ -7,14 +7,12 @@ var YAMLJS = require("json2yaml");
 
 module.exports = function($rootScope, $scope, AlertManager) {
   "ngInject";
-
   /**
    * Modify the missing property of item
    * @param {Object} item
    * @returns
    */
   $scope.markMissingTranslations = function(item) {
-    console.log(item);
     if (
       !item.lhs || item.lhs.length === 0 || (!item.rhs || item.rhs.length === 0)
     ) {
@@ -26,14 +24,13 @@ module.exports = function($rootScope, $scope, AlertManager) {
   };
 
   $scope.$on("filereaded", function(event, arg, filename) {
-    console.log(arg.state)
     $scope[arg.state] = arg.datas;
 
     if (!$scope.lhs || !$scope.rhs) {
       return false;
     }
-    var rhs = $scope.rhs.en;
-    var lhs = $scope.lhs.fr;
+    var rhs = $scope.rhs[Object.keys($scope.rhs)[0]];
+    var lhs = $scope.lhs[Object.keys($scope.lhs)[0]];
     var objectLhs = {
       language: "lhs",
       translations: flattenObject(lhs)
@@ -48,8 +45,6 @@ module.exports = function($rootScope, $scope, AlertManager) {
     var mergedData = mergeObjects(objectLhs, objectRhs);
     var markedData = markedMissing(mergedData);
     $scope.metadata = markedData;
-
-    console.log("Metadata", $scope.metadata);
   });
 
   // Takes a nested object and produces a result objects where all the nested paths have
@@ -68,7 +63,6 @@ module.exports = function($rootScope, $scope, AlertManager) {
   };
 
   var markedMissing = function(data) {
-    console.log("Marked missing data", data);
     Object.keys(data).forEach(function(key) {
       var current = data[key];
       if (current.lhs.length === 0 || current.rhs.length === 0) {
