@@ -22,10 +22,11 @@ en:
     #       email: 'E-mail to sign in.'
     #     edit:
     #       email: 'E-mail.'
-    # hints:
-    #   defaults:
-    #     username: 'User name to sign in.'
-    #     password: 'No special characters, please.'
+    hints:
+      try: false
+      defaults:
+        username: 'User name to sign in.'
+        password: 'No special characters, please.'
     # include_blanks:
     #   defaults:
     #     age: 'Rather not say'

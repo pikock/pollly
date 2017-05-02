@@ -13,17 +13,62 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
    * @returns
    */
   $scope.markMissingTranslations = function(item) {
-    if (
-      !item.lhs ||
-      !item.rhs ||
-      (item.lhs && item.lhs.length === 0) ||
-      (item.rhs && item.rhs.length === 0)
-    ) {
-      item["missing"] = true;
+    if (!item.lhs || (item.lhs && item.lhs.length === 0)) {
+      item["missing"] = "lhs";
+    } else if (!item.rhs || (item.rhs && item.rhs.length === 0)) {
+      item["missing"] = "rhs";
     } else {
       delete item["missing"];
     }
+
     return item;
+  };
+
+  $scope.goToMissingStep = function(index, event, specific) {
+    $scope.running = true
+    console.log('BEFORE', specific);
+    if (event.shiftKey && event.which === 13) {
+      goToMissingStep(index, specific);
+    } else if (event.which === 13) {
+      goToMissingStep(index);
+    }
+    $scope.running = false
+  };
+
+  var goToMissingStep = function(index, specific, retry) {
+    try {
+      Object.keys($scope.metadata)
+        .slice(index)
+        .forEach(function(line, lineIndex) {
+          if ($scope.metadata[line].hasOwnProperty("missing")) {
+            console.log('AFTER', specific)
+            console.log('tEST', $scope.metadata[line].missing)
+            if (specific && $scope.metadata[line].missing !== specific) {
+              return false;
+            }
+            var inputIndex = $scope.metadata[line].missing === "lhs" ? 0 : 1;
+            var selector =
+              ".metadata tbody tr:nth-child(" +
+              (lineIndex + index + 1) +
+              ") td:nth-child(" +
+              (inputIndex + 2) +
+              ") input";
+            var element = document.querySelector(selector);
+            console.log(selector);
+            element.focus();
+            element.scrollIntoView();
+            throw BreakException;
+          }
+        });
+
+      if (retry) {
+        document.scrollIntoView();
+      } else {
+        goToMissingStep(0, specific, true);
+      }
+    } catch (e) {
+      return e;
+    }
   };
 
   $scope.calculateStatistics = function() {
@@ -43,8 +88,9 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
   var generateStatistic = function(data) {
     $scope.inputs = Object.keys(data).length;
     $scope.missingInputs = missingInputs(data);
-    $scope.ratioMissing =
-      ($scope.inputs - $scope.missingInputs) / $scope.inputs * 100;
+    $scope.ratioMissing = Math.floor(
+      ($scope.inputs - $scope.missingInputs) / $scope.inputs * 100
+    );
   };
 
   $scope.$on("filereaded", function(event, arg, filename) {
@@ -53,6 +99,15 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
     if (!$scope.lhs || !$scope.rhs) {
       return false;
     }
+
+    // document.addEventListener("keydown", function(event) {
+    //   setTimeout(function () {
+    //     console.log($scope.running)
+    //     if (!$scope.running && event.which === 13) {
+    //       goToMissingStep(0);
+    //     }
+    //   }, 1)
+    // }, false);
 
     var langRhs = Object.keys($scope.rhs)[0];
     var langLhs = Object.keys($scope.lhs)[0];
@@ -93,13 +148,10 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
   var markedMissing = function(data) {
     Object.keys(data).forEach(function(key) {
       var current = data[key];
-      if (
-        !current.lhs ||
-        !current.rhs ||
-        (current.lhs && current.lhs.length === 0) ||
-        (current.rhs && current.rhs.length === 0)
-      ) {
-        current["missing"] = true;
+      if (!current.lhs || (current.lhs && current.lhs.length === 0)) {
+        current["missing"] = "lhs";
+      } else if (!current.rhs || (current.rhs && current.rhs.length === 0)) {
+        current["missing"] = "rhs";
       }
 
       if (
