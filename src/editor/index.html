@@ -7,31 +7,36 @@
       <input type="file" fileread="initial" filestate="" />
       <input type="file" fileread="totranslate" />
 
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Ref</th>
-            <th>Key</th>
-            <th>{{initialLang}}</th>
-            <th>{{totranslateLang}}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="(key, value) in metadata" ng-class="item.hasOwnProperty('missing') ? 'missing' : ''">
-            <td>{{$index}}</td>
-            <td width="15%">{{key}}</td>
-            <td>
-              <input class="form-control" tabindex="{{ item.hasOwnProperty('missing') ? 0 : -1 }}" type="text" ng-model="value[initialLang]"
-                ng-change="markMissingTranslations(item)"><br>
-              <input class="form-control" tabindex="{{ item.hasOwnProperty('missing') ? 0 : -1 }}" type="text" ng-model="value[totranslateLang]"
-                ng-change="markMissingTranslations(item)">
-            </td>
-            <!--<td>
+      <div ng-if="metadata">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Ref</th>
+              <th>Key</th>
+              <th>{{initialLang}}</th>
+              <th>{{totranslateLang}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="(key, value) in metadata" ng-class="value.hasOwnProperty('missing') ? 'missing' : ''">
+              <td>{{$index}}</td>
+              <td>{{key}}</td>
+              <td>
+                <input class="form-control" type="text" ng-model="value.lhs" ng-change="markMissingTranslations(value)">
+              </td>
+              <td>
+                <input class="form-control" type="text" ng-model="value.rhs" ng-change="markMissingTranslations(value)">
+              </td>
+              <!--<td>
 
-            </td>-->
-          </tr>
-        </tbody>
-      </table>
+              </td>-->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div ng-if="!metadata">
+        <h3>No metadata yet</h3>
+      </div>
     </div>
   </div>
 </div>
