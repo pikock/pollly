@@ -5,7 +5,7 @@
 require("./things.js");
 var YAMLJS = require("json2yaml");
 
-module.exports = function($rootScope, $scope, AlertManager) {
+module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
   "ngInject";
   /**
    * Modify the missing property of item
@@ -46,8 +46,8 @@ module.exports = function($rootScope, $scope, AlertManager) {
       translations: flattenObject(rhs)
     };
 
-    $scope.initialLang = langRhs;
-    $scope.totranslateLang = langLhs;
+    $scope.initialLang = langLhs;
+    $scope.totranslateLang = langRhs;
     var mergedData = mergeObjects(objectLhs, objectRhs);
     var markedData = markedMissing(mergedData);
     $scope.metadata = markedData;
@@ -108,39 +108,71 @@ module.exports = function($rootScope, $scope, AlertManager) {
     return result;
   };
 
+  var returnDataToExport = function(data, lang) {
+    var tmpArray = [];
+    Object.keys(data).forEach(function(key) {
+      tmpArray.push({ path: key.split("/"), value: data[key][lang] });
+    });
+    return tmpArray;
+  };
+
+  var constructObj = function(array, lang) {
+    $scope.tmpObj = {};
+    array.forEach(function(obj) {
+      addPathToObject(obj.value, obj.path, $scope.tmpObj);
+    });
+    var parentLang = lang === "lhs"
+      ? $scope.initialLang
+      : $scope.totranslateLang;
+    var tmp = {};
+    tmp[parentLang] = $scope.tmpObj;
+    delete $scope.tmpObj;
+    return tmp;
+  };
+
+  var addPathToObject = function(value, path, currentPath) {
+    var toGoPath = path.shift();
+    if (currentPath.hasOwnProperty(toGoPath) && path.length >= 1) {
+      return addPathToObject(value, path, currentPath[toGoPath]);
+    } else if (!currentPath.hasOwnProperty(toGoPath) && path.length === 0) {
+      currentPath[toGoPath] = value;
+      return true;
+    } else if (!currentPath.hasOwnProperty(toGoPath) && path.length >= 1) {
+      currentPath[toGoPath] = {};
+      return addPathToObject(value, path, currentPath[toGoPath]);
+    }
+  };
+
   // We need to export both versions (lhs and rhs) since values might have been added on both sides
-  $scope.export = function(datas, lang) {
-    console.log("Datas", datas);
-    console.log("Lang", lang);
-    // console.log($scope.filename)
-    //   if (checkEmptyValue(datas, lang)) {
-    //     AlertManager.add({
-    //       type: 'danger',
-    //       msg: 'Still has empty values'
-    //     })
-    //     return false
-    //   }
+  $scope.export = function(data, lang) {
+    var modalInstance = $uibModal.open({
+      animation: true,
+      templateUrl: "exportModal.html",
+      size: "lg",
+      resolve: {
+        filename: function() {
+          return $scope.filename + ".yml";
+        }
+      }
+    });
 
-    //   for (var i = 0; i < datas.length; i++) {
-    //     var paths = datas[i].path.split('/')
-    //     paths.splice(0, 2)
-    //     paths.unshift(lang)
-    //     addPathToObject($scope.totranslate, paths, datas[i].key, datas[i][lang])
-    //   }
-
-    //   var yamlToExport = YAMLJS.stringify($scope.totranslate)
-    //   var blob = new Blob([yamlToExport], { type: 'application/x-yaml' })
-
-    //   if (window.navigator.msSaveOrOpenBlob) {
-    //     window.navigator.msSaveBlob(blob, $scope.filename)
-    //   } else {
-    //     var elem = window.document.createElement('a')
-    //     elem.href = window.URL.createObjectURL(blob)
-    //     elem.download = $scope.filename
-    //     document.body.appendChild(elem)
-    //     elem.click()
-    //     document.body.removeChild(elem)
-    //   }
-    // }
+    modalInstance.result.then(function(filename) {
+      console.log(filename)
+      filename = /.yml/.test(filename) ? filename : filename + ".yml";
+      var filtered = returnDataToExport(data, lang);
+      var constructed = constructObj(filtered, lang);
+      var yamlToExport = YAMLJS.stringify(constructed);
+      var blob = new Blob([yamlToExport], { type: "application/x-yaml" });
+      if (window.navigator.msSaveOrOpenBlob) {
+        window.navigator.msSaveBlob(blob, filename);
+      } else {
+        var elem = window.document.createElement("a");
+        elem.href = window.URL.createObjectURL(blob);
+        elem.download = filename;
+        document.body.appendChild(elem);
+        elem.click();
+        document.body.removeChild(elem);
+      }
+    });
   };
 };

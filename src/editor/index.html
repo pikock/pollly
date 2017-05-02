@@ -1,8 +1,18 @@
 <div class="container main-content-primary">
   <div class="row">
     <div class="col-md-12">
-      <br><br>
-      
+      <script type="text/ng-template" id="exportModal.html">
+        <div class="modal-header">
+          <h3 class="modal-title" id="modal-title">Choissisez le nom du fichier à exporter</h3>
+        </div>
+        <div class="modal-body" id="modal-body">
+          <input class="form-control" type="text" ng-model="filename">
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" type="button" ng-click="$close(filename);">Export</button>
+          <button class="btn btn-warning" type="button" ng-click="$dismiss('cancel');">Cancel</button>
+        </div>
+      </script>
 
       <input type="file" fileread="lhs" />
       <input type="file" fileread="rhs" />
