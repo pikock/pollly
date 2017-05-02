@@ -777,7 +777,6 @@ fr:
       configure_permanent: Configurer le module permanent
       remove_permanent: Rendre le module non-permanent
       content: Contenu
-      code: Code
       title: Titre
       text: Texte
       link: "Lien & Bouton"
@@ -915,7 +914,6 @@ fr:
       search_name: Rechercher par nom
       reset_search: Ré-initialiser la recherche
       remove_link: Retirer le Lien
-      external_link: Lien externe
       external_link_adress: Adresse lien externe
       text_link_display: Texte du lien à afficher
       type: Type
@@ -1445,7 +1443,6 @@ fr:
       final_step_instructions: "Essayez maintenant ! Glissez et déposez ce module sur votre page."
       welcome: "Bienvenue sur Orson.io!"
       welcome_instructions: "Apprenez en quelques clics comment utiliser Orson pour créer facilement un site internet à votre image"
-      edit_text: "Modifier du texte"
       edit_text_instructions: "Modifiez le contenu de votre site comme vous le souhaitez et autant que vous le voulez"
       add_text: "Insérer du texte"
       add_text_instructions: "Remplacez le texte par votre propre contenu. Les options du traitement de texte vous permettent d'ajuster les tailles et mises en page!"

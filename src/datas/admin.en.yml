@@ -383,7 +383,6 @@ en:
     the: "the"
     not_published_yet: "Not published yet"
     tags: Tags
-    last_published: "Published on"
     all_articles: "Show all articles"
     last_published: "Last published"
     title_article: Title of your article
@@ -550,7 +549,6 @@ en:
     themes:
       photograph: Photograph
       business: Business
-      agency: Portfolio
       presentation: Presentation
       event: Event
       ecommerce: Ecommerce
@@ -911,8 +909,6 @@ en:
       search_name: Search by name
       reset_search: Reset the search filter
       remove_link: Remove link
-      external_link: External link
-      external_link_adress: External link address
       text_link_display: Text to display
       size: Size
       button_main_color: Main color
@@ -1433,7 +1429,6 @@ en:
 
       welcome: "Welcome on Orson.io!"
       welcome_instructions: "Lean in few clics how to use Orson to create easily a website like you"
-      edit_text: "Edit the text"
       edit_text_instructions: "Change the content of your website as you want and as much as you want"
       add_text: "Add text"
       add_text_instructions: "Replace the text by your content. You can adjust the size, make text bold like in a classic text editor"
