@@ -19,7 +19,6 @@ var dependencies = [
   'LocalStorageModule',
   'editor',
   'colorpicker.module',
-  'ezfb',
   'pascalprecht.translate',
   'ngSanitize'
 ]
