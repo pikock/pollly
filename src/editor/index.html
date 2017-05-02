@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12">
       <br><br>
-      <a class="btn btn-primary" ng-click="export(inline_es,totranslateLang )">Export</a>
+      
 
       <input type="file" fileread="lhs" />
       <input type="file" fileread="rhs" />
@@ -13,8 +13,8 @@
             <tr>
               <th>Ref</th>
               <th>Key</th>
-              <th>{{initialLang}}</th>
-              <th>{{totranslateLang}}</th>
+              <th>{{initialLang}} - <a class="btn btn-primary" ng-click="export(metadata, 'lhs' )">Export</a></th>
+              <th>{{totranslateLang}} - <a class="btn btn-primary" ng-click="export(metadata, 'rhs' )">Export</a></th>
             </tr>
           </thead>
           <tbody>
