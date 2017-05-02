@@ -21,7 +21,3 @@ fr:
     hints:
       defaults:
         username: 'User name to sign in.'
-
-    test:
-      duplicate: false
-      duplicate: true

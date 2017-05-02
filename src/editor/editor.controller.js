@@ -26,6 +26,27 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
     return item;
   };
 
+  $scope.calculateStatistics = function() {
+    generateStatistic($scope.metadata);
+  };
+
+  var missingInputs = function(data) {
+    var tmpNumber = 0;
+    Object.keys(data).forEach(function(line) {
+      if (data[line].hasOwnProperty("missing")) {
+        tmpNumber++;
+      }
+    });
+    return tmpNumber;
+  };
+
+  var generateStatistic = function(data) {
+    $scope.inputs = Object.keys(data).length;
+    $scope.missingInputs = missingInputs(data);
+    $scope.ratioMissing =
+      ($scope.inputs - $scope.missingInputs) / $scope.inputs * 100;
+  };
+
   $scope.$on("filereaded", function(event, arg, filename) {
     $scope[arg.state] = arg.datas;
 
@@ -51,6 +72,7 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
     var mergedData = mergeObjects(objectLhs, objectRhs);
     var markedData = markedMissing(mergedData);
     $scope.metadata = markedData;
+    generateStatistic(markedData);
   });
 
   // Takes a nested object and produces a result objects where all the nested paths have
