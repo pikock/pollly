@@ -3,7 +3,7 @@
 "use strict";
 
 require("./things.js");
-var YAMLJS = require("json2yaml");
+var yaml = require("js-yaml");
 
 module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
   "ngInject";
@@ -78,6 +78,13 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
         (current.rhs && current.rhs.length === 0)
       ) {
         current["missing"] = true;
+      }
+
+      if (
+        (!current.lhs && !current.rhs) ||
+        (current.lhs.length === 0 && current.rhs.length === 0)
+      ) {
+        delete data[key];
       }
     });
     return data;
@@ -157,11 +164,11 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
     });
 
     modalInstance.result.then(function(filename) {
-      console.log(filename)
+      console.log(filename);
       filename = /.yml/.test(filename) ? filename : filename + ".yml";
       var filtered = returnDataToExport(data, lang);
       var constructed = constructObj(filtered, lang);
-      var yamlToExport = YAMLJS.stringify(constructed);
+      var yamlToExport = yaml.dump(constructed);
       var blob = new Blob([yamlToExport], { type: "application/x-yaml" });
       if (window.navigator.msSaveOrOpenBlob) {
         window.navigator.msSaveBlob(blob, filename);
