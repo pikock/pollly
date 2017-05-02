@@ -14,7 +14,10 @@ module.exports = function($rootScope, $scope, AlertManager) {
    */
   $scope.markMissingTranslations = function(item) {
     if (
-      !item.lhs || item.lhs.length === 0 || (!item.rhs || item.rhs.length === 0)
+      !item.lhs ||
+      !item.rhs ||
+      (item.lhs && item.lhs.length === 0) ||
+      (item.rhs && item.rhs.length === 0)
     ) {
       item["missing"] = true;
     } else {
@@ -29,8 +32,11 @@ module.exports = function($rootScope, $scope, AlertManager) {
     if (!$scope.lhs || !$scope.rhs) {
       return false;
     }
-    var rhs = $scope.rhs[Object.keys($scope.rhs)[0]];
-    var lhs = $scope.lhs[Object.keys($scope.lhs)[0]];
+
+    var langRhs = Object.keys($scope.rhs)[0];
+    var langLhs = Object.keys($scope.lhs)[0];
+    var rhs = $scope.rhs[langRhs];
+    var lhs = $scope.lhs[langLhs];
     var objectLhs = {
       language: "lhs",
       translations: flattenObject(lhs)
@@ -40,8 +46,8 @@ module.exports = function($rootScope, $scope, AlertManager) {
       translations: flattenObject(rhs)
     };
 
-    $scope.initialLang = "lhs";
-    $scope.totranslateLang = "rhs";
+    $scope.initialLang = langRhs;
+    $scope.totranslateLang = langLhs;
     var mergedData = mergeObjects(objectLhs, objectRhs);
     var markedData = markedMissing(mergedData);
     $scope.metadata = markedData;
@@ -65,7 +71,12 @@ module.exports = function($rootScope, $scope, AlertManager) {
   var markedMissing = function(data) {
     Object.keys(data).forEach(function(key) {
       var current = data[key];
-      if (current.lhs.length === 0 || current.rhs.length === 0) {
+      if (
+        !current.lhs ||
+        !current.rhs ||
+        (current.lhs && current.lhs.length === 0) ||
+        (current.rhs && current.rhs.length === 0)
+      ) {
         current["missing"] = true;
       }
     });
