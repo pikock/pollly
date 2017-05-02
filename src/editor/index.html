@@ -23,12 +23,13 @@
             <td width="15%">{{key}}</td>
             <td>
               <input class="form-control" tabindex="{{ item.hasOwnProperty('missing') ? 0 : -1 }}" type="text" ng-model="value[initialLang]"
-                ng-change="markMissingTranslations(item)">
-            </td>
-            <td>
+                ng-change="markMissingTranslations(item)"><br>
               <input class="form-control" tabindex="{{ item.hasOwnProperty('missing') ? 0 : -1 }}" type="text" ng-model="value[totranslateLang]"
                 ng-change="markMissingTranslations(item)">
             </td>
+            <!--<td>
+
+            </td>-->
           </tr>
         </tbody>
       </table>

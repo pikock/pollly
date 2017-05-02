@@ -216,34 +216,36 @@ module.exports = function ($rootScope, $scope, GenericDatas, AlertManager) {
 
   // We need to export both versions (lhs and rhs) since values might have been added on both sides
   $scope.export = function (datas, lang) {
-    console.log($scope.filename)
-    if (checkEmptyValue(datas, lang)) {
-      AlertManager.add({
-        type: 'danger',
-        msg: 'Still has empty values'
-      })
-      return false
-    }
+    debugger;
+    //console.log($scope.filename)
+    //   if (checkEmptyValue(datas, lang)) {
+    //     AlertManager.add({
+    //       type: 'danger',
+    //       msg: 'Still has empty values'
+    //     })
+    //     return false
+    //   }
 
-    for (var i = 0; i < datas.length; i++) {
-      var paths = datas[i].path.split('/')
-      paths.splice(0, 2)
-      paths.unshift(lang)
-      addPathToObject($scope.totranslate, paths, datas[i].key, datas[i][lang])
-    }
+    //   for (var i = 0; i < datas.length; i++) {
+    //     var paths = datas[i].path.split('/')
+    //     paths.splice(0, 2)
+    //     paths.unshift(lang)
+    //     addPathToObject($scope.totranslate, paths, datas[i].key, datas[i][lang])
+    //   }
 
-    var yamlToExport = YAMLJS.stringify($scope.totranslate)
-    var blob = new Blob([yamlToExport], { type: 'application/x-yaml' })
+    //   var yamlToExport = YAMLJS.stringify($scope.totranslate)
+    //   var blob = new Blob([yamlToExport], { type: 'application/x-yaml' })
 
-    if (window.navigator.msSaveOrOpenBlob) {
-      window.navigator.msSaveBlob(blob, $scope.filename)
-    } else {
-      var elem = window.document.createElement('a')
-      elem.href = window.URL.createObjectURL(blob)
-      elem.download = $scope.filename
-      document.body.appendChild(elem)
-      elem.click()
-      document.body.removeChild(elem)
-    }
+    //   if (window.navigator.msSaveOrOpenBlob) {
+    //     window.navigator.msSaveBlob(blob, $scope.filename)
+    //   } else {
+    //     var elem = window.document.createElement('a')
+    //     elem.href = window.URL.createObjectURL(blob)
+    //     elem.download = $scope.filename
+    //     document.body.appendChild(elem)
+    //     elem.click()
+    //     document.body.removeChild(elem)
+    //   }
+    // }
   }
 }
