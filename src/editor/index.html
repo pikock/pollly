@@ -26,10 +26,10 @@
                 <div class="index">{{$index}}</div>
               </td>
               <td>
-                <input class="form-control" type="text" ng-keypress="goToMissingStep($index, $event, 'lhs')" ng-model="value.lhs" ng-change="markMissingTranslations(value);calculateStatistics()">
+                <input class="form-control" type="text" ng-focus="setSpecific('lhs')" ng-model="value.lhs" ng-change="markMissingTranslations(value);calculateStatistics()">
               </td>
               <td>
-                <input class="form-control" type="text" ng-keypress="goToMissingStep($index, $event, 'rhs')" ng-model="value.rhs" ng-change="markMissingTranslations(value);calculateStatistics()">
+                <input class="form-control" type="text" ng-focus="setSpecific('rhs')" ng-model="value.rhs" ng-change="markMissingTranslations(value);calculateStatistics()">
               </td>
               <!--<td>
 

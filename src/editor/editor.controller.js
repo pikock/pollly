@@ -24,16 +24,9 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
     return item;
   };
 
-  $scope.goToMissingStep = function(index, event, specific) {
-    $scope.running = true
-    console.log('BEFORE', specific);
-    if (event.shiftKey && event.which === 13) {
-      goToMissingStep(index, specific);
-    } else if (event.which === 13) {
-      goToMissingStep(index);
-    }
-    $scope.running = false
-  };
+  $scope.setSpecific = function (specific) {
+    $scope.keySpecific = specific
+  }
 
   var goToMissingStep = function(index, specific, retry) {
     try {
@@ -41,8 +34,6 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
         .slice(index)
         .forEach(function(line, lineIndex) {
           if ($scope.metadata[line].hasOwnProperty("missing")) {
-            console.log('AFTER', specific)
-            console.log('tEST', $scope.metadata[line].missing)
             if (specific && $scope.metadata[line].missing !== specific) {
               return false;
             }
@@ -54,9 +45,10 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
               (inputIndex + 2) +
               ") input";
             var element = document.querySelector(selector);
-            console.log(selector);
             element.focus();
             element.scrollIntoView();
+            $scope.keyIndex = lineIndex
+            $scope.specific = specific
             throw BreakException;
           }
         });
@@ -100,14 +92,15 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
       return false;
     }
 
-    // document.addEventListener("keydown", function(event) {
-    //   setTimeout(function () {
-    //     console.log($scope.running)
-    //     if (!$scope.running && event.which === 13) {
-    //       goToMissingStep(0);
-    //     }
-    //   }, 1)
-    // }, false);
+    document.addEventListener("keyup", function(event) {
+      var index = $scope.keyIndex || 0;
+      var specific = $scope.keySpecific || undefined;
+      if (event.shiftKey && event.which === 13) {
+        goToMissingStep(index, specific);
+      } else if (event.which === 13) {
+        goToMissingStep(index);
+      }
+    });
 
     var langRhs = Object.keys($scope.rhs)[0];
     var langLhs = Object.keys($scope.lhs)[0];
@@ -238,7 +231,6 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
     });
 
     modalInstance.result.then(function(filename) {
-      console.log(filename);
       filename = /.yml/.test(filename) ? filename : filename + ".yml";
       var filtered = returnDataToExport(data, lang);
       var constructed = constructObj(filtered, lang);
