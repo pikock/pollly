@@ -1,49 +1,85 @@
-<div class="container main-content-primary">
-  <div class="row">
-    <div class="col-md-12">
-      <input type="file" fileread="lhs" />
-      <input type="file" fileread="rhs" />
+<div class="main-content-primary">
 
-      <div class="statistics">
-        <h3>statistics</h3>
-        <p>Number of inputs - {{inputs}}</p>
-        <p>Number of missing inputs - {{missingInputs}}</p>
-        <p>Pourcents - {{ratioMissing}}</p>
+  <div class="actions" ng-if="!enterPressed">
+    <h2>Bienvenue sur YML Editor</h2>
+    <div class="action_container">
+      <span class="tip">1</span>
+      <div class="action_list">
+        <p>Importer votre premier fichier</p>
+        <label class="btn btn-default btn-file">
+              Import <input type="file" style="display: none;" fileread="lhs">
+            </label>
       </div>
 
-      <div class="metadata" ng-if="metadata">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Ref</th>
-              <th>{{initialLang}} - <a class="btn btn-primary" ng-click="export(metadata, 'lhs' )">Export</a></th>
-              <th>{{totranslateLang}} - <a class="btn btn-primary" ng-click="export(metadata, 'rhs' )">Export</a></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="(key, value) in metadata" ng-class="value.hasOwnProperty('missing') ? 'missing' : ''">
-              <td>
-                <div class="index">{{$index}}</div>
-              </td>
-              <td>
-                <input class="form-control" type="text" ng-focus="setSpecific('lhs')" ng-model="value.lhs" ng-change="markMissingTranslations(value);calculateStatistics()">
-              </td>
-              <td>
-                <input class="form-control" type="text" ng-focus="setSpecific('rhs')" ng-model="value.rhs" ng-change="markMissingTranslations(value);calculateStatistics()">
-              </td>
-              <!--<td>
-
-              </td>-->
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div ng-if="!metadata">
-        <h3>No metadata yet</h3>
+      <div class="action_list">
+        <p>Importer votre second fichier</p>
+        <label class="btn btn-default btn-file">
+              Import <input type="file" style="display: none;" fileread="rhs">
+            </label>
       </div>
     </div>
+
+    <div class="action_container">
+      <span class="tip">2</span>
+      <button class="custom-button">
+            Démarrer
+          </button>
+      <span class="tooltip">Press <strong>Enter</strong></span>
+    </div>
   </div>
+
+  <div class="statistics" ng-if="metadata && enterPressed">
+    <h3>statistics</h3>
+    <p>Number of inputs - {{inputs}}</p>
+    <p>Number of missing inputs - {{missingInputs}}</p>
+    <p>Pourcents - {{ratioMissing}}</p>
+  </div>
+
+  <div class="metadata" ng-if="metadata && enterPressed">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Ref</th>
+          <th>{{initialLang}} - <a class="btn btn-primary" ng-click="export(metadata, 'lhs' )">Export</a></th>
+          <th>{{totranslateLang}} - <a class="btn btn-primary" ng-click="export(metadata, 'rhs' )">Export</a></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="(key, value) in metadata" ng-class="value.hasOwnProperty('missing') ? 'missing' : ''">
+          <td>
+            <div class="index">{{$index}}</div>
+          </td>
+          <td>
+            <input class="form-control" type="text" ng-focus="setSpecific('lhs')" ng-model="value.lhs" ng-change="markMissingTranslations(value);calculateStatistics()">
+          </td>
+          <td>
+            <input class="form-control" type="text" ng-focus="setSpecific('rhs')" ng-model="value.rhs" ng-change="markMissingTranslations(value);calculateStatistics()">
+          </td>
+          <!--<td>
+
+              </td>-->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 </div>
+
+<script>
+  document.addEventListener('keydown', function (event) {
+    if (event.which === 13) {
+      var scope = angular.element($(".main-content-primary")).scope();
+      if (scope.metadata) {
+        console.log('Enter Key pressed')
+        scope.$apply(function () {
+          scope.enterPressed = true;
+        })
+        this.removeEventListener('click', arguments.callee, true)
+      }
+    }
+  })
+
+</script>
 
 <script type="text/ng-template" id="exportModal.html">
   <div class="modal-header">

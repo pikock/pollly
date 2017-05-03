@@ -512,14 +512,92 @@
     opacity: 1;
 }
 
-@pink: '#C64981';
-@dark-pink: '#512D68';
-@light-pink: '#FF6398';
-@grey: '#7D7D7D';
+@pink: #C64981;
+@dark-pink: #512D68;
+@light-pink: #FF6398;
+@grey: #7D7D7D;
 @ratio: 40px;
+
+.actions {
+    max-width: 600px;
+    color: @grey;
+
+    span.tip {
+        margin-top: -10px;
+        margin-left: -10px;
+        position: absolute;
+        border: 0px solid transparent;
+        width: 30px;
+        height: 30px;
+        display: block;
+        text-align: center;
+        line-height: 30px;
+        font-size: 20px;
+        border-radius: 100px;
+        color: white;
+        background: @light-pink;
+        font-weight: 500;
+    }
+    
+    .custom-button {
+        margin: 0 0px 0px 44px;
+        line-height: 26px;
+        text-align: center;
+        width: 150px;
+        height: 40px;
+        border: 0px solid transparent;
+        border-radius: 3px;
+        background-color: @pink;
+        color: white; 
+    }
+    
+    .action_container {
+        overflow: auto;
+        margin: 40px 0;
+    }
+    
+    .action_container:first-of-type {
+        border-bottom: 1px @grey solid;
+        padding: 0 0 40px 0;
+    }
+    .action_list {
+        width: 50%;
+        height: 75px;
+        margin: 0;
+        float: left;
+        text-align: center;
+        position: relative;
+    }
+    .action_list label {    
+        position: absolute;
+        line-height: 26px;
+        width: 150px;
+        height: 40px;
+        border: 0px solid transparent;
+        border-radius: 3px;
+        background-color: @pink;
+        color: white;
+        margin: auto;
+        left: 0;
+        right: 0;
+    }
+}
+
+.statistics {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border: 1px grey solid;
+    padding: 0px 40px;
+    border-radius: 5px;
+}
 
 // MODAL END
 .metadata {
+    position: absolute;
+    top: 200px;
+    width: 98%;
+    margin: 0 1%;
     tr th {
         text-align: center;
         height: 50px;
