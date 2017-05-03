@@ -8,10 +8,6 @@
     margin-bottom: 0;
 }
 
-.missing {
-    background: red;
-}
-
 .navbar {
     z-index: 50;
 }
@@ -512,4 +508,307 @@
     opacity: 1;
 }
 
-// MODAL END
+@pink: #C64981;
+@dark-pink: #512D68;
+@light-pink: #FF6398;
+@grey: #7D7D7D;
+@ratio: 40px;
+
+.actions,
+.statistics,
+.metadata {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.actions {
+    max-width: 600px;
+    color: @grey;
+
+    svg {
+        margin: -10px 0 0 0;
+        color: white;
+    }
+
+    span.tooltip {
+        margin: 0 0 0 7px;                
+    }
+
+    span.tip {
+        margin-top: -10px;
+        margin-left: -10px;
+        position: absolute;
+        border: 0px solid transparent;
+        width: 30px;
+        height: 30px;
+        display: block;
+        text-align: center;
+        line-height: 30px;
+        font-size: 20px;
+        border-radius: 100px;
+        color: white;
+        background: @light-pink;
+        font-weight: 500;
+    }
+    
+    .custom-button {
+        margin: 0 0px 0px 44px;
+        line-height: 26px;
+        text-align: center;
+        width: 150px;
+        height: 40px;
+        border: 0px solid transparent;
+        border-radius: 3px;
+        background-color: @pink;
+        color: white;         
+    }
+
+    input.disabled {
+        background-color: @grey;    
+    }
+    
+    .action_container {
+        overflow: auto;
+        margin: 40px 0;
+    }
+    
+    .action_container:first-of-type {
+        border-bottom: 1px @grey solid;
+        padding: 0 0 40px 0;
+    }
+    .action_list {
+        width: 50%;
+        height: 75px;
+        margin: 0;
+        float: left;
+        text-align: center;
+        position: relative;
+    }
+    .action_list label {    
+        position: absolute;
+        line-height: 26px;
+        width: 150px;
+        height: 40px;
+        border: 0px solid transparent;
+        border-radius: 3px;
+        background-color: @pink;
+        color: white;
+        margin: auto;
+        left: 0;
+        right: 0;
+    }
+}
+
+.statistics {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 140px;
+    width: 100vw;
+    z-index: 1000;
+    background: white;
+
+    .statistics_container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        border: 1px grey solid;
+        padding: 0px 40px;
+        border-radius: 5px;
+    }
+    .statistics_data {
+        float: left;
+        text-align: left;
+        margin: 0 0 0 -10px;
+
+        h3 {
+            color: @grey;
+            font-size: 38px;
+            margin: 16px 0 -3px 0;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        strong {
+            font-size: 16px;
+        }
+    }
+
+    .statistics_action {
+        margin: 0 -10px 0 50px;
+        float: right;
+        width: 140px;
+        display: block;
+        position: relative;
+        overflow: auto;
+        height: 96px;
+        left: 0;
+        a {
+            background: @pink;
+            color: white;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            left: 10px;
+            right: 0;
+            bottom: 0;
+            height: 50px;
+            border: 0;
+            text-align: center;
+            line-height: 39px;
+            font-size: 20px;
+        }
+    }
+}
+
+.metadata {
+    position: absolute;
+    top: 140px;
+    width: 98%;
+    margin: 0 1%;
+    tr th {
+        text-align: center;
+        height: 50px;
+    }
+    tr th:first-child {
+        width: @ratio;
+    }
+    input {
+        height: @ratio;
+        width: 80%;
+        margin: 0 10%;
+    }
+
+    .missing .index {
+        background: @pink;
+        color: white;
+    }
+
+    .selected .index {
+        margin: 20px 0;
+    }
+
+    .selected input {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .specific_button {
+        display: none;
+        color: @grey;
+    }
+    .selected .specific_button {
+        display: block;
+        text-align: center;
+        button {
+            background: white;
+            border: 1px solid @grey;
+            color: @grey;
+            margin: 20px 0 2px;
+            height: 40px;
+        }
+
+        .tooltip {
+            display: block;
+            font-size: 14px;
+        }
+        
+    }
+    .index {
+        border: 1px solid;
+        border-radius: 50%;
+        width: @ratio;
+        height: @ratio;
+        text-align: center;
+        line-height: @ratio;
+        font-size: 24px;
+    }
+}
+
+table {
+    max-width: 2000px;
+
+    th:last-child {
+        width: 100px;
+    }
+
+    tr, td {
+        border: 0px solid transparent !important;
+    }
+}
+
+.modal-lg {
+    font-family: 'Open Sans', arial;
+    svg {
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 50px;
+    }
+
+    .modal-header {
+        margin: 130px 70px 0;
+        text-align: center;
+        color: @grey;
+        font-weight: 100;
+    }
+
+    .choose_lang {
+        float: left;
+        margin: auto;
+        text-align: center;
+        margin: 0px 30px 30px;
+        padding: 10px 20px;
+        width: 370px;
+        background: @pink;
+        border: 0;
+
+        &.selected {
+            background: @dark-pink;
+        }
+    }
+
+    input {
+        width: 50%;
+        margin: auto;
+    }
+
+    h3 {
+        font-weight: 100;
+    }
+
+    h4 {
+        text-align: center;
+        color: @dark-pink;
+        margin: 0px 0 30px 0;
+        font-size: 25px;
+        display: block;
+        font-weight: 400;
+        span {
+            font-weight: 900;
+        }
+    }
+
+    .close-button {
+        background: @dark-pink;
+        color: white;
+        border: 1px solid @dark-pink;
+
+        &.disabled {
+            background: @grey;
+        }
+    }
+
+    .dismiss-button {
+        background: white;
+        border: 1px solid @dark-pink;
+        color: @dark-pink;
+    }
+
+    h1, h2, h3, p {
+        color: @grey;
+    }
+    
+}
