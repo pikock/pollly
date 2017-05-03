@@ -239,26 +239,23 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
     var modalInstance = $uibModal.open({
       animation: true,
       templateUrl: "exportModal.html",
-      size: "lg",
-      resolve: {
-        filename: function() {
-          return $scope.filename + ".yml";
-        }
-      }
+      size: "lg"
     });
 
-    modalInstance.result.then(function(filename) {
-      filename = /.yml/.test(filename) ? filename : filename + ".yml";
-      var filtered = returnDataToExport(data, lang);
-      var constructed = constructObj(filtered, lang);
+    modalInstance.result.then(function(modalResult) {
+      modalResult.filename = /.yml/.test(modalResult.filename)
+        ? modalResult.filename
+        : modalResult.filename + ".yml";
+      var filtered = returnDataToExport(data, modalResult.lang);
+      var constructed = constructObj(filtered, modalResult.lang);
       var yamlToExport = yaml.dump(constructed);
       var blob = new Blob([yamlToExport], { type: "application/x-yaml" });
       if (window.navigator.msSaveOrOpenBlob) {
-        window.navigator.msSaveBlob(blob, filename);
+        window.navigator.msSaveBlob(blob, modalResult.filename);
       } else {
         var elem = window.document.createElement("a");
         elem.href = window.URL.createObjectURL(blob);
-        elem.download = filename;
+        elem.download = modalResult.filename;
         document.body.appendChild(elem);
         elem.click();
         document.body.removeChild(elem);

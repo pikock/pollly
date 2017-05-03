@@ -737,3 +737,78 @@ table {
         border: 0px solid transparent !important;
     }
 }
+
+.modal-lg {
+    font-family: 'Open Sans', arial;
+    svg {
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 50px;
+    }
+
+    .modal-header {
+        margin: 130px 70px 0;
+        text-align: center;
+        color: @grey;
+        font-weight: 100;
+    }
+
+    .choose_lang {
+        float: left;
+        margin: auto;
+        text-align: center;
+        margin: 0px 30px 30px;
+        padding: 10px 20px;
+        width: 370px;
+        background: @pink;
+        border: 0;
+
+        &.selected {
+            background: @dark-pink;
+        }
+    }
+
+    input {
+        width: 50%;
+        margin: auto;
+    }
+
+    h3 {
+        font-weight: 100;
+    }
+
+    h4 {
+        text-align: center;
+        color: @dark-pink;
+        margin: 0px 0 30px 0;
+        font-size: 25px;
+        display: block;
+        font-weight: 400;
+        span {
+            font-weight: 900;
+        }
+    }
+
+    .close-button {
+        background: @dark-pink;
+        color: white;
+        border: 1px solid @dark-pink;
+
+        &.disabled {
+            background: @grey;
+        }
+    }
+
+    .dismiss-button {
+        background: white;
+        border: 1px solid @dark-pink;
+        color: @dark-pink;
+    }
+
+    h1, h2, h3, p {
+        color: @grey;
+    }
+    
+}
