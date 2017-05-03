@@ -15,7 +15,8 @@ module.exports = angular
     };
   })
   .directive("fileread", [
-    function() {
+    "AlertManager",
+    function(AlertManager) {
       return {
         link: function(scope, element, attributes) {
           element.bind("change", function(changeEvent) {
@@ -26,7 +27,22 @@ module.exports = angular
             var reader = new FileReader();
             reader.onload = function(loadEvent) {
               scope.$apply(function() {
-                scope.fileread = YAMLJS.safeLoad(loadEvent.target.result);
+                try {
+                  scope.fileread = YAMLJS.safeLoad(loadEvent.target.result);
+                } catch (e) {
+                  if (e.reason === "duplicated mapping key") {
+                    AlertManager.add({
+                      type: "danger",
+                      msg: "Duplicate Key"
+                    });
+                  } else {
+                    AlertManager.add({
+                      type: "danger",
+                      msg: "Unknown error"
+                    });
+                  }
+                }
+
                 scope.$emit("filereaded", {
                   datas: scope.fileread,
                   state: attributes.fileread,

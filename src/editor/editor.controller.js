@@ -24,9 +24,9 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
     return item;
   };
 
-  $scope.setSpecific = function (specific) {
-    $scope.keySpecific = specific
-  }
+  $scope.setSpecific = function(specific) {
+    $scope.keySpecific = specific;
+  };
 
   var goToMissingStep = function(index, specific, retry) {
     try {
@@ -47,8 +47,8 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
             var element = document.querySelector(selector);
             element.focus();
             element.scrollIntoView();
-            $scope.keyIndex = lineIndex
-            $scope.specific = specific
+            $scope.keyIndex = lineIndex;
+            $scope.specific = specific;
             throw BreakException;
           }
         });
