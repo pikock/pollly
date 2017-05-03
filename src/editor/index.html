@@ -31,7 +31,7 @@
 
     <div class="action_container">
       <span class="tip">2</span>
-      <button class="custom-button" ng-click="enterPressed = (metadata) ? true : undefined; return"> Démarrer </button>
+      <button class="custom-button" ng-click="enterPressedClick()"> Démarrer </button>
       <span class="tooltip ">Press <strong>Enter</strong></span>
     </div>
   </div>
@@ -102,7 +102,7 @@
       <button class="btn btn-primary choose_lang" ng-click="langChoosed = 'lhs'">Exporter les traductions de la première langue</button>
       <button class="btn btn-primary choose_lang" ng-click="langChoosed = 'rhs'">Exporter les traductions de la seconde langue</button>
     </div>
-    <input class="form-control " type="text " ng-model="filename ">
+    <input class="form-control filename" type="text " ng-model="filename ">
   </div>
   <div class="modal-footer ">
     <button class="btn btn-warning dismiss-button" type="button " ng-click="$dismiss('cancel'); ">Annuler</button>
@@ -118,7 +118,7 @@
         previous.classList.remove('selected')
       }
       event.target.classList.add('selected')
-      $('input').focus()
+      $('input.filename').focus()
     })
   </script>
 </script>

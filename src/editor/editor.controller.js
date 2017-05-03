@@ -24,6 +24,12 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
     return item;
   };
 
+  $scope.enterPressedClick = function() {
+    if ($scope.metadata) {
+      $scope.enterPressed = true;
+    }
+  };
+
   $scope.setSelected = function(index) {
     var selector = ".metadata tbody tr:nth-child(" + (index + 1) + ")";
     var selectedTr = document.querySelector("tr.selected");

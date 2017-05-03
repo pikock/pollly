@@ -38,11 +38,6 @@ module.exports = angular
                     });
                   }
                 }
-                console.log({
-                  datas: scope.fileread,
-                  state: attributes.fileread,
-                  filename: changeEvent.target.files[0].name
-                });
                 if (attributes.fileread === "lhs") {
                   document.querySelector("label.lhs").classList.add("disabled");
                   document
