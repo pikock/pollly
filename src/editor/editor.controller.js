@@ -24,11 +24,21 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
     return item;
   };
 
+  $scope.setSelected = function(index) {
+    console.log("Set selected", index);
+    var selector = ".metadata tbody tr:nth-child(" + (index + 1) + ")";
+    var selectedTr = document.querySelector("tr.selected");
+    if (selectedTr) {
+      selectedTr.classList.remove("selected");
+    }
+    document.querySelector(selector).classList.add("selected");
+  };
+
   $scope.setSpecific = function(specific) {
     $scope.keySpecific = specific;
   };
 
-  var goToMissingStep = function(index, specific, retry) {
+  $scope.goToMissingStep = function(index, specific, retry) {
     try {
       Object.keys($scope.metadata)
         .slice(index)
@@ -96,9 +106,9 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
       var index = $scope.keyIndex || 0;
       var specific = $scope.keySpecific || undefined;
       if (event.shiftKey && event.which === 13) {
-        goToMissingStep(index, specific);
+        $scope.goToMissingStep(index, specific);
       } else if (event.which === 13) {
-        goToMissingStep(index);
+        $scope.goToMissingStep(index);
       }
     });
 

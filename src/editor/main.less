@@ -8,10 +8,6 @@
     margin-bottom: 0;
 }
 
-.missing {
-    background: red;
-}
-
 .navbar {
     z-index: 50;
 }
@@ -518,9 +514,24 @@
 @grey: #7D7D7D;
 @ratio: 40px;
 
+.actions,
+.statistics,
+.metadata {
+    font-family: 'Open Sans', sans-serif;
+}
+
 .actions {
     max-width: 600px;
     color: @grey;
+
+    svg {
+        margin: -10px 0 0 0;
+        color: white;
+    }
+
+    span.tooltip {
+        margin: 0 0 0 7px;                
+    }
 
     span.tip {
         margin-top: -10px;
@@ -548,7 +559,11 @@
         border: 0px solid transparent;
         border-radius: 3px;
         background-color: @pink;
-        color: white; 
+        color: white;         
+    }
+
+    input.disabled {
+        background-color: @grey;    
     }
     
     .action_container {
@@ -585,14 +600,68 @@
 
 .statistics {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    border: 1px grey solid;
-    padding: 0px 40px;
-    border-radius: 5px;
+    top: 0;
+    left: 0;
+    height: 140px;
+    width: 100vw;
+    z-index: 1000;
+    background: white;
+
+    .statistics_container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        border: 1px grey solid;
+        padding: 0px 40px;
+        border-radius: 5px;
+    }
+    .statistics_data {
+        float: left;
+        text-align: left;
+        margin: 0 0 0 -10px;
+
+        h3 {
+            color: @grey;
+            font-size: 38px;
+            margin: 16px 0 -3px 0;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        strong {
+            font-size: 16px;
+        }
+    }
+
+    .statistics_action {
+        margin: 0 -10px 0 50px;
+        float: right;
+        width: 140px;
+        display: block;
+        position: relative;
+        overflow: auto;
+        height: 96px;
+        left: 0;
+        a {
+            background: @pink;
+            color: white;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            left: 10px;
+            right: 0;
+            bottom: 0;
+            height: 50px;
+            border: 0;
+            text-align: center;
+            line-height: 39px;
+            font-size: 20px;
+        }
+    }
 }
 
-// MODAL END
 .metadata {
     position: absolute;
     top: 200px;
@@ -607,6 +676,45 @@
     }
     input {
         height: @ratio;
+        width: 80%;
+        margin: 0 10%;
+    }
+
+    .missing .index {
+        margin: 20px 0;
+        background: @pink;
+        color: white;
+    }
+
+    .selected .index {
+        margin: 20px 0;
+    }
+
+    .selected input {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .specific_button {
+        display: none;
+        color: @grey;
+    }
+    .selected .specific_button {
+        display: block;
+        text-align: center;
+        button {
+            background: white;
+            border: 1px solid @grey;
+            color: @grey;
+            margin: 20px 0 2px;
+            height: 40px;
+        }
+
+        .tooltip {
+            display: block;
+            font-size: 14px;
+        }
+        
     }
     .index {
         border: 1px solid;
@@ -616,5 +724,17 @@
         text-align: center;
         line-height: @ratio;
         font-size: 24px;
+    }
+}
+
+table {
+    max-width: 2000px;
+
+    th:last-child {
+        width: 100px;
+    }
+
+    tr, td {
+        border: 0px solid transparent !important;
     }
 }

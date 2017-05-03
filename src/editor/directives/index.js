@@ -20,10 +20,6 @@ module.exports = angular
       return {
         link: function(scope, element, attributes) {
           element.bind("change", function(changeEvent) {
-            console.log(
-              "Changevent filename",
-              changeEvent.target.files[0].name
-            );
             var reader = new FileReader();
             reader.onload = function(loadEvent) {
               scope.$apply(function() {
@@ -42,7 +38,22 @@ module.exports = angular
                     });
                   }
                 }
-
+                console.log({
+                  datas: scope.fileread,
+                  state: attributes.fileread,
+                  filename: changeEvent.target.files[0].name
+                });
+                if (attributes.fileread === "lhs") {
+                  document.querySelector("label.lhs").classList.add("disabled");
+                  document
+                    .querySelector("input.lhs")
+                    .setAttribute("disabled", "disabled");
+                } else {
+                  document.querySelector("label.rhs").classList.add("disabled");
+                  document
+                    .querySelector("input.rhs")
+                    .setAttribute("disabled", "disabled");
+                }
                 scope.$emit("filereaded", {
                   datas: scope.fileread,
                   state: attributes.fileread,
