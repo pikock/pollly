@@ -54,9 +54,16 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
               ") td:nth-child(" +
               (inputIndex + 2) +
               ") input";
+            var containerSelector =
+              ".metadata tbody tr:nth-child(" + (lineIndex + index + 1) + ")";
             var element = document.querySelector(selector);
             element.focus();
-            element.scrollIntoView();
+            window.scrollTo(
+              0,
+              document.querySelector(containerSelector).offsetTop -
+                window.innerHeight / 2 +
+                140
+            );
             $scope.keyIndex = lineIndex;
             $scope.specific = specific;
             throw BreakException;
