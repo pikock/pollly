@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" viewBox="0 0 290 175" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <rect id="a" width="98.853" height="99.187" y=".746" rx="3"/>
+    <mask id="h" width="98.853" height="99.187" x="0" y="0" fill="white">
+      <use xlink:href="#a"/>
+    </mask>
+    <path id="b" d="M0,3.74569044 C0,2.08895064 1.34117642,0.745897679 2.99892649,0.745897679 L95.8544998,0.745897679 C97.5107612,0.745897679 98.8534263,2.09025917 98.8534263,3.74569044 L98.8534263,8.36362562 L0,8.36362562 L0,3.74569044 Z"/>
+    <mask id="i" width="98.853" height="7.618" x="0" y="0" fill="white">
+      <use xlink:href="#b"/>
+    </mask>
+    <rect id="c" width="71.89" height="29.555" x=".482" y=".542" rx="2"/>
+    <mask id="j" width="71.89" height="29.555" x="0" y="0" fill="white">
+      <use xlink:href="#c"/>
+    </mask>
+    <rect id="d" width="29" height="29.555" x=".482" y="40.564" rx="2"/>
+    <mask id="k" width="29" height="29.555" x="0" y="0" fill="white">
+      <use xlink:href="#d"/>
+    </mask>
+    <rect id="e" width="35.573" height="29.555" x="36.427" y="40.564" rx="2"/>
+    <mask id="l" width="35.573" height="29.555" x="0" y="0" fill="white">
+      <use xlink:href="#e"/>
+    </mask>
+    <rect id="f" width="40" height="34" x="192.795" y="75.5" rx="2"/>
+    <mask id="m" width="40" height="34" x="0" y="0" fill="white">
+      <use xlink:href="#f"/>
+    </mask>
+    <rect id="g" width="29.737" height="30" x="41.482" y="110.849" rx="2"/>
+    <mask id="n" width="29.737" height="30" x="0" y="0" fill="white">
+      <use xlink:href="#g"/>
+    </mask>
+    <path id="o" d="M206,80.3449018 C206,80.3449018 186.488796,58.7623447 170.659816,80.0181409"/>
+    <path id="p" d="M91.7461369,107.737976 C91.7461369,107.737976 72.2349327,86.1554194 56.4059526,107.411216"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(15 12)">
+    <rect width="184" height="45" x="13.037" y="51.709" fill="#F0F0F0" opacity=".531" rx="22.5"/>
+    <rect width="101" height="45" x="48" y="96.709" fill="#F0F0F0" opacity=".531" rx="22.5"/>
+    <rect width="68" height="45" x="148" y="105.5" fill="#F0F0F0" opacity=".531" rx="22.5"/>
+    <rect width="62.674" height="45" x="90" y="6.5" fill="#F0F0F0" opacity=".531" rx="22.5"/>
+    <g transform="translate(81.388 26.476)">
+      <g transform="translate(.5 .558)">
+        <use fill="#FFFFFF" stroke="#000000" mask="url(#h)" xlink:href="#a"/>
+        <use fill="#000000" stroke="#000000" mask="url(#i)" xlink:href="#b"/>
+        <g fill="#FFFFFF" transform="translate(4 3.055)">
+          <circle cx="1.131" cy="1.555" r="1"/>
+          <circle cx="5.566" cy="1.555" r="1"/>
+          <circle cx="10" cy="1.555" r="1"/>
+        </g>
+      </g>
+      <g stroke="#000000" transform="translate(13.5 18.558)">
+        <use fill="#FFFFFF" mask="url(#j)" xlink:href="#c"/>
+        <use fill="#FFFFFF" mask="url(#k)" stroke-dasharray="2 2 2" xlink:href="#d"/>
+        <use fill="#FFFFFF" mask="url(#l)" stroke-dasharray="2 2 2" xlink:href="#e"/>
+        <path d="M42.1483292 46.5L66.4134089 46.5M42.1483292 50.8333333L66.4134089 50.8333333M42.1483292 55.1666667L66.4134089 55.1666667M42.1483292 59.5L52.5945627 59.5" stroke-linecap="round"/>
+      </g>
+    </g>
+    <circle cx="44.5" cy="73.5" r="3.5" stroke="#000000"/>
+    <circle cx="207.5" cy="9" r="3.5" stroke="#000000"/>
+    <circle cx="7.537" cy="122.709" r="3.5" stroke="#000000"/>
+    <circle cx="207.797" cy="53.506" r="1.797" stroke="#000000"/>
+    <circle cx="66.5" cy="11" r="3.5" fill="#000000"/>
+    <circle cx="256" cy="66.5" r="3.5" fill="#000000"/>
+    <g stroke="#000000" transform="translate(2.037 40.709)" stroke-linecap="round" stroke-linejoin="bevel">
+      <path d="M1.89859295,0.172599359 L1.89859295,3.62458654"/>
+      <path d="M1.89859295,0.172599359 L1.89859295,3.62458654" transform="rotate(-90 1.899 1.899)"/>
+    </g>
+    <g stroke="#000000" transform="translate(238.708 115.209)" stroke-linecap="round" stroke-linejoin="bevel">
+      <path d="M1.89859295,0.172599359 L1.89859295,3.62458654"/>
+      <path d="M1.89859295,0.172599359 L1.89859295,3.62458654" transform="rotate(-90 1.899 1.899)"/>
+    </g>
+    <g stroke="#000000" transform="translate(120.5)" stroke-linecap="round" stroke-linejoin="bevel">
+      <path d="M5.5,0.5 L5.5,10.5"/>
+      <path d="M5.5,0.5 L5.5,10.5" transform="rotate(-90 5.5 5.5)"/>
+    </g>
+    <g stroke="#000000" transform="translate(.537 85.709)" stroke-linecap="round" stroke-linejoin="bevel">
+      <path d="M5.5,0.5 L5.5,10.5"/>
+      <path d="M5.5,0.5 L5.5,10.5" transform="rotate(-90 5.5 5.5)"/>
+    </g>
+    <use fill="#FFFFFF" stroke="#000000" mask="url(#m)" transform="rotate(-21 212.795 92.5)" xlink:href="#f"/>
+    <use fill="#FFFFFF" stroke="#000000" mask="url(#n)" transform="rotate(14 56.35 125.849)" xlink:href="#g"/>
+    <g stroke-linecap="round">
+      <use stroke="#FFFFFF" stroke-width="8" xlink:href="#o"/>
+      <use stroke="#000000" stroke-width=".5" xlink:href="#o"/>
+    </g>
+    <g transform="rotate(-30 74.076 102.893)" stroke-linecap="round">
+      <use stroke="#FFFFFF" stroke-width="8" xlink:href="#p"/>
+      <use stroke="#000000" stroke-width=".5" xlink:href="#p"/>
+    </g>
+    <g stroke="#000000" transform="rotate(-22 333.465 -457.603)" stroke-linecap="round">
+      <path d="M1.15884905 2.0593023L29.0515004 2.0593023M1.15884905 6.62323252L29.0515004 6.62323252M1.15884905 10.6232325L29.0515004 10.6232325M1.15884905 14.6232325L13.1667696 14.6232325"/>
+    </g>
+  </g>
+</svg>

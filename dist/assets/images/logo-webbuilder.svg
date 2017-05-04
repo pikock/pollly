@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="670" height="95" viewBox="0 0 670 95">
+  <g fill="#000000" fill-rule="evenodd">
+    <text font-family="Avenir-Black, Avenir" font-size="30" font-weight="700">
+      <tspan x="20.355" y="57.5">1&amp;1</tspan>
+    </text>
+    <text opacity=".114" font-family="Avenir-Black, Avenir" font-size="30" font-weight="700">
+      <tspan x="205.45" y="57.5">Jimdo</tspan>
+    </text>
+    <text opacity=".114" font-family="Avenir-Black, Avenir" font-size="30" font-weight="700">
+      <tspan x="327.36" y="57.5">Weebly</tspan>
+    </text>
+    <text opacity=".11" font-family="Avenir-Black, Avenir" font-size="30" font-weight="700">
+      <tspan x="470.04" y="57.5">Squarespace</tspan>
+    </text>
+    <polygon points="115.143 36.138 120.259 36.138 123.66 49.891 128.174 36.138 132.538 36.138 136.962 50.255 140.604 36.138 145.359 36.138 139.129 57.586 134.946 57.586 130.251 42.742 125.496 57.586 121.463 57.586"/>
+    <text opacity=".114" font-family="Avenir-Black, Avenir" font-size="30" font-weight="700">
+      <tspan x="115.184" y="57.5">Wix</tspan>
+    </text>
+  </g>
+</svg>
