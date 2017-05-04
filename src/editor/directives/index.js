@@ -38,7 +38,9 @@ module.exports = angular
                     });
                   }
                   console.error("YAML Execption", e);
+                  return false;
                 }
+
                 if (attributes.fileread === "lhs") {
                   document.querySelector("label.lhs").classList.add("disabled");
                   document
