@@ -29,7 +29,7 @@ module.exports = angular
                   if (e.reason === "duplicated mapping key") {
                     AlertManager.add({
                       type: "danger",
-                      msg: "Duplicate Key"
+                      msg: "Duplicate Key : " + e.message
                     });
                   } else {
                     AlertManager.add({
@@ -37,6 +37,7 @@ module.exports = angular
                       msg: "Unknown error"
                     });
                   }
+                  console.error("YAML Execption", e);
                 }
                 if (attributes.fileread === "lhs") {
                   document.querySelector("label.lhs").classList.add("disabled");
