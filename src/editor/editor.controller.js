@@ -241,6 +241,14 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
 
   // We need to export both versions (lhs and rhs) since values might have been added on both sides
   $scope.export = function(data, lang) {
+    if ($scope.ratioMissing !== 100) {
+      AlertManager.add({
+        type: "danger",
+        msg: "Tous les champs n'ont pas été rempli, veuillez remplir tout les champs avant d'exporter"
+      });
+      return false;
+    }
+
     var modalInstance = $uibModal.open({
       animation: true,
       templateUrl: "exportModal.html",
