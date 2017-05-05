@@ -7,7 +7,7 @@
     "dev": "NODE_ENV=dev gulp serve",
     "build": "NODE_ENV=production gulp build",
     "staging": "NODE_ENV=staging gulp build",
-    "prededloy": "git checkout master && npm run build && git push github master && git checkout gh-pages",
+    "predeploy": "git checkout master && npm run build && git push github master && git checkout gh-pages",
     "deploy": "rm -rf assets index.html bundle.js && mv dist/* .  && git add index.html assets bundle.js && git commit -m 'New realease' && git push github gh-pages",
     "postdeploy": "git checkout master"
   },
