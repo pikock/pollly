@@ -1,7 +1,19 @@
 <div class="main-content-primary">
 
   <div class="actions" ng-if="!enterPressed">
-    <h2>Bienvenue sur YML Editor</h2>
+    <svg class="logo" width="206" height="116" viewBox="0 0 206 116">
+      <g fill="none" fill-rule="evenodd" transform="translate(23 15)">
+        <text fill="#010729" font-family="JosefinSans-Bold, Josefin Sans" font-size="50.7" font-weight="bold">
+          <tspan x="1.099" y="60.163">PO</tspan>
+        </text>
+        <text fill="#020829" font-family="JosefinSans-Bold, Josefin Sans" font-size="50.7" font-weight="bold">
+          <tspan x="125.64" y="60">Y</tspan>
+        </text>
+        <path stroke="#496EC6" stroke-width="6.338" d="M82.2596491.846938776L82.2596491 60.9795918M114.259649 25.8469388L114.259649 85.9795918M98.2596491.846938776L98.2596491 60.9795918"
+          stroke-linecap="round" />
+      </g>
+    </svg>
+
     <div class="action_container">
       <span class="tip">1</span>
       <div class="action_list">
@@ -31,7 +43,7 @@
 
     <div class="action_container">
       <span class="tip">2</span>
-      <button class="custom-button" ng-click="enterPressedClick()"> Démarrer </button>
+      <button class="custom-button" ng-click="enterPressedClick();goToMissingStep(0)"> Démarrer </button>
       <span class="tooltip ">Press <strong>Enter</strong></span>
     </div>
   </div>

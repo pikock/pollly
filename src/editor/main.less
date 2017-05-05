@@ -1,6 +1,6 @@
-@pink: #C64981;
-@dark-pink: #512D68;
-@light-pink: #FF6398;
+@primary: #496EC6;
+@dark-primary: #0C2560;
+@light-primary: #496EC6;
 @grey: #7D7D7D;
 @ratio: 40px;
 
@@ -23,8 +23,16 @@
     max-width: 600px;
     color: @grey;
     margin: 15px auto;
-    padding-top: 10vh;
+    padding-top: 15vh;
     width: 80%;
+
+    .logo {
+        margin: auto;
+        top: 7vh;
+        left: 0;
+        right: 0;
+        position: absolute;
+    }
 
     svg {
         margin: -10px 0 0 0;
@@ -48,7 +56,7 @@
         font-size: 20px;
         border-radius: 100px;
         color: white;
-        background: @light-pink;
+        background: @light-primary;
         font-weight: 500;
     }
     
@@ -60,7 +68,7 @@
         height: 40px;
         border: 0px solid transparent;
         border-radius: 3px;
-        background-color: @pink;
+        background-color: @primary;
         color: white;         
     }
 
@@ -93,7 +101,7 @@
         height: 40px;
         border: 0px solid transparent;
         border-radius: 3px;
-        background-color: @pink;
+        background-color: @primary;
         color: white;
         margin: auto;
         left: 0;
@@ -159,7 +167,7 @@
         height: 96px;
         left: 0;
         a {
-            background: @pink;
+            background: @primary;
             color: white;
             position: absolute;
             margin: auto;
@@ -186,6 +194,7 @@
 
     table {
         max-width: 2000px;
+        margin: auto;
 
         th:last-child {
             width: 100px;
@@ -209,7 +218,7 @@
     }
 
     .missing .index {
-        background: @pink;
+        background: @primary;
         color: white;
     }
 
@@ -278,13 +287,13 @@
         margin: 0px 30px 30px;
         padding: 10px 20px;
         width: 370px;
-        background: @pink;
+        background: @primary;
         border: 0;
         font-size: 15px;
 
 
         &.selected {
-            background: @dark-pink;
+            background: @dark-primary;
         }
     }
 
@@ -299,7 +308,7 @@
 
     h4 {
         text-align: center;
-        color: @dark-pink;
+        color: @dark-primary;
         margin: 0px 0 30px 0;
         font-size: 25px;
         display: block;
@@ -310,9 +319,9 @@
     }
 
     .close-button {
-        background: @dark-pink;
+        background: @dark-primary;
         color: white;
-        border: 1px solid @dark-pink;
+        border: 1px solid @dark-primary;
 
         &.disabled {
             background: @grey;
@@ -321,8 +330,8 @@
 
     .dismiss-button {
         background: white;
-        border: 1px solid @dark-pink;
-        color: @dark-pink;
+        border: 1px solid @dark-primary;
+        color: @dark-primary;
     }
 
     h1, h2, h3, p {

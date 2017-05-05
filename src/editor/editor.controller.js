@@ -44,6 +44,7 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
   };
 
   $scope.goToMissingStep = function(index, specific, retry) {
+    console.log('Index', index)
     try {
       Object.keys($scope.metadata)
         .slice(index)
