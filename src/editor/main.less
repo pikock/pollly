@@ -1,39 +1,9 @@
-#background-hero-example {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
+@pink: #C64981;
+@dark-pink: #512D68;
+@light-pink: #FF6398;
+@grey: #7D7D7D;
+@ratio: 40px;
 
-.progress {
-    margin-bottom: 0;
-}
-
-.navbar {
-    z-index: 50;
-}
-
-.nav>li>a:hover,
-.nav>li>a:focus {
-    text-decoration: none;
-    background-color: transparent;
-}
-
-.or-alert {
-    margin-top: 8px;
-}
-
-.main-conent+.blue {
-    background: blue;
-}
-
-.blue {
-    background: #3A599A;
-    h3 {
-        color: white;
-    }
-}
-
-//
 .full-container {
     position: absolute;
     top: 0;
@@ -42,477 +12,6 @@
     left: 0;
     z-index: 1;
 }
-
-.gears {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.actions {
-    margin: 15px auto;
-    width: 80%;
-    .actions-container {
-        padding-top: 10px;
-    }
-}
-
-.container-finish {
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.color-btn {
-    width: 30px;
-    height: 30px;
-    &.large {
-        width: 120px;
-        height: 120px;
-    }
-}
-
-.main-content-primary {
-    padding-top: 10vh;
-    &.main-content-on-page {
-        padding-top: 20vh;
-    }
-    &.main-content-facebook {
-        padding-top: 5vh;
-    }
-}
-
-.block-container {
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-.form-control:focus {
-    border-color: #ccc;
-    box-shadow: none;
-}
-
-.label {
-    font-size: 1.3em;
-}
-
-.form-control {
-    border: 1px solid #000;
-}
-
-.logo-bottom {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    margin-left: -50px;
-    z-index: -1;
-    &.logo-white {
-        fill: white;
-    }
-    svg {
-        width: 100px;
-        height: 100px;
-    }
-}
-
-// GENERIC END
-.alert {
-    z-index: 11;
-    text-align: center;
-    .close {
-        z-index: 12;
-    }
-}
-
-.facebook-lists {
-    padding: 0;
-    margin-bottom: 200px;
-    .facebook-list {
-        margin-bottom: 10px;
-        padding: 10px;
-        border-radius: 4px;
-        background-color: white;
-        list-style: none;
-        text-align: left;
-        img {
-            width: 80px;
-        }
-        .btn-default {
-            float: right;
-            margin-top: 24px;
-        }
-    }
-}
-
-// BUTTONS START
-.icn-in-button {
-    position: absolute;
-    top: 25px;
-    left: 59px;
-}
-
-.btn-default {
-    border-width: 1px;
-    border-color: #000;
-    background: transparent;
-    font-size: 15px;
-}
-
-.btn-default:hover {
-    border-color: #000000;
-    background: transparent;
-    background-color: #ececec;
-    color: #333;
-}
-
-.btn-primary {
-    border-width: 1px;
-    border-color: #000;
-    background-color: black;
-    font-size: 15px;
-}
-
-.btn-lg {
-    padding: 20px 40px;
-}
-
-.btn-sm {
-    padding: 20px 30px 20px;
-    height: 65px;
-    text-align: center;
-}
-
-.btn-border-overlay {
-    width: 100%;
-    left: 0;
-    bottom: -40px;
-    position: absolute;
-}
-
-.btn-border-overlay-hero {
-    width: 50%;
-    position: absolute;
-    left: 25%;
-    bottom: 10px;
-    background: white;
-    text-align: center;
-}
-
-.btn-float {
-    float: right;
-}
-
-.btn-link {
-    text-decoration: none;
-}
-
-// BUTTONS END
-.content-container {
-    padding: 50px;
-    width: 100%;
-    border-radius: 15px;
-    background-color: white;
-}
-
-// image container
-.image-container {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    position: relative;
-    float: left;
-    overflow: hidden;
-    /* height: 200px; */
-    padding: 0 0 65%;
-    width: 100%;
-    height: 0;
-    border-radius: 2px;
-    &.plus-button {
-        border: 1px dashed;
-        font-size: 32px;
-        position: relative;
-        text-align: center;
-        &:hover {
-            text-decoration: none;
-        }
-        .plus {
-            width: 50%;
-            height: 50%;
-            overflow: auto;
-            margin: auto;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            right: 0;
-        }
-    }
-}
-
-.connect-bouton {
-    position: relative;
-    margin: 150px 0;
-    padding: 20px 50px;
-    border-width: 1px;
-    border-style: solid;
-}
-
-.logo-container {
-    margin: 90px auto;
-    min-height: 150px;
-    width: 150px;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    text-align: center;
-    line-height: 146px;
-    #logo {
-        display: inline-block;
-    }
-}
-
-.readability-container {
-    text-align: center; // margin-top: 120px;
-}
-
-.loading-bar {
-    position: relative;
-    z-index: 10;
-    .loading-step {
-        display: block;
-        float: left;
-        width: 15%;
-        height: 10px;
-        background-color: #eee;
-        &.active {
-            background-color: @brand-primary;
-        }
-    }
-}
-
-.logo-creator {
-    .palette-colors {
-        padding: 10px 2px;
-    }
-    .palette-color {
-        float: left;
-        margin-right: 10px;
-        width: 32px;
-        height: 32px;
-    }
-    .form-group {
-        margin-bottom: 40px;
-    }
-    .logo-creator-title {
-        margin-bottom: 20px;
-    }
-}
-
-.close {
-    background-color: #000;
-}
-
-//END COLOR-BAR
-#logo-creator-input {
-    padding: 0;
-    padding: 35px;
-    height: 200px;
-    border: solid;
-    border-width: 1px;
-    background: white;
-    box-shadow: none;
-    font-size: 3em;
-}
-
-//ASIDE-BAR
-.aside-bar {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    overflow-y: scroll;
-    padding-right: 40px;
-    width: 30%;
-    height: 100%;
-    z-index: 10;
-    &.aside-bar-image {
-        padding-top: 60px;
-    }
-}
-
-.aside-container {
-    padding-left: 20px;
-    &.aside-container-colors {
-        margin-top: 100px;
-    }
-}
-
-.font-selector {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    .font-container {
-        overflow: hidden;
-        padding-left: 30px;
-        border-left: 3px solid transparent;
-        line-height: 20px;
-        -webkit-transition: all 0.8s;
-        /* Safari */
-        transition: all 0.8s;
-        position: relative;
-        .sign {
-            font-size: 0.8em;
-            position: absolute;
-            right: 7px;
-            bottom: 3px;
-            color: white;
-            a,
-            a:hover {
-                color: white;
-            }
-        }
-        .font-name {
-            color: lighten(@brand-primary, 50%);
-        }
-        .font-element {
-            display: block;
-            padding: 20px;
-            border-bottom: 1px solid lighten(@brand-primary, 80%);
-            text-decoration: none;
-            &.large {
-                padding: 40px 20px;
-                font-size: 2em;
-            }
-        }
-        &.active {
-            border-left: 3px solid @brand-primary;
-        }
-        &.image {
-            margin-bottom: 30px;
-            .image-container {
-                padding: 0 0 65%;
-            }
-        }
-    }
-}
-
-//END ASIDE-BAR
-.content-container {
-    margin: 40px 0;
-    padding: 40px;
-    border: 1px solid #979797;
-    border-radius: 5px;
-    &.content-font-container {
-        min-height: 350px;
-    }
-    &.image {
-        padding: 0;
-        overflow: hidden
-    }
-}
-
-// MODAL START
-.modal-dialog.modal-xl {
-    position: fixed;
-    bottom: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    .modal-content {
-        height: 100%;
-        border: 0;
-        border-radius: 0;
-        .modal-body {
-            padding: 30px 80px;
-        }
-    }
-}
-
-// .modal-body{
-//   margin: 30px 0px;
-// }
-.modal-footer {
-    margin-top: 25px;
-}
-
-.modal-header {
-    margin: 20px;
-    border: none
-}
-
-.ngRepeatSpan3 .col-md-3:nth-of-type(4n+1) {
-    margin-left: 0;
-}
-
-.image-container-parent {
-    position: relative;
-}
-
-.image-container {
-    position: relative;
-    float: left;
-    overflow: hidden;
-    padding: 0 0 65%;
-    width: 100%;
-    height: 0;
-    border-radius: 2px;
-    img {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
-
-#gallery-lift,
-#terms-container {
-    overflow: scroll;
-    margin: 20px 0;
-    height: 400px;
-    .image-container {
-        margin-bottom: 30px;
-    }
-}
-
-//INPUT:
-.input-lg {
-    margin: 30px 0 15px;
-    padding: 10px 16px;
-    height: 65px;
-    border-radius: 2px;
-    font-size: 20px;
-    line-height: 1.3333333;
-    border-radius: 2px;
-    margin: 0;
-}
-
-;
-//loader
-#loader {
-    margin-top: 20%;
-    color: #000;
-    font-size: 130px;
-}
-
-//image
-// close
-.close {
-    position: absolute;
-    top: 18px;
-    right: 32px;
-    float: right;
-    color: #000;
-    text-shadow: 0 1px 0 #fff;
-    font-weight: bold;
-    font-size: 32px;
-    line-height: 1;
-    opacity: 1;
-}
-
-@pink: #C64981;
-@dark-pink: #512D68;
-@light-pink: #FF6398;
-@grey: #7D7D7D;
-@ratio: 40px;
 
 .actions,
 .statistics,
@@ -523,6 +22,9 @@
 .actions {
     max-width: 600px;
     color: @grey;
+    margin: 15px auto;
+    padding-top: 10vh;
+    width: 80%;
 
     svg {
         margin: -10px 0 0 0;
@@ -569,6 +71,7 @@
     .action_container {
         overflow: auto;
         margin: 40px 0;
+        padding-top: 10px;
     }
     
     .action_container:first-of-type {
@@ -598,10 +101,15 @@
     }
 }
 
-.alert {
-  position: absolute;
-  width: 97vw;
-  left: 1vw;
+.or-alert {
+    margin-top: 8px;
+    .alert {
+        text-align: center;
+        position: absolute;
+        width: 97vw;
+        left: 1vw;
+        z-index: 1000;
+    }
 }
 
 .statistics {
@@ -673,6 +181,18 @@
     top: 140px;
     width: 98%;
     margin: 0 1%;
+
+    table {
+        max-width: 2000px;
+
+        th:last-child {
+            width: 100px;
+        }
+
+        tr, td {
+            border: 0px solid transparent !important;
+        }
+    }
     tr th {
         text-align: center;
         height: 50px;
@@ -732,18 +252,6 @@
     }
 }
 
-table {
-    max-width: 2000px;
-
-    th:last-child {
-        width: 100px;
-    }
-
-    tr, td {
-        border: 0px solid transparent !important;
-    }
-}
-
 .modal-lg {
     font-family: 'Open Sans', arial;
     svg {
@@ -770,6 +278,8 @@ table {
         width: 370px;
         background: @pink;
         border: 0;
+        font-size: 15px;
+
 
         &.selected {
             background: @dark-pink;
