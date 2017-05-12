@@ -39,27 +39,27 @@
         margin: 0 0 0 7px;
     }
     span.tip {
-        margin-top: -10px;
-        margin-left: -10px;
-        position: absolute;
-        border: 0px solid transparent;
-        width: 30px;
-        height: 30px;
-        display: block;
-        text-align: center;
-        line-height: 30px;
-        font-size: 20px;
-        border-radius: 100px;
-        color: white;
-        background: @light-primary;
-        font-weight: 500;
+      margin-top: 1px;
+      margin-left: -16px;
+      position: absolute;
+      border: 0px solid transparent;
+      width: 30px;
+      height: 30px;
+      display: block;
+      text-align: center;
+      line-height: 29px;
+      font-size: 18px;
+      border-radius: 100px;
+      color: white;
+      background: #496EC6;
+      font-weight: 500;
     }
     .custom-button {
-        margin: 0 0px 0px 44px;
+        margin: 0 0px 0px 63px;
         line-height: 26px;
         text-align: center;
         width: 150px;
-        height: 40px;
+        height: 45px;
         border: 0px solid transparent;
         border-radius: 3px;
         background-color: @primary;
@@ -76,6 +76,7 @@
     .action_container:first-of-type {
         border-bottom: 1px @grey solid;
         padding: 0 0 40px 0;
+        height: 152px;
     }
     .action_list {
         width: 50%;
@@ -86,17 +87,17 @@
         position: relative;
     }
     .action_list label {
-        position: absolute;
-        line-height: 26px;
-        width: 150px;
-        height: 40px;
-        border: 0px solid transparent;
-        border-radius: 3px;
-        background-color: @primary;
-        color: white;
-        margin: auto;
-        left: 0;
-        right: 0;
+
+      position: absolute;
+      line-height: 26px;
+      width: 150px;
+      height: 45px;
+      border: 0px solid transparent;
+      border-radius: 3px;
+      background-color: #496EC6;
+      color: white;
+      top: 62px;
+      right: 87px;
     }
 }
 
@@ -112,17 +113,19 @@
 }
 
 .statistics {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 140px;
-    width: 100vw;
-    z-index: 10;
-    background: white;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 260px;
+        width: 460vw;
+        z-index: 10;
+        background-image: linear-gradient(-180deg, #FFFFFF 50%, rgba(255,255,255,0.00) 97%);
+
     .statistics_container {
         position: fixed;
-        top: 20px;
-        right: 20px;
+        top: 40px;
+        right: 60px;
         border: 1px grey solid;
         padding: 0px 40px;
         border-radius: 5px;
@@ -172,11 +175,12 @@
 
 .metadata {
     position: absolute;
-    top: 140px;
-    width: 98%;
-    margin: auto;
-    left: 0;
-    right: 0;
+        top: 170px;
+        width: 98%;
+        margin: 18px 30px -25px 30px;
+        left: 0;
+        right: 0;
+
     table {
         max-width: 2000px;
         margin: auto;
@@ -307,4 +311,3 @@
     p {
         color: @grey;
     }
-}
