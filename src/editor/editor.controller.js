@@ -282,12 +282,12 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
         type: 'danger',
         msg: "Tous les champs n'ont pas été rempli, veuillez remplir tout les champs avant d'exporter"
       })
-      return false
     }
 
     var modalInstance = $uibModal.open({
       animation: true,
       templateUrl: 'exportModal.html',
+      controller: 'exportController',
       size: 'lg'
     })
 
@@ -298,7 +298,7 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
       var filtered = returnDataToExport(data, modalResult.lang)
       var constructed = constructObj(filtered, modalResult.lang)
       var yamlToExport = yaml.dump(constructed)
-      var blob = new Blob([yamlToExport], { type: 'application/x-yaml' })
+      var blob = new window.Blob([yamlToExport], { type: 'application/x-yaml' })
       if (window.navigator.msSaveOrOpenBlob) {
         window.navigator.msSaveBlob(blob, modalResult.filename)
       } else {
