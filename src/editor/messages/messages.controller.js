@@ -1,29 +1,23 @@
-/*global module */
-/**
- * for orson by thierry_c
- */
+/* global module */
 
+module.exports = function ($scope, $uibModalInstance, messageBox) {
+  'ngInject'
+  'use strict'
+  $scope.title = messageBox.title
+  $scope.message = messageBox.message
 
-module.exports = function($scope, $uibModalInstance, messageBox) {
-    'ngInject';
-    'use strict';
+  $scope.btnOk = messageBox.btnOk || 'Ok'
+  $scope.btnCancel = messageBox.btnCancel || 'Cancel'
 
-    $scope.title = messageBox.title;
-    $scope.message = messageBox.message;
+  $scope.ok = function () {
+    $uibModalInstance.close('ok')
+  }
 
-    $scope.btnOk = messageBox.btnOk || 'Ok';
-    $scope.btnCancel = messageBox.btnCancel || 'Cancel';
+  $scope.close = function () {
+    $uibModalInstance.close()
+  }
 
-    $scope.ok = function() {
-        $uibModalInstance.close('ok');
-    };
-
-    $scope.close = function() {
-        $uibModalInstance.close();
-    };
-
-    $scope.getSvg = function (fileName) {
-        return '/assets/images/' + fileName + '.svg';
-    };
-
-};
+  $scope.getSvg = function (fileName) {
+    return '/assets/images/' + fileName + '.svg'
+  }
+}

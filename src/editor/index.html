@@ -17,7 +17,7 @@
     <div class="action_container">
       <span class="tip">1</span>
       <div class="action_list">
-        <p>Importer votre premier fichier</p>
+        <p>Import your first file</p>
         <label class="btn btn-default btn-file lhs">
           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 72 72">
             <g fill="none" fill-rule="evenodd" stroke="white" stroke-width="3" transform="translate(18 18)" stroke-linecap="round" stroke-linejoin="round">
@@ -29,7 +29,7 @@
       </div>
 
       <div class="action_list">
-        <p>Importer votre second fichier</p>
+        <p>Import your second file</p>
         <label class="btn btn-default btn-file rhs">
           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 72 72">
             <g fill="none" fill-rule="evenodd" stroke="white" stroke-width="3" transform="translate(18 18)" stroke-linecap="round" stroke-linejoin="round">
@@ -43,7 +43,7 @@
 
     <div class="action_container">
       <span class="tip">2</span>
-      <button class="custom-button" ng-click="enterPressedClick();goToMissingStep(0)"> Démarrer </button>
+      <button class="custom-button" ng-click="enterPressedClick();goToMissingStep(0)"> Start </button>
       <span class="tooltip ">Press <strong>Enter</strong></span>
     </div>
   </div>
@@ -55,7 +55,7 @@
         <p><strong>{{ inputs - missingInputs }}</strong> / {{ inputs }} </p>
       </div>
       <div class="statistics_action ">
-        <a class="btn btn-primary " ng-click="export(metadata) " role="button ">Exporter</a>
+        <a class="btn btn-primary " ng-click="export(metadata) " role="button ">Export</a>
       </div>
     </div>
 
@@ -66,6 +66,7 @@
       <thead>
         <tr>
           <th>Ref</th>
+          <th>Key</th>
           <th>{{initialLang}}</th>
           <th>{{totranslateLang}}</th>
           <th></th>
@@ -76,6 +77,7 @@
           <td>
             <div class="index">{{$index}}</div>
           </td>
+          <td>{{ key }}</td>
           <td>
             <input class="form-control " type="text " ng-focus="setSpecific('lhs');setSelected($index)" ng-model="value.lhs " ng-change="markMissingTranslations(value);calculateStatistics() ">
           </td>
@@ -83,7 +85,7 @@
             <input class="form-control " type="text " ng-focus="setSpecific('rhs');setSelected($index)" ng-model="value.rhs " ng-change="markMissingTranslations(value);calculateStatistics() ">
           </td>
           <td class="specific_button">
-            <button ng-click="goToMissingStep(keyIndex, keySpecific)" class="btn btn-primary">Suivant</button>
+            <button ng-click="goToMissingStep(keyIndex, keySpecific)" class="btn btn-primary">Next</button>
             <span class="tooltip">Press <strong>Enter</strong></span>
           </td>
           <!--<td>
@@ -106,19 +108,19 @@
   </svg>
 
   <div class="modal-header ">
-    <h3 class="modal-title " id="modal-title ">Tous les champs sont remplis, exportez votre fichier au format .YML</h3>
+    <h3 class="modal-title " id="modal-title ">All the input has been files, export your file to .YML format</h3>
   </div>
   <div class="modal-body " id="modal-body ">
     <h4>Progression <br> <span>100%</span></h4>
     <div>
-      <button class="btn btn-primary choose_lang" ng-click="langChoosed = 'lhs'">Exporter les traductions de la première langue</button>
-      <button class="btn btn-primary choose_lang" ng-click="langChoosed = 'rhs'">Exporter les traductions de la seconde langue</button>
+      <button class="btn btn-primary choose_lang" ng-click="langChoosed = 'lhs'">Export the traduction of the first language</button>
+      <button class="btn btn-primary choose_lang" ng-click="langChoosed = 'rhs'">Export the traduction of the second language</button>
     </div>
     <input class="form-control filename" type="text " ng-model="filename ">
   </div>
   <div class="modal-footer ">
-    <button class="btn btn-warning dismiss-button" type="button " ng-click="$dismiss('cancel'); ">Annuler</button>
-    <button class="btn btn-primary close-button disabled" type="button " disabled ng-click="$close({ filename, lang: langChoosed }); ">Exporter</button>
+    <button class="btn btn-warning dismiss-button" type="button " ng-click="$dismiss('cancel'); ">Cancel</button>
+    <button class="btn btn-primary close-button disabled" type="button " disabled ng-click="$close({ filename, lang: langChoosed }); ">Export</button>
   </div>
 
   <script>

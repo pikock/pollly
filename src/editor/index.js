@@ -1,26 +1,18 @@
-/*global module require */
+/* global module require */
 /**
  * for orson by thierry_c
  */
-"use strict";
+'use strict'
 
-require("./services");
-require("./directives");
+require('./services/AlertManager')
+require('./directives/OrAlert')
+require('./directives/FileRead')
 
-module.exports = angular
-  .module("editor", [
-    "services",
-    "directives"
-  ])
-  /* set storagekey */
-  .value("storageKey", "ymlEditor")
-  .factory("editorService", function(
-    $rootScope,
-    $exceptionHandler,
-    $window,
-    storageKey
-  ) {
-    "ngInject";
-    var service = {};
-    return service;
-  }).name;
+module.exports = window.angular
+  .module('editor', ['OrAlert', 'AlertManager', 'FileRead'])
+  .value('storageKey', 'ymlEditor')
+  .factory('editorService', function () {
+    'ngInject'
+    var service = {}
+    return service
+  }).name

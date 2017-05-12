@@ -3,7 +3,6 @@
 @light-primary: #496EC6;
 @grey: #7D7D7D;
 @ratio: 40px;
-
 .full-container {
     position: absolute;
     top: 0;
@@ -25,7 +24,6 @@
     margin: 15px auto;
     padding-top: 15vh;
     width: 80%;
-
     .logo {
         margin: auto;
         top: 7vh;
@@ -33,16 +31,13 @@
         right: 0;
         position: absolute;
     }
-
     svg {
         margin: -10px 0 0 0;
         color: white;
     }
-
     span.tooltip {
-        margin: 0 0 0 7px;                
+        margin: 0 0 0 7px;
     }
-
     span.tip {
         margin-top: -10px;
         margin-left: -10px;
@@ -59,7 +54,6 @@
         background: @light-primary;
         font-weight: 500;
     }
-    
     .custom-button {
         margin: 0 0px 0px 44px;
         line-height: 26px;
@@ -69,19 +63,16 @@
         border: 0px solid transparent;
         border-radius: 3px;
         background-color: @primary;
-        color: white;         
+        color: white;
     }
-
     input.disabled {
-        background-color: @grey;    
+        background-color: @grey;
     }
-    
     .action_container {
         overflow: auto;
         margin: 40px 0;
         padding-top: 10px;
     }
-    
     .action_container:first-of-type {
         border-bottom: 1px @grey solid;
         padding: 0 0 40px 0;
@@ -94,7 +85,7 @@
         text-align: center;
         position: relative;
     }
-    .action_list label {    
+    .action_list label {
         position: absolute;
         line-height: 26px;
         width: 150px;
@@ -128,7 +119,6 @@
     width: 100vw;
     z-index: 10;
     background: white;
-
     .statistics_container {
         position: fixed;
         top: 20px;
@@ -141,22 +131,18 @@
         float: left;
         text-align: left;
         margin: 0 0 0 -10px;
-
         h3 {
             color: @grey;
             font-size: 38px;
             margin: 16px 0 -3px 0;
         }
-
         p {
             font-size: 14px;
         }
-
         strong {
             font-size: 16px;
         }
     }
-
     .statistics_action {
         margin: 0 -10px 0 50px;
         float: right;
@@ -191,16 +177,14 @@
     margin: auto;
     left: 0;
     right: 0;
-
     table {
         max-width: 2000px;
         margin: auto;
-
         th:last-child {
             width: 100px;
         }
-
-        tr, td {
+        tr,
+        td {
             border: 0px solid transparent !important;
         }
     }
@@ -216,21 +200,17 @@
         width: 80%;
         margin: 0 10%;
     }
-
     .missing .index {
         background: @primary;
         color: white;
     }
-
     .selected .index {
         margin: 20px 0;
     }
-
     .selected input {
         width: 100%;
         margin: 20px 0;
     }
-
     .specific_button {
         display: none;
         color: @grey;
@@ -245,12 +225,10 @@
             margin: 20px 0 2px;
             height: 40px;
         }
-
         .tooltip {
             display: block;
             font-size: 14px;
         }
-        
     }
     .index {
         border: 1px solid;
@@ -272,14 +250,12 @@
         right: 0;
         top: 50px;
     }
-
     .modal-header {
         margin: 130px 70px 0;
         text-align: center;
         color: @grey;
         font-weight: 100;
     }
-
     .choose_lang {
         float: left;
         margin: auto;
@@ -290,22 +266,17 @@
         background: @primary;
         border: 0;
         font-size: 15px;
-
-
         &.selected {
             background: @dark-primary;
         }
     }
-
     input {
         width: 50%;
         margin: auto;
     }
-
     h3 {
         font-weight: 100;
     }
-
     h4 {
         text-align: center;
         color: @dark-primary;
@@ -317,25 +288,23 @@
             font-weight: 900;
         }
     }
-
     .close-button {
         background: @dark-primary;
         color: white;
         border: 1px solid @dark-primary;
-
         &.disabled {
             background: @grey;
         }
     }
-
     .dismiss-button {
         background: white;
         border: 1px solid @dark-primary;
         color: @dark-primary;
     }
-
-    h1, h2, h3, p {
+    h1,
+    h2,
+    h3,
+    p {
         color: @grey;
     }
-    
 }
