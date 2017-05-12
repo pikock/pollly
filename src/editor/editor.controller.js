@@ -24,6 +24,26 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
     return item
   }
 
+  $scope.displayKey = false
+
+  $scope.toggleKey = function () {
+    var th = document.querySelector('table th:nth-child(2)')
+    var tr = document.querySelectorAll('table tr td:nth-child(2)')
+    if ($scope.displayKey) {
+      th.classList.add('hidden')
+      tr.forEach(function (line) {
+        line.classList.add('hidden')
+      })
+      $scope.displayKey = false
+    } else {
+      th.classList.remove('hidden')
+      tr.forEach(function (line) {
+        line.classList.remove('hidden')
+      })
+      $scope.displayKey = true
+    }
+  }
+
   $scope.enterPressedClick = function () {
     if ($scope.metadata) {
       $scope.enterPressed = true

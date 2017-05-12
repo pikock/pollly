@@ -3,6 +3,10 @@
 @light-primary: #496EC6;
 @grey: #7D7D7D;
 @ratio: 40px;
+.hidden {
+    display: none;
+}
+
 .full-container {
     position: absolute;
     top: 0;
@@ -14,8 +18,18 @@
 
 .actions,
 .statistics,
+.menu,
 .metadata {
     font-family: 'Open Sans', sans-serif;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 140px;
+    width: 100vw;
+    z-index: 11;
 }
 
 .actions {
