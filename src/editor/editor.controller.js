@@ -25,7 +25,6 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
   }
 
   $scope.displayKey = false
-
   $scope.toggleKey = function () {
     var th = document.querySelector('table th:nth-child(2)')
     var tr = document.querySelectorAll('table tr td:nth-child(2)')
@@ -41,6 +40,25 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
         line.classList.remove('hidden')
       })
       $scope.displayKey = true
+    }
+  }
+
+  $scope.filterAction = 'missings'
+  $scope.filter = function (action) {
+    if (action === 'missings') {
+      window.scroll(0, 0)
+      $scope.tempData = $scope.metadata
+      var missingsKey = Object.keys($scope.metadata).filter(function (key) {
+        return $scope.metadata[key].missing
+      })
+      $scope.metadata = {}
+      missingsKey.forEach(function (line) {
+        $scope.metadata[line] = $scope.tempData[line]
+      })
+      $scope.filterAction = 'all'
+    } else if (action === 'all') {
+      $scope.metadata = $scope.tempData
+      $scope.filterAction = 'missings'
     }
   }
 
