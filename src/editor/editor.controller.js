@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 'use strict'
 
 require('./things.js')
@@ -7,6 +5,8 @@ var yaml = require('js-yaml')
 
 module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
   'ngInject'
+  $scope.displayKey = false
+  $scope.filterAction = 'missings'
   /**
    * Modify the missing property of item
    * @param {Object} item
@@ -24,10 +24,9 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
     return item
   }
 
-  $scope.displayKey = false
   $scope.toggleKey = function () {
-    var th = document.querySelector('table th:nth-child(2)')
-    var tr = document.querySelectorAll('table tr td:nth-child(2)')
+    var th = document.querySelector('table th.key')
+    var tr = document.querySelectorAll('table tr td.key')
     if ($scope.displayKey) {
       th.classList.add('hidden')
       tr.forEach(function (line) {
@@ -43,7 +42,6 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
     }
   }
 
-  $scope.filterAction = 'missings'
   $scope.filter = function (action) {
     if (action === 'missings') {
       window.scroll(0, 0)

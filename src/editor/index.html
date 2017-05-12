@@ -73,7 +73,7 @@
       <thead>
         <tr>
           <th>Ref</th>
-          <th class="hidden">Key</th>
+          <th class="hidden key">Key</th>
           <th>{{initialLang}}</th>
           <th>{{totranslateLang}}</th>
           <th></th>
@@ -87,7 +87,7 @@
           <td>
             <div class="index">{{$index}}</div>
           </td>
-          <td class="hidden">{{ key }}</td>
+          <td class="hidden key">{{ key }}</td>
           <td>
             <input class="form-control " type="text " ng-focus="setSpecific('lhs');setSelected($index)" ng-model="value.lhs " ng-change="markMissingTranslations(value);calculateStatistics() ">
           </td>
