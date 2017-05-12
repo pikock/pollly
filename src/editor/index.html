@@ -47,12 +47,78 @@
       <span class="tooltip ">Press <strong>Enter</strong></span>
     </div>
   </div>
+  
+  <nav class="navbar navbar-default navbar-fixed-top"  ng-if="metadata && enterPressed ">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <svg class="logo" width="103" height="58" viewBox="0 0 206 116">
+            <g fill="none" fill-rule="evenodd" transform="translate(23 15)">
+              <text fill="#010729" font-family="JosefinSans-Bold, Josefin Sans" font-size="50.7" font-weight="bold">
+                <tspan x="1.099" y="60.163">PO</tspan>
+              </text>
+              <text fill="#020829" font-family="JosefinSans-Bold, Josefin Sans" font-size="50.7" font-weight="bold">
+                <tspan x="125.64" y="60">Y</tspan>
+              </text>
+              <path stroke="#496EC6" stroke-width="6.338" d="M82.2596491.846938776L82.2596491 60.9795918M114.259649 25.8469388L114.259649 85.9795918M98.2596491.846938776L98.2596491 60.9795918"
+                stroke-linecap="round" />
+            </g>
+          </svg>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class=""><a href="" ng-click="toggleKey()">Display key</a></li>
+          <li><a href="#" ng-click="filter(filterAction)">Display only missing translations</a></li>
+        </ul>
 
+        <ul class="nav navbar-nav navbar-right">
+
+          <p class="navbar-text">
+            {{ratioMissing}} %
+            <small><strong>{{ inputs - missingInputs }}</strong> / {{ inputs }} </small>
+          </p>
+
+
+          <button type="button"   ng-click="export(metadata) " class="btn btn-primary navbar-btn">Export</button>
+
+          
+        </ul>
+      </div><!-- 
+
+      <div class="statistics_container">
+        <div class="statistics_data ">
+          <h3>{{ratioMissing}} %</h3>
+          <p><strong>{{ inputs - missingInputs }}</strong> / {{ inputs }} </p>
+        </div>
+        <div class="statistics_action ">
+          <a class="btn btn-primary " ng-click="export(metadata) " role="button ">Export</a>
+        </div>
+      </div>
+ -->
+    </div>
+  </nav>
+<!-- 
 
   <div class="menu" ng-if="metadata && enterPressed ">
 
     <button class="btn btn-primary" ng-click="toggleKey()">Toggle key visibility</button>
+    <button class="btn btn-primary" ng-click="filter(filterAction)">Filter by missings inputs</button>
+ 
+    <div class="statistics_container">
+      <div class="statistics_data ">
+        <h3>{{ratioMissing}} %</h3>
+        <p><strong>{{ inputs - missingInputs }}</strong> / {{ inputs }} </p>
+      </div>
+      <div class="statistics_action ">
+        <a class="btn btn-primary " ng-click="export(metadata) " role="button ">Export</a>
+      </div>
+    </div>
+  </div> -->
 
+
+  <!-- <div class="menu" ng-if="metadata && enterPressed ">
+    <button class="btn btn-primary" ng-click="toggleKey()">Toggle key visibility</button>
     <button class="btn btn-primary" ng-click="filter(filterAction)">Filter by missings inputs</button>
 
   </div>
@@ -67,9 +133,8 @@
         <a class="btn btn-primary " ng-click="export(metadata) " role="button ">Export</a>
       </div>
     </div>
-
   </div>
-
+ -->
   <div class="metadata " ng-if="metadata && enterPressed ">
     <table class="table ">
       <thead>
