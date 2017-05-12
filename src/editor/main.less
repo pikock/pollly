@@ -5,8 +5,13 @@
 @ratio: 40px;
 
 .btn-primary{
-    background: @primary;
+    background-image: none;
+    background-color: @primary;
     border-color: @primary;
+    .btn-primary:hover,.btn-primary:focus{
+        background-image: none;
+        background-color: darken(@primary, 10%)
+    }
 }
 
 .hidden {
@@ -34,7 +39,7 @@
     top: 0;
     left: 0;
     height: 140px;
-    width: calc(100vw - 500px);
+    width: 100vw;
     z-index: 11;
 }
 
@@ -116,7 +121,7 @@
     max-width: 600px;
     color: @grey;
     margin: 15px auto;
-    padding-top: 15vh;
+    padding-top: 20vh;
     width: 80%;
     .logo {
         margin: auto;
@@ -205,75 +210,10 @@
     }
 }
 
-.statistics {
-
-
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 238px;
-        width: 460vw;
-        z-index: 10;
-        background-image: linear-gradient(-180deg, #FFFFFF 50%, rgba(255,255,255,0.00) 97%);
-
-
-    .statistics_container {
-        position: fixed;
-        top: 40px;
-        right: 60px;
-        border: 1px grey solid;
-        padding: 0px 40px;
-        border-radius: 5px;
-    }
-    .statistics_data {
-        float: left;
-        text-align: left;
-        margin: 0 0 0 -10px;
-        h3 {
-            color: @grey;
-            font-size: 38px;
-            margin: 16px 0 -3px 0;
-        }
-        p {
-            font-size: 14px;
-        }
-        strong {
-            font-size: 16px;
-        }
-    }
-    .statistics_action {
-        margin: 0 -10px 0 50px;
-        float: right;
-        width: 140px;
-        display: block;
-        position: relative;
-        overflow: auto;
-        height: 96px;
-        left: 0;
-        a {
-            background: @primary;
-            color: white;
-            position: absolute;
-            margin: auto;
-            top: 0;
-            left: 10px;
-            right: 0;
-            bottom: 0;
-            height: 50px;
-            border: 0;
-            text-align: center;
-            line-height: 39px;
-            font-size: 20px;
-        }
-    }
-          .btn-key{
-              background: aliceblue;
-          }
-}
 
 .metadata {
     position: absolute;
-    top: 60px;
+    top: 70px;
     width: 98%;
     margin: 18px 30px -25px 30px;
     left: 0;
@@ -338,8 +278,7 @@
         height: @ratio;
         text-align: center;
         line-height: @ratio;
-        font-size: 12px;
-        color: #585858;
+        font-size: 24px;
     }
 }
 
@@ -353,27 +292,24 @@
         top: 50px;
     }
     .modal-header {
-        margin: 142px 150px 0;
+        margin: 130px 70px 0;
         text-align: center;
-        color: #7D7D7D;
+        color: @grey;
         font-weight: 100;
     }
     .choose_lang {
         float: left;
         margin: auto;
         text-align: center;
-        background: #fff;
         margin: 0px 30px 30px;
         padding: 10px 20px;
         width: 370px;
-        border: 1;
+        background: @primary;
+        border: 0;
         font-size: 15px;
-        color: #000;
         &.selected {
             background: @dark-primary;
-            color: #fff;
         }
-
     }
     input {
         width: 50%;
@@ -385,7 +321,7 @@
     h4 {
         text-align: center;
         color: @dark-primary;
-        margin: 10px 0 30px 0;
+        margin: 0px 0 30px 0;
         font-size: 25px;
         display: block;
         font-weight: 400;
@@ -401,7 +337,6 @@
             background: @grey;
         }
     }
-
     .dismiss-button {
         background: white;
         border: 1px solid @dark-primary;
