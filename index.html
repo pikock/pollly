@@ -20,12 +20,23 @@
     <meta name="msapplication-TileImage" content="assets/favico/mstile-144x144.png">
     <meta name="msapplication-config" content="assets/favico/browserconfig.xml">
     <meta name="theme-color" content="%maskThemeColor%"> -->
-    <title>Pollly - i18n translation editor</title>
+    <title>Pollly: The simplest editor to translate apps & sites for YAML files. Fast & Simple & Open Source. Start to translate now!</title>
+    <meta name="description" content="Git repository for Free YAML editor made for everyone. Start to translate your yaml files to localize your application ">
+
     <link rel="stylesheet" href="assets/main.css">
 </head>
 
 <body>
     <!-- main page -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
     <div class="or-alert" or-alert="alerts"></div>
     <div ui-view class="full-container"></div>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
