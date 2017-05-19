@@ -8,10 +8,11 @@
     background-image: none;
     background-color: @primary;
     border-color: @primary;
-    .btn-primary:hover,.btn-primary:focus{
-        background-image: none;
-        background-color: darken(@primary, 10%)
-    }
+}
+
+.btn-primary:hover,.btn-primary:focus{
+    background-image: none;
+    background-color: darken(@primary, 10%)
 }
 
 .key{
@@ -123,15 +124,13 @@
 .actions {
     max-width: 600px;
     color: @grey;
-    margin: 15px auto;
-    padding-top: 20vh;
+    margin: 30px auto;
+    // padding-top: 20vh;
     width: 80%;
     .logo {
-        margin: auto;
-        top: 7vh;
-        left: 0;
-        right: 0;
-        position: absolute;
+        margin: 0 auto;
+        
+        display: block;
     }
     svg {
         margin: -10px 0 0 0;
