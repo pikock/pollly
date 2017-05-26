@@ -1,0 +1,79 @@
+@animationDuration: 600ms;
+
+#twitter-widget-0{
+    margin-top: 15px;
+    float:left;
+}
+
+#facebook-share{
+    float: left;
+    overflow: hidden;
+    margin-top: 15px;
+    margin-left: 10px;
+
+}
+.main-content_ {
+    position: relative;
+}
+
+.main-content_-primary {
+    margin-top: 20vh;
+}
+
+.animate-main-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    z-index: 1;
+    &.ng-enter,
+    &.ng-leave {
+        transition: all linear (@animationDuration * 1.3);
+    }
+    &.ng-enter,
+    &.ng-enter.ng-enter-prepare {
+        top: 200%;
+        //opacity: 0;
+    }
+    &.ng-enter-active {
+        top: 0;
+        opacity: 1;
+        .aside-bar {
+            display: none;
+        }
+    }
+    &.ng-leave {
+        top: 0;
+        opacity: 1;
+    }
+    &.ng-leave-active {
+        top: -100%;
+        opacity: 1;
+        .aside-bar {
+            display: none;
+        }
+    }
+}
+
+.up .animate-main-content {
+    &.ng-enter,
+    &.ng-leave {
+        transition: all linear (@animationDuration * 1.3);
+    }
+    &.ng-enter,
+    &.ng-enter.ng-enter-prepare {
+        top: -100%;
+    }
+    &.ng-enter-active {
+        top: 0;
+    }
+    &.ng-leave,
+    &.ng-leave.ng-leave-prepare {
+        top: 0;
+    }
+    &.ng-leave-active {
+        top: 200%;
+    }
+}

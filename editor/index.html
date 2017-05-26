@@ -1,0 +1,244 @@
+<div class="main-content-primary">
+
+  <div class="actions" ng-if="!enterPressed">
+    <svg class="logo" width="206" height="116" viewBox="0 0 206 116">
+      <g fill="none" fill-rule="evenodd" transform="translate(23 15)">
+        <text fill="#010729" font-family="JosefinSans-Bold, Josefin Sans" font-size="50.7" font-weight="bold">
+          <tspan x="1.099" y="60.163">PO</tspan>
+        </text>
+        <text fill="#020829" font-family="JosefinSans-Bold, Josefin Sans" font-size="50.7" font-weight="bold">
+          <tspan x="125.64" y="60">Y</tspan>
+        </text>
+        <path stroke="#496EC6" stroke-width="6.338" d="M82.2596491.846938776L82.2596491 60.9795918M114.259649 25.8469388L114.259649 85.9795918M98.2596491.846938776L98.2596491 60.9795918"
+          stroke-linecap="round" />
+      </g>
+    </svg>
+    <p class="text-center">The simplest editor to translate apps & sites for YML files
+      <br/> FAST & SIMPLE & FREE & OPENSOURCE
+    </p>
+
+    <div class="action_container">
+      <span class="tip">1</span>
+      <div class="action_list">
+        <p>Import your first file</p>
+        <label class="btn btn-default btn-file lhs btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 72 72">
+            <g fill="none" fill-rule="evenodd" stroke="white" stroke-width="3" transform="translate(18 18)" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23.1428571 5.5958279L18 .665710561M33.4285714 8.06088657C34.8505714 8.06088657 36 9.1627678 36 10.5259452L36 32.7114733C36 34.0746507 34.8505714 35.1765319 33.4285714 35.1765319L2.57142857 35.1765319C1.14942857 35.1765319 0 34.0746507 0 32.7114733L0 10.5259452C0 9.1627678 1.14942857 8.06088657 2.57142857 8.06088657M18 25.3162973L18 .665710561M18 .665710561L12.8571429 5.5958279"/>
+            </g>
+          </svg>
+          <input type="file" class="lhs" style="display: none;" fileread="lhs">
+        </label>
+      </div>
+
+      <div class="action_list">
+        <p>Import your second file</p>
+        <label class="btn btn-default btn-file rhs btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 72 72">
+            <g fill="none" fill-rule="evenodd" stroke="white" stroke-width="3" transform="translate(18 18)" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23.1428571 5.5958279L18 .665710561M33.4285714 8.06088657C34.8505714 8.06088657 36 9.1627678 36 10.5259452L36 32.7114733C36 34.0746507 34.8505714 35.1765319 33.4285714 35.1765319L2.57142857 35.1765319C1.14942857 35.1765319 0 34.0746507 0 32.7114733L0 10.5259452C0 9.1627678 1.14942857 8.06088657 2.57142857 8.06088657M18 25.3162973L18 .665710561M18 .665710561L12.8571429 5.5958279"/>
+            </g>
+          </svg>
+          <input type="file" class="rhs" style="display: none;" fileread="rhs">
+        </label>
+      </div>
+    </div>
+
+    <div class="action_container">
+      <span class="tip">2</span>
+      <button class="custom-button" ng-click="enterPressedClick();goToMissingStep(0)"> Start </button>
+      <span class="tooltip ">Press <strong>Enter</strong></span>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-default navbar-fixed-top" ng-if="metadata && enterPressed ">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <svg class="logo" width="103" height="58" viewBox="0 0 206 116">
+            <g fill="none" fill-rule="evenodd" transform="translate(23 15)">
+              <text fill="#010729" font-family="JosefinSans-Bold, Josefin Sans" font-size="50.7" font-weight="bold">
+                <tspan x="1.099" y="60.163">PO</tspan>
+              </text>
+              <text fill="#020829" font-family="JosefinSans-Bold, Josefin Sans" font-size="50.7" font-weight="bold">
+                <tspan x="125.64" y="60">Y</tspan>
+              </text>
+              <path stroke="#496EC6" stroke-width="6.338" d="M82.2596491.846938776L82.2596491 60.9795918M114.259649 25.8469388L114.259649 85.9795918M98.2596491.846938776L98.2596491 60.9795918"
+                stroke-linecap="round" />
+            </g>
+          </svg>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class=""><a href="" ng-click="toggleKey()">Display key</a></li>
+          <li><a href="#" ng-click="filter(filterAction)">Display only missing translations</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+
+          <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a>
+          <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+          <iframe id="facebook-share" src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fpikock.github.io%2Fpollly%2F&layout=button_count&size=small&mobile_iframe=true&width=69&height=20&appId"
+            width="87" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+
+          <p class="navbar-text">
+            {{ratioMissing}} %
+            <small><strong>{{ inputs - missingInputs }}</strong> / {{ inputs }} </small>
+          </p>
+
+
+          <button type="button" ng-click="export(metadata) " class="btn btn-primary navbar-btn">Export</button>
+
+
+        </ul>
+      </div>
+      <!-- 
+
+      <div class="statistics_container">
+        <div class="statistics_data ">
+          <h3>{{ratioMissing}} %</h3>
+          <p><strong>{{ inputs - missingInputs }}</strong> / {{ inputs }} </p>
+        </div>
+        <div class="statistics_action ">
+          <a class="btn btn-primary " ng-click="export(metadata) " role="button ">Export</a>
+        </div>
+      </div>
+ -->
+    </div>
+  </nav>
+  <!-- 
+
+  <div class="menu" ng-if="metadata && enterPressed ">
+
+    <button class="btn btn-primary" ng-click="toggleKey()">Toggle key visibility</button>
+    <button class="btn btn-primary" ng-click="filter(filterAction)">Filter by missings inputs</button>
+ 
+    <div class="statistics_container">
+      <div class="statistics_data ">
+        <h3>{{ratioMissing}} %</h3>
+        <p><strong>{{ inputs - missingInputs }}</strong> / {{ inputs }} </p>
+      </div>
+      <div class="statistics_action ">
+        <a class="btn btn-primary " ng-click="export(metadata) " role="button ">Export</a>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- <div class="menu" ng-if="metadata && enterPressed ">
+    <button class="btn btn-primary" ng-click="toggleKey()">Toggle key visibility</button>
+    <button class="btn btn-primary" ng-click="filter(filterAction)">Filter by missings inputs</button>
+
+  </div>
+
+  <div class="statistics " ng-if="metadata && enterPressed ">
+    <div class="statistics_container">
+      <div class="statistics_data ">
+        <h3>{{ratioMissing}} %</h3>
+        <p><strong>{{ inputs - missingInputs }}</strong> / {{ inputs }} </p>
+      </div>
+      <div class="statistics_action ">
+        <a class="btn btn-primary " ng-click="export(metadata) " role="button ">Export</a>
+      </div>
+    </div>
+  </div>
+ -->
+  <div class="metadata " ng-if="metadata && enterPressed ">
+    <table class="table ">
+      <thead>
+        <tr>
+          <th>Ref</th>
+          <th class="hidden key">Key</th>
+          <th>{{langLhs}}</th>
+          <th>{{langRhs}}</th>
+          <th></th>
+        </tr>
+      </thead>
+      <span class="spacer">
+
+      </span>
+      <tbody>
+        <tr ng-repeat="(key, value) in metadata " ng-class="value.hasOwnProperty('missing') ? 'missing' : '' ">
+          <td>
+            <div class="index">{{$index}}</div>
+          </td>
+          <td class="hidden key">{{ key }}</td>
+          <td>
+            <input class="form-control lhs" type="text " ng-focus="setSpecific('lhs');setSelected($index)" ng-model="value.lhs " ng-change="markMissingTranslations(value);calculateStatistics() ">
+          </td>
+          <td>
+            <input class="form-control rhs" type="text " ng-focus="setSpecific('rhs');setSelected($index)" ng-model="value.rhs " ng-change="markMissingTranslations(value);calculateStatistics() ">
+          </td>
+          <td class="specific_button">
+            <button ng-click="goToMissingStep(keyIndex, keySpecific)" class="btn btn-primary">Next</button>
+            <span class="tooltip">Press <strong>Enter</strong></span>
+          </td>
+          <!--<td>
+
+              </td>-->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<script type="text/ng-template" id="exportModal.html">
+  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 72 72">
+    <g fill="none" fill-rule="evenodd" stroke="#512D68" stroke-width="4" transform="translate(19 19)">
+      <path d="M17.5 31.7752871L17.5 22.0022505M10 32.9411765L25 32.9411765" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M17.5 22.0022505L17.5 22.0022505C11.9775 22.0022505 7.5 17.6263733 7.5 12.2292138L7.5 2.45617714C7.5 1.10505482 8.62.0129179768 10 .0129179768L25 .0129179768C26.38.0129179768 27.5 1.10505482 27.5 2.45617714L27.5 12.2292138C27.5 17.6263733 23.0225 22.0022505 17.5 22.0022505zM7.5 12.2292138L5 12.2292138C2.24 12.2292138 0 10.0400536 0 7.34269547 0 4.64533735 2.24 2.45617714 5 2.45617714L7.5 2.45617714M27.5 2.45617714L30 2.45617714C32.76 2.45617714 35 4.64533735 35 7.34269547 35 10.0400536 32.76 12.2292138 30 12.2292138L27.5 12.2292138"
+      />
+    </g>
+  </svg>
+
+  <div class="modal-header ">
+    <h3 class="modal-title " id="modal-title ">All the input has been files, export your file to .YML format</h3>
+  </div>
+  <div class="modal-body " id="modal-body ">
+    <h4>Progression <br> <span>100%</span></h4>
+    <div>
+      <button class="btn btn-primary choose_lang" ng-click="langChoosed = 'lhs'">Export the traduction of the first language</button>
+      <button class="btn btn-primary choose_lang" ng-click="langChoosed = 'rhs'">Export the traduction of the second language</button>
+    </div>
+    <div class="filename_container">
+      <label for="filename" class="form-controll">Your filename</label>
+      <input class="form-control filename" name="filename" type="text " ng-model="filename ">
+    </div>
+
+  </div>
+  <div class="modal-footer ">
+    <button class="btn btn-warning dismiss-button" type="button " ng-click="$dismiss('cancel'); ">Cancel</button>
+    <button class="btn btn-primary close-button disabled" type="button " disabled ng-click="$close({ filename, lang: langChoosed }); ">Export</button>
+  </div>
+
+  <script>
+    $('.choose_lang').on('click', function (event) {
+      $('.close-button').removeAttr('disabled')
+       $('.close-button').removeClass('disabled')
+      var previous = document.querySelector('.choose_lang.selected')
+      if (previous) {
+        previous.classList.remove('selected')
+      }
+      event.target.classList.add('selected')
+      $('input.filename').focus()
+    })
+  </script>
+</script>
+
+<script>
+  document.addEventListener('keydown', function (event) {
+    if (event.which === 13) {
+      var scope = angular.element($(".main-content-primary ")).scope();
+      if (scope.metadata) {
+        scope.$apply(function () {
+          scope.enterPressed = true;
+        })
+        this.removeEventListener('click', arguments.callee, true)
+      }
+    }
+  })
+
+</script>
