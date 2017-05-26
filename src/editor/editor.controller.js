@@ -162,23 +162,30 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
   }
 
   var constructLangObject = function () {
-    $scope.langLhs = Object.keys($scope.lhs)[0]
-    $scope.langRhs = Object.keys($scope.rhs)[0]
-    var rhs = $scope.rhs[$scope.langRhs]
-    var lhs = $scope.lhs[$scope.langLhs]
+    var objToReturn = {}
+    ;['lhs', 'rhs'].forEach(function (lang) {
+      var obj = $scope[lang]
+      var tmp
+      if (Object.keys(obj).length > 1) {
+        $scope['lang' + capitalize(lang)] = lang
+        tmp = {
+          language: lang,
+          translations: flattenObject({ lang: $scope[lang] })
+        }
+      } else {
+        $scope['lang' + capitalize(lang)] = Object.keys($scope[lang])[0]
+        tmp = {
+          language: lang,
+          translations: flattenObject(
+            $scope[lang][$scope['lang' + capitalize(lang)]]
+          )
+        }
+      }
 
-    var objectLhs = {
-      language: 'lhs',
-      translations: flattenObject(lhs)
-    }
-    var objectRhs = {
-      language: 'rhs',
-      translations: flattenObject(rhs)
-    }
-    return {
-      lhs: objectLhs,
-      rhs: objectRhs
-    }
+      objToReturn[lang] = tmp
+    })
+
+    return objToReturn
   }
 
   $scope.$on('filereaded', function (event, arg, filename) {
@@ -267,7 +274,12 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
     })
     var parentLang = lang === 'lhs' ? $scope.langLhs : $scope.langRhs
     var tmp = {}
-    tmp[parentLang] = $scope.tmpObj
+    if (lang === 'lhs' || lang === 'rhs') {
+      tmp = $scope.tmpObj
+    } else {
+      tmp[parentLang] = $scope.tmpObj
+    }
+
     delete $scope.tmpObj
     return tmp
   }
