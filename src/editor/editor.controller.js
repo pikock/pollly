@@ -58,6 +58,7 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
       $scope.metadata = $scope.tempData
       $scope.filterAction = 'missings'
     }
+    generateStatistic($scope.metadata)
   }
 
   $scope.enterPressedClick = function () {
@@ -156,6 +157,10 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
     })
   }
 
+  var capitalize = function (string) {
+    return string[0].toUpperCase() + string.substr(1)
+  }
+
   var constructLangObject = function () {
     $scope.langLhs = Object.keys($scope.lhs)[0]
     $scope.langRhs = Object.keys($scope.rhs)[0]
@@ -185,9 +190,8 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
     attachListener()
     var langObj = constructLangObject()
     var mergedData = mergeObjects(langObj.lhs, langObj.rhs)
-    var markedData = markedMissing(mergedData)
-    $scope.metadata = markedData
-    generateStatistic(markedData)
+    $scope.metadata = markedMissing(mergedData)
+    generateStatistic($scope.metadata)
   })
 
   // Takes a nested object and produces a result objects where all the nested paths have

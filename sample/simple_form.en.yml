@@ -1,5 +1,4 @@
-en:
-  simple_form:
+simple_form:
     "yes": 'Yes'
     "no": 'No'
     required:
@@ -33,4 +32,7 @@ en:
     # prompts:
     #   defaults:
     #     age: 'Select your age'
+
+test:
+  test: "NTEOSJDSQ"
 
