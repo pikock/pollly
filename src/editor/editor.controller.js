@@ -80,7 +80,6 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
   }
 
   $scope.goToMissingStep = function (index, specific, retry) {
-    console.log('Index', index)
     try {
       Object.keys($scope.metadata)
         .slice(index)
@@ -99,7 +98,6 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
               ') input'
             var containerSelector =
               '.metadata tbody tr:nth-child(' + (lineIndex + index + 1) + ')'
-            console.log('Selector', selector)
             var element = document.querySelector(selector)
             element.focus()
             window.scrollTo(
@@ -146,13 +144,7 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
     )
   }
 
-  $scope.$on('filereaded', function (event, arg, filename) {
-    $scope[arg.state] = arg.datas
-
-    if (!$scope.lhs || !$scope.rhs) {
-      return false
-    }
-
+  var attachListener = function () {
     document.addEventListener('keyup', function (event) {
       var index = $scope.keyIndex || 0
       var specific = $scope.keySpecific || undefined
@@ -162,11 +154,37 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
         $scope.goToMissingStep(index)
       }
     })
+  }
 
+  var constructLangObject = function () {
     var langRhs = Object.keys($scope.rhs)[0]
     var langLhs = Object.keys($scope.lhs)[0]
     var rhs = $scope.rhs[langRhs]
     var lhs = $scope.lhs[langLhs]
+
+    var objectLhs = {
+      language: 'lhs',
+      translations: flattenObject(lhs)
+    }
+    var objectRhs = {
+      language: 'rhs',
+      translations: flattenObject(rhs)
+    }
+  }
+
+  $scope.$on('filereaded', function (event, arg, filename) {
+    $scope[arg.state] = arg.datas
+    if (!$scope.lhs || !$scope.rhs) {
+      return false
+    }
+
+    attachListener()
+    // constructLangObject()
+    var langRhs = Object.keys($scope.rhs)[0]
+    var langLhs = Object.keys($scope.lhs)[0]
+    var rhs = $scope.rhs[langRhs]
+    var lhs = $scope.lhs[langLhs]
+
     var objectLhs = {
       language: 'lhs',
       translations: flattenObject(lhs)
@@ -176,8 +194,8 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
       translations: flattenObject(rhs)
     }
 
-    $scope.initialLang = langLhs
-    $scope.totranslateLang = langRhs
+    $scope.langLhs = langLhs
+    $scope.langRhs = langRhs
     var mergedData = mergeObjects(objectLhs, objectRhs)
     var markedData = markedMissing(mergedData)
     $scope.metadata = markedData
@@ -255,9 +273,7 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
     array.forEach(function (obj) {
       addPathToObject(obj.value, obj.path, $scope.tmpObj)
     })
-    var parentLang = lang === 'lhs'
-      ? $scope.initialLang
-      : $scope.totranslateLang
+    var parentLang = lang === 'lhs' ? $scope.langLhs : $scope.langRhs
     var tmp = {}
     tmp[parentLang] = $scope.tmpObj
     delete $scope.tmpObj
