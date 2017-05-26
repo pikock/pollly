@@ -68,7 +68,7 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
   }
 
   $scope.setSelected = index => {
-    let selector = '.metadata tbody tr:nth-child(' + (index + 1) + ')'
+    let selector = `.metadata tbody tr:nth-child(${index + 1})`
     let selectedTr = document.querySelector('tr.selected')
     if (selectedTr) {
       selectedTr.classList.remove('selected')
@@ -91,14 +91,8 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
             }
 
             let inputIndex = $scope.metadata[line].missing === 'lhs' ? 0 : 1
-            let selector =
-              '.metadata tbody tr:nth-child(' +
-              (lineIndex + index + 1) +
-              ') td:nth-child(' +
-              (inputIndex + 3) +
-              ') input'
-            let containerSelector =
-              '.metadata tbody tr:nth-child(' + (lineIndex + index + 1) + ')'
+            let selector = `.metadata tbody tr:nth-child(${lineIndex + index + 1}) td:nth-child(${inputIndex + 3}) input`
+            let containerSelector = `.metadata tbody tr:nth-child(${lineIndex + index + 1})`
             let element = document.querySelector(selector)
             element.focus()
             window.scrollTo(
@@ -161,8 +155,7 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
   }
 
   let constructLangObject = () => {
-    let objToReturn = {}
-    ;['lhs', 'rhs'].forEach(function (lang) {
+    return ['lhs', 'rhs'].reduce((memo, lang) => {
       let obj = $scope[lang]
       let tmp
       if (Object.keys(obj).length > 1) {
@@ -180,14 +173,12 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
           )
         }
       }
-
-      objToReturn[lang] = tmp
-    })
-
-    return objToReturn
+      memo[lang] = tmp
+      return memo
+    }, {})
   }
 
-  $scope.$on('filereaded', function (event, arg, filename) {
+  $scope.$on('filereaded', (event, arg, filename) => {
     $scope[arg.state] = arg.datas
     if (!$scope.lhs || !$scope.rhs) {
       return false
@@ -266,13 +257,15 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
     return tmpArray
   }
 
-  let constructObj = function (array, lang) {
+  let constructObj = (array, lang) => {
     $scope.tmpObj = {}
-    array.forEach(function (obj) {
+    let tmp = {}
+
+    array.forEach(obj => {
       addPathToObject(obj.value, obj.path, $scope.tmpObj)
     })
     let parentLang = lang === 'lhs' ? $scope.langLhs : $scope.langRhs
-    let tmp = {}
+
     if (lang === 'lhs' || lang === 'rhs') {
       tmp = $scope.tmpObj
     } else {
@@ -283,7 +276,7 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
     return tmp
   }
 
-  let addPathToObject = function (value, path, currentPath) {
+  let addPathToObject = (value, path, currentPath) => {
     let toGoPath = path.shift()
     if (currentPath.hasOwnProperty(toGoPath) && path.length >= 1) {
       return addPathToObject(value, path, currentPath[toGoPath])
@@ -297,7 +290,7 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
   }
 
   // We need to export both versions (lhs and rhs) since values might have been added on both sides
-  $scope.export = function (data, lang) {
+  $scope.export = (data, lang) => {
     if ($scope.ratioMissing !== 100) {
       AlertManager.add({
         type: 'danger',
@@ -312,7 +305,7 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
       size: 'lg'
     })
 
-    modalInstance.result.then(function (modalResult) {
+    modalInstance.result.then(modalResult => {
       modalResult.filename = /.yml/.test(modalResult.filename)
         ? modalResult.filename
         : modalResult.filename + '.yml'

@@ -1,6 +1,6 @@
 /* global module */
 
-module.exports = function ($scope, $uibModalInstance, messageBox) {
+module.exports = ($scope, $uibModalInstance, messageBox) => {
   'ngInject'
   'use strict'
   $scope.title = messageBox.title
@@ -9,15 +9,15 @@ module.exports = function ($scope, $uibModalInstance, messageBox) {
   $scope.btnOk = messageBox.btnOk || 'Ok'
   $scope.btnCancel = messageBox.btnCancel || 'Cancel'
 
-  $scope.ok = function () {
+  $scope.ok = () => {
     $uibModalInstance.close('ok')
   }
 
-  $scope.close = function () {
+  $scope.close = () => {
     $uibModalInstance.close()
   }
 
-  $scope.getSvg = function (fileName) {
+  $scope.getSvg = fileName => {
     return '/assets/images/' + fileName + '.svg'
   }
 }

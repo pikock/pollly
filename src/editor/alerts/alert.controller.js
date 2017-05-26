@@ -3,11 +3,11 @@
  * for orson by thierry_c
  */
 
-module.exports = function ($scope, AlertManager) {
+module.exports = ($scope, AlertManager) => {
   'ngInject'
   'use strict'
   $scope.alerts = AlertManager.list
-  $scope.closeAlert = function () {
+  $scope.closeAlert = () => {
     AlertManager.del()
   }
 }
