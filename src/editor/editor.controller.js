@@ -170,7 +170,7 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
         $scope['lang' + capitalize(lang)] = lang
         tmp = {
           language: lang,
-          translations: flattenObject({ lang: $scope[lang] })
+          translations: flattenObject({ tmp: $scope[lang] })
         }
       } else {
         $scope['lang' + capitalize(lang)] = Object.keys($scope[lang])[0]

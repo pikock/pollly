@@ -581,7 +581,8 @@ en:
       icon_widget_feature: "Icon Widget"
       video_background_feature: "Video Backgrounds"
       parallax: Parallax scrolling
-    user_blocks: Your custom block has been deleted
+    user_blocks:
+      test: Your custom block has been deleted
     select_displayed_widgets: Select the widgets you want displayed in your menu
     website_care:
       error_title: "Orson Bot has found an error"
