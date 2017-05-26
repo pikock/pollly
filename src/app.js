@@ -9,6 +9,7 @@ require('angular-easyfb')
 require('angular-translate')
 require('angular-sanitize')
 require('./editor')
+require('./assets/styles/main.less')
 
 var dependencies = [
   'ui.router',
