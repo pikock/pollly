@@ -23,11 +23,17 @@ angular
   .constant('AppConfig', {})
   .config(require('./app.routes'))
   .config(require('./app.config'))
-  .run(function ($rootScope, $state, $stateParams, $document) {
-    'ngInject'
-    $rootScope.$state = $state
-    $rootScope.$stateParams = $stateParams
-  })
+  .run([
+    '$rootScope',
+    '$state',
+    '$stateParams',
+    '$document',
+    function ($rootScope, $state, $stateParams, $document) {
+      'ngInject'
+      $rootScope.$state = $state
+      $rootScope.$stateParams = $stateParams
+    }
+  ])
   .config([
     '$compileProvider',
     function ($compileProvider) {
