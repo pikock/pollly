@@ -157,10 +157,10 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
   }
 
   var constructLangObject = function () {
-    var langRhs = Object.keys($scope.rhs)[0]
-    var langLhs = Object.keys($scope.lhs)[0]
-    var rhs = $scope.rhs[langRhs]
-    var lhs = $scope.lhs[langLhs]
+    $scope.langLhs = Object.keys($scope.lhs)[0]
+    $scope.langRhs = Object.keys($scope.rhs)[0]
+    var rhs = $scope.rhs[$scope.langRhs]
+    var lhs = $scope.lhs[$scope.langLhs]
 
     var objectLhs = {
       language: 'lhs',
@@ -169,6 +169,10 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
     var objectRhs = {
       language: 'rhs',
       translations: flattenObject(rhs)
+    }
+    return {
+      lhs: objectLhs,
+      rhs: objectRhs
     }
   }
 
@@ -179,24 +183,8 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
     }
 
     attachListener()
-    // constructLangObject()
-    var langRhs = Object.keys($scope.rhs)[0]
-    var langLhs = Object.keys($scope.lhs)[0]
-    var rhs = $scope.rhs[langRhs]
-    var lhs = $scope.lhs[langLhs]
-
-    var objectLhs = {
-      language: 'lhs',
-      translations: flattenObject(lhs)
-    }
-    var objectRhs = {
-      language: 'rhs',
-      translations: flattenObject(rhs)
-    }
-
-    $scope.langLhs = langLhs
-    $scope.langRhs = langRhs
-    var mergedData = mergeObjects(objectLhs, objectRhs)
+    var langObj = constructLangObject()
+    var mergedData = mergeObjects(langObj.lhs, langObj.rhs)
     var markedData = markedMissing(mergedData)
     $scope.metadata = markedData
     generateStatistic(markedData)
