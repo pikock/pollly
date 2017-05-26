@@ -203,7 +203,11 @@
       <button class="btn btn-primary choose_lang" ng-click="langChoosed = 'lhs'">Export the traduction of the first language</button>
       <button class="btn btn-primary choose_lang" ng-click="langChoosed = 'rhs'">Export the traduction of the second language</button>
     </div>
-    <input class="form-control filename" type="text " ng-model="filename ">
+    <div class="filename_container">
+      <label for="filename" class="form-controll">Your filename</label>
+      <input class="form-control filename" name="filename" type="text " ng-model="filename ">
+    </div>
+
   </div>
   <div class="modal-footer ">
     <button class="btn btn-warning dismiss-button" type="button " ng-click="$dismiss('cancel'); ">Cancel</button>
