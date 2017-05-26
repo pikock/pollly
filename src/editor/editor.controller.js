@@ -89,15 +89,17 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
             if (specific && $scope.metadata[line].missing !== specific) {
               return false
             }
+
             var inputIndex = $scope.metadata[line].missing === 'lhs' ? 0 : 1
             var selector =
               '.metadata tbody tr:nth-child(' +
               (lineIndex + index + 1) +
               ') td:nth-child(' +
-              (inputIndex + 2) +
+              (inputIndex + 3) +
               ') input'
             var containerSelector =
               '.metadata tbody tr:nth-child(' + (lineIndex + index + 1) + ')'
+            console.log('Selector', selector)
             var element = document.querySelector(selector)
             element.focus()
             window.scrollTo(
@@ -108,14 +110,14 @@ module.exports = function ($rootScope, $scope, AlertManager, $uibModal) {
             )
             $scope.keyIndex = lineIndex
             $scope.specific = specific
-            throw BreakException
+            throw new Error('BreakException')
           }
         })
 
       if (retry) {
         document.scrollIntoView()
       } else {
-        goToMissingStep(0, specific, true)
+        $scope.goToMissingStep(0, specific, true)
       }
     } catch (e) {
       return e

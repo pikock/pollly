@@ -14,8 +14,7 @@
       </g>
     </svg>
     <p class="text-center">The simplest editor to translate apps & sites for YML files
-    <br/>
-    FAST & SIMPLE & FREE & OPENSOURCE
+      <br/> FAST & SIMPLE & FREE & OPENSOURCE
     </p>
 
     <div class="action_container">
@@ -51,8 +50,8 @@
       <span class="tooltip ">Press <strong>Enter</strong></span>
     </div>
   </div>
-  
-  <nav class="navbar navbar-default navbar-fixed-top"  ng-if="metadata && enterPressed ">
+
+  <nav class="navbar navbar-default navbar-fixed-top" ng-if="metadata && enterPressed ">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">
@@ -78,9 +77,11 @@
 
         <ul class="nav navbar-nav navbar-right">
 
-          <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-          
-          <iframe id="facebook-share" src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fpikock.github.io%2Fpollly%2F&layout=button_count&size=small&mobile_iframe=true&width=69&height=20&appId" width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a>
+          <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+          <iframe id="facebook-share" src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fpikock.github.io%2Fpollly%2F&layout=button_count&size=small&mobile_iframe=true&width=69&height=20&appId"
+            width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
 
           <p class="navbar-text">
             {{ratioMissing}} %
@@ -88,11 +89,12 @@
           </p>
 
 
-          <button type="button"   ng-click="export(metadata) " class="btn btn-primary navbar-btn">Export</button>
+          <button type="button" ng-click="export(metadata) " class="btn btn-primary navbar-btn">Export</button>
 
-          
+
         </ul>
-      </div><!-- 
+      </div>
+      <!-- 
 
       <div class="statistics_container">
         <div class="statistics_data ">
@@ -106,7 +108,7 @@
  -->
     </div>
   </nav>
-<!-- 
+  <!-- 
 
   <div class="menu" ng-if="metadata && enterPressed ">
 
@@ -164,10 +166,10 @@
           </td>
           <td class="hidden key">{{ key }}</td>
           <td>
-            <input class="form-control " type="text " ng-focus="setSpecific('lhs');setSelected($index)" ng-model="value.lhs " ng-change="markMissingTranslations(value);calculateStatistics() ">
+            <input class="form-control lhs" type="text " ng-focus="setSpecific('lhs');setSelected($index)" ng-model="value.lhs " ng-change="markMissingTranslations(value);calculateStatistics() ">
           </td>
           <td>
-            <input class="form-control " type="text " ng-focus="setSpecific('rhs');setSelected($index)" ng-model="value.rhs " ng-change="markMissingTranslations(value);calculateStatistics() ">
+            <input class="form-control rhs" type="text " ng-focus="setSpecific('rhs');setSelected($index)" ng-model="value.rhs " ng-change="markMissingTranslations(value);calculateStatistics() ">
           </td>
           <td class="specific_button">
             <button ng-click="goToMissingStep(keyIndex, keySpecific)" class="btn btn-primary">Next</button>
