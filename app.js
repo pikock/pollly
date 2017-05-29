@@ -1,33 +1,32 @@
 /* global require angular module */
 'use strict'
-
 require('angular')
-require('angular-ui-bootstrap')
-require('angular-ui-router')
 require('angular-local-storage')
 require('angular-easyfb')
-require('angular-translate')
 require('angular-sanitize')
-require('./editor')
 require('./assets/styles/main.less')
 
-var dependencies = [
-  'ui.router',
-  'ui.bootstrap',
-  'editor',
-  'pascalprecht.translate'
-]
-
 angular
-  .module('ymlEditor', dependencies)
+  .module('ymlEditor', [
+    require('angular-ui-router'),
+    require('angular-ui-bootstrap'),
+    require('./editor'),
+    require('angular-translate')
+  ])
   .constant('AppConfig', {})
   .config(require('./app.routes'))
   .config(require('./app.config'))
-  .run(function ($rootScope, $state, $stateParams, $document) {
-    'ngInject'
-    $rootScope.$state = $state
-    $rootScope.$stateParams = $stateParams
-  })
+  // .run([
+  //   '$rootScope',
+  //   '$state',
+  //   '$stateParams',
+  //   '$document',
+  //   function ($rootScope, $state, $stateParams, $document) {
+  //     'ngInject'
+  //     $rootScope.$state = $state
+  //     $rootScope.$stateParams = $stateParams
+  //   }
+  // ])
   .config([
     '$compileProvider',
     function ($compileProvider) {
