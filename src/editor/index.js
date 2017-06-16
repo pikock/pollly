@@ -1,6 +1,6 @@
 /* global module require */
 
-'use strict';
+'use strict'
 
 module.exports = window.angular
   .module('editor', [
@@ -10,7 +10,7 @@ module.exports = window.angular
     require('./controllers/exportController')
   ])
   .factory('editorService', function() {
-    'ngInject';
-    var service = {};
-    return service;
-  }).name;
+    'ngInject'
+    var service = {}
+    return service
+  }).name

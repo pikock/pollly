@@ -1,8 +1,8 @@
 module.exports = window.angular
   .module('OrAlert', [])
   .directive('orAlert', function() {
-    'ngInject';
-    'use strict';
+    'ngInject'
+    'use strict'
     return {
       template: require('../alerts/index.html'),
       scope: {
@@ -10,5 +10,5 @@ module.exports = window.angular
       },
       controller: require('../alerts/alert.controller.js'),
       link: function(scope, element, attr) {}
-    };
-  }).name;
+    }
+  }).name
