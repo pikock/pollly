@@ -196,10 +196,8 @@
     </svg>
 
     <div class="modal-header ">
-      <h3 class="modal-title " id="modal-title ">All the input has been files, export your file to .YML format</h3>
+      <h3 class="modal-title " id="modal-title ">All the input has been filed, export your file to .YML format</h3>
     </div>
-
-
 
     <div class="modal-body " id="modal-body ">
       <h4>Progression <br> <span>{{ratio}}%</span></h4>
@@ -216,7 +214,7 @@
     </div>
     <div class="modal-footer ">
       <button class="btn btn-warning dismiss-button" type="button " ng-click="$dismiss('cancel'); ">Cancel</button>
-      <button class="btn btn-primary close-button disabled" type="button " disabled ng-click="$close({ filename, lang: langChoosed }); ">Export</button>
+      <button class="btn btn-primary close-button disabled" type="button " disabled ng-click="close()">Export</button>
     </div>
   </div>
 </script>

@@ -5,6 +5,23 @@ module.exports = window.angular.module('FileRead', []).directive('fileread', [
   function(AlertManager) {
     return {
       link: function(scope, element, attributes) {
+        function changeUi(lang) {
+          if (lang === 'lhs') {
+            document.querySelector('label.lhs').classList.add('disabled')
+            document
+              .querySelector('input.lhs')
+              .setAttribute('disabled', 'disabled')
+            document.querySelector('label.rhs').classList.remove('disabled')
+            document.querySelector('input.rhs').removeAttribute('disabled')
+            document.querySelector('label.rhs').classList.remove('disabled')
+            document.querySelector('input.rhs').removeAttribute('disabled')
+          } else if (lang === 'rhs') {
+            document
+              .querySelector('input.rhs')
+              .setAttribute('disabled', 'disabled')
+          }
+        }
+
         element.bind('change', function(changeEvent) {
           var reader = new window.FileReader()
           reader.onload = function(loadEvent) {
@@ -27,17 +44,9 @@ module.exports = window.angular.module('FileRead', []).directive('fileread', [
                 return false
               }
 
-              if (attributes.fileread === 'lhs') {
-                document.querySelector('label.lhs').classList.add('disabled')
-                document
-                  .querySelector('input.lhs')
-                  .setAttribute('disabled', 'disabled')
-              } else {
-                document.querySelector('label.rhs').classList.add('disabled')
-                document
-                  .querySelector('input.rhs')
-                  .setAttribute('disabled', 'disabled')
-              }
+              changeUi(attributes.fileread)
+              console.log(attributes.fileread)
+              console.log(scope.fileread)
               scope.$emit('filereaded', {
                 datas: scope.fileread,
                 state: attributes.fileread,

@@ -9,6 +9,7 @@ var yaml = require('js-yaml')
 module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
   'ngInject'
   $scope.displayKey = false
+  $scope.inputName = false
   $scope.filterAction = 'missings'
   /**
    * Modify the missing property of item
@@ -62,12 +63,6 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
       $scope.filterAction = 'missings'
     }
     generateStatistic($scope.metadata)
-  }
-
-  $scope.enterPressedClick = function() {
-    if ($scope.metadata) {
-      $scope.enterPressed = true
-    }
   }
 
   $scope.setSelected = function(index) {
@@ -201,7 +196,9 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
     var langObj = constructLangObject()
     var mergedData = mergeObjects(langObj.lhs, langObj.rhs)
     $scope.metadata = markedMissing(mergedData)
+    $scope.enterPressed = true
     generateStatistic($scope.metadata)
+    $scope.goToMissingStep(0)
   })
 
   // Takes a nested object and produces a result objects where all the nested paths have
@@ -277,10 +274,15 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
     })
     var parentLang = lang === 'lhs' ? $scope.langLhs : $scope.langRhs
     var tmp = {}
-    if (lang === 'lhs' || lang === 'rhs') {
-      tmp = $scope.tmpObj
-    } else {
+    console.log('Lang', lang)
+    console.log('ParentLang', parentLang)
+
+    if (parentLang !== 'tmp') {
       tmp[parentLang] = $scope.tmpObj
+    } else if (lang === 'lhs' || lang === 'rhs') {
+      tmp = $scope.tmpObj
+      console.log($scope.tmpObj)
+      console.log('TMP', tmp)
     }
 
     delete $scope.tmpObj
@@ -302,6 +304,7 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
 
   // We need to export both versions (lhs and rhs) since values might have been added on both sides
   $scope.export = function(data, lang) {
+    console.log(data, lang)
     if ($scope.ratioMissing !== 100) {
       AlertManager.add({
         type: 'danger',
@@ -331,18 +334,30 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
             event.target.classList.add('selected')
             $('input.filename').focus()
           }
+
+          $scope.close = function() {
+            modalInstance.close({
+              filename: $scope.filename,
+              lang: $scope.lang
+            })
+          }
         }
       ],
       size: 'lg'
     })
 
     modalInstance.result.then(function(modalResult) {
+      console.log(modalResult)
       modalResult.filename = /.yml/.test(modalResult.filename)
         ? modalResult.filename
         : modalResult.filename + '.yml'
+      console.log('Data', data)
       var filtered = returnDataToExport(data, modalResult.lang)
+      console.log('Filtered', filtered)
       var constructed = constructObj(filtered, modalResult.lang)
+      console.log('Constructed', constructed)
       var yamlToExport = yaml.dump(constructed)
+      console.log('YamlToExport', yamlToExport)
       var blob = new window.Blob([yamlToExport], {
         type: 'application/octet-stream'
       })
