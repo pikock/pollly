@@ -2,13 +2,13 @@ var YAMLJS = require('js-yaml')
 
 module.exports = window.angular.module('FileRead', []).directive('fileread', [
   'AlertManager',
-  function (AlertManager) {
+  function(AlertManager) {
     return {
-      link: function (scope, element, attributes) {
-        element.bind('change', function (changeEvent) {
+      link: function(scope, element, attributes) {
+        element.bind('change', function(changeEvent) {
           var reader = new window.FileReader()
-          reader.onload = function (loadEvent) {
-            scope.$apply(function () {
+          reader.onload = function(loadEvent) {
+            scope.$apply(function() {
               try {
                 scope.fileread = YAMLJS.safeLoad(loadEvent.target.result)
               } catch (e) {

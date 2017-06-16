@@ -13,6 +13,7 @@ fr:
     labels:
       defaults:
         password: 'Password'
+        password: 'Password'
       user:
         new:
           email: 'E-mail to sign in.'

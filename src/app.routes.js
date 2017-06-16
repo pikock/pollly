@@ -1,6 +1,6 @@
 /* global require module */
 
-module.exports = function ($stateProvider, $urlRouterProvider, AppConfig) {
+module.exports = function($stateProvider, $urlRouterProvider, AppConfig) {
   'ngInject'
   'use strict'
   $stateProvider

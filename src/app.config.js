@@ -1,5 +1,5 @@
 'use strict'
-module.exports = /* @ngInject */ function (
+module.exports = /* @ngInject */ function(
   $httpProvider,
   AppConfig,
   $translateProvider

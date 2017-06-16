@@ -22,14 +22,14 @@ angular
   .constant('AppConfig', {})
   .config(require('./app.routes'))
   .config(require('./app.config'))
-  .run(function ($rootScope, $state, $stateParams, $document) {
+  .run(function($rootScope, $state, $stateParams, $document) {
     'ngInject'
     $rootScope.$state = $state
     $rootScope.$stateParams = $stateParams
   })
   .config([
     '$compileProvider',
-    function ($compileProvider) {
+    function($compileProvider) {
       $compileProvider.aHrefSanitizationWhitelist(
         /^\s*(https?|ftp|mailto|tel|file|blob):/
       )
@@ -37,19 +37,19 @@ angular
   ])
 
 var app = {
-  initialize: function () {
+  initialize: function() {
     this.angularBootstrap()
   },
-  angularBootstrap: function () {
+  angularBootstrap: function() {
     var self = this
-    angular.element(document).ready(function () {
+    angular.element(document).ready(function() {
       self.onDeviceReady()
     })
   },
-  bindEvents: function () {
+  bindEvents: function() {
     document.addEventListener('deviceready', this.onDeviceReady, false)
   },
-  onDeviceReady: function () {
+  onDeviceReady: function() {
     angular.bootstrap(document, ['ymlEditor'])
   }
 }
