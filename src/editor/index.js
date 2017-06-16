@@ -1,16 +1,16 @@
 /* global module require */
 
-'use strict'
-
-require('./services/AlertManager')
-require('./directives/OrAlert')
-require('./directives/FileRead')
-require('./controllers/exportModal')
+'use strict';
 
 module.exports = window.angular
-  .module('editor', ['OrAlert', 'AlertManager', 'FileRead', 'exportModal'])
-  .factory('editorService', function () {
-    'ngInject'
-    var service = {}
-    return service
-  }).name
+  .module('editor', [
+    require('./directives/OrAlert'),
+    require('./services/AlertManager'),
+    require('./directives/FileRead'),
+    require('./controllers/exportController')
+  ])
+  .factory('editorService', function() {
+    'ngInject';
+    var service = {};
+    return service;
+  }).name;

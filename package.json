@@ -1,19 +1,29 @@
 {
-  "name": "yml-editor",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "pollly",
+  "version": "0.0.1",
+  "description": "YML Editor used for managing differents translations files",
+  "main": "src/app.js",
   "scripts": {
     "dev": "NODE_ENV=dev gulp serve",
     "build": "NODE_ENV=production gulp build",
     "staging": "NODE_ENV=staging gulp build",
     "predeploy": "git checkout master && npm run build && git push origin master && git checkout gh-pages",
     "deploy": "rm -rf assets index.html bundle.js && mv dist/* .  && git add index.html assets bundle.js && git commit -m 'New realease' && git push origin gh-pages",
-    "postdeploy": "git checkout master"
+    "postdeploy": "git checkout master",
+    "precommit": "lint-staged"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "translation",
+    "yml"
+  ],
+  "author": "Antoine Renault <antoine.renault.mmi@gmail.com>",
   "license": "ISC",
+  "lint-staged": {
+    "*.js": [
+      "./node_modules/.bin/prettier --single-quote --no-semi --trailing-comma none --write",
+      "git add"
+    ]
+  },
   "dependencies": {
     "angular": "^1.6.1",
     "angular-animate": "^1.6.1",
@@ -25,6 +35,7 @@
     "angular-translate": "^2.14.0",
     "angular-ui-bootstrap": "^1.3.3",
     "angular-ui-router": "^0.4.2",
+    "clipboard": "^1.7.1",
     "file-saver": "^1.3.3",
     "jquery": "^3.0.0",
     "js-yaml": "^3.8.3",
@@ -59,8 +70,11 @@
     "gulp-task-listing": "^1.0.1",
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.11",
+    "husky": "^0.13.4",
     "jshint": "^2.9.4",
     "jshint-stylish": "^2.2.1",
+    "lint-staged": "^3.6.1",
+    "prettier": "^1.4.4",
     "stringify": "^5.1.0",
     "through2": "^2.0.3",
     "uglifyify": "^3.0.4",

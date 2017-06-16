@@ -2,6 +2,7 @@
 
 require('./lib/things.js');
 require('./lib/blob.js');
+var Clipboard = require('clipboard');
 var FileSaver = require('file-saver');
 var yaml = require('js-yaml');
 
@@ -309,10 +310,29 @@ module.exports = function($rootScope, $scope, AlertManager, $uibModal) {
       });
     }
 
+    var ratio = $scope.ratioMissing;
+
     var modalInstance = $uibModal.open({
       animation: true,
-      templateUrl: 'exportModal.html',
-      controller: 'exportController',
+      templateUrl: 'exportController.html',
+      controller: [
+        '$scope',
+        function($scope) {
+          $scope.ratio = ratio;
+
+          $scope.setLangChoosed = function(lang) {
+            $scope.lang = lang;
+            $('.close-button').removeAttr('disabled');
+            $('.close-button').removeClass('disabled');
+            var previous = document.querySelector('.choose_lang.selected');
+            if (previous) {
+              previous.classList.remove('selected');
+            }
+            event.target.classList.add('selected');
+            $('input.filename').focus();
+          };
+        }
+      ],
       size: 'lg'
     });
 

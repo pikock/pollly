@@ -185,47 +185,40 @@
 
 </div>
 
-<script type="text/ng-template" id="exportModal.html">
-  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 72 72">
-    <g fill="none" fill-rule="evenodd" stroke="#512D68" stroke-width="4" transform="translate(19 19)">
-      <path d="M17.5 31.7752871L17.5 22.0022505M10 32.9411765L25 32.9411765" stroke-linecap="round" stroke-linejoin="round" />
-      <path d="M17.5 22.0022505L17.5 22.0022505C11.9775 22.0022505 7.5 17.6263733 7.5 12.2292138L7.5 2.45617714C7.5 1.10505482 8.62.0129179768 10 .0129179768L25 .0129179768C26.38.0129179768 27.5 1.10505482 27.5 2.45617714L27.5 12.2292138C27.5 17.6263733 23.0225 22.0022505 17.5 22.0022505zM7.5 12.2292138L5 12.2292138C2.24 12.2292138 0 10.0400536 0 7.34269547 0 4.64533735 2.24 2.45617714 5 2.45617714L7.5 2.45617714M27.5 2.45617714L30 2.45617714C32.76 2.45617714 35 4.64533735 35 7.34269547 35 10.0400536 32.76 12.2292138 30 12.2292138L27.5 12.2292138"
-      />
-    </g>
-  </svg>
+<script type="text/ng-template" id="exportController.html">
+  <div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 72 72">
+      <g fill="none" fill-rule="evenodd" stroke="#512D68" stroke-width="4" transform="translate(19 19)">
+        <path d="M17.5 31.7752871L17.5 22.0022505M10 32.9411765L25 32.9411765" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M17.5 22.0022505L17.5 22.0022505C11.9775 22.0022505 7.5 17.6263733 7.5 12.2292138L7.5 2.45617714C7.5 1.10505482 8.62.0129179768 10 .0129179768L25 .0129179768C26.38.0129179768 27.5 1.10505482 27.5 2.45617714L27.5 12.2292138C27.5 17.6263733 23.0225 22.0022505 17.5 22.0022505zM7.5 12.2292138L5 12.2292138C2.24 12.2292138 0 10.0400536 0 7.34269547 0 4.64533735 2.24 2.45617714 5 2.45617714L7.5 2.45617714M27.5 2.45617714L30 2.45617714C32.76 2.45617714 35 4.64533735 35 7.34269547 35 10.0400536 32.76 12.2292138 30 12.2292138L27.5 12.2292138"
+        />
+      </g>
+    </svg>
 
-  <div class="modal-header ">
-    <h3 class="modal-title " id="modal-title ">All the input has been files, export your file to .YML format</h3>
-  </div>
-  <div class="modal-body " id="modal-body ">
-    <h4>Progression <br> <span>100%</span></h4>
-    <div>
-      <button class="btn btn-primary choose_lang" ng-click="langChoosed = 'lhs'">Export the traduction of the first language</button>
-      <button class="btn btn-primary choose_lang" ng-click="langChoosed = 'rhs'">Export the traduction of the second language</button>
-    </div>
-    <div class="filename_container">
-      <label for="filename" class="form-controll">Your filename</label>
-      <input class="form-control filename" name="filename" type="text " ng-model="filename ">
+    <div class="modal-header ">
+      <h3 class="modal-title " id="modal-title ">All the input has been files, export your file to .YML format</h3>
     </div>
 
-  </div>
-  <div class="modal-footer ">
-    <button class="btn btn-warning dismiss-button" type="button " ng-click="$dismiss('cancel'); ">Cancel</button>
-    <button class="btn btn-primary close-button disabled" type="button " disabled ng-click="$close({ filename, lang: langChoosed }); ">Export</button>
-  </div>
 
-  <script>
-    $('.choose_lang').on('click', function (event) {
-      $('.close-button').removeAttr('disabled')
-       $('.close-button').removeClass('disabled')
-      var previous = document.querySelector('.choose_lang.selected')
-      if (previous) {
-        previous.classList.remove('selected')
-      }
-      event.target.classList.add('selected')
-      $('input.filename').focus()
-    })
-  </script>
+
+    <div class="modal-body " id="modal-body ">
+      <h4>Progression <br> <span>{{ratio}}%</span></h4>
+
+      <div>
+        <button class="btn btn-primary choose_lang" ng-click="setLangChoosed('lhs')">Export the traduction of the first language</button>
+        <button class="btn btn-primary choose_lang" ng-click="setLangChoosed('rhs')">Export the traduction of the second language</button>
+      </div>
+      <div class="filename_container">
+        <label for="filename" class="form-controll">Your filename</label>
+        <input class="form-control filename" name="filename" type="text " ng-model="filename ">
+      </div>
+
+    </div>
+    <div class="modal-footer ">
+      <button class="btn btn-warning dismiss-button" type="button " ng-click="$dismiss('cancel'); ">Cancel</button>
+      <button class="btn btn-primary close-button disabled" type="button " disabled ng-click="$close({ filename, lang: langChoosed }); ">Export</button>
+    </div>
+  </div>
 </script>
 
 <script>
